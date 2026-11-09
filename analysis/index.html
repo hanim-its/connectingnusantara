@@ -1,81 +1,37 @@
+<!doctype html>
+<html lang="id" data-base="../" data-page="analysis/">
+<head>
 <meta charset="utf-8">
-<title>Digital Inequality in Indonesia — 2024</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analisis · Connecting Nusantara</title>
+<meta name="description" content="Analisis kesenjangan digital Indonesia 2024: akses, infrastruktur, dan penggunaan internet di 38 provinsi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
 <style>
+  /* Analysis tokens mapped onto the site palette (assets/style.css), so light/dark and colours match every other page */
   :root {
-    color-scheme: light;
-    --surface-0:  #f9f9f7;
-    --surface-1:  #fcfcfb;
-    --surface-2:  #ffffff;
-    --ink-1:      #0b0f14;
-    --ink-2:      #4a5560;
-    --ink-3:      #85919c;
-    --grid:       #e2e6e9;
-    --baseline:   #c7ced4;
-    --border:     rgba(11,15,20,0.10);
-    --accent:     #2a78d6;
-    --accent-ink: #ffffff;
-    --deficit:    #eb6834;
-    --good:       #0ca30c;
-    --warning:    #c98500;
-    --serious:    #ec835a;
-    --critical:   #d03b3b;
-    --seq-100: #cde2fb; --seq-250: #86b6ef; --seq-450: #2a78d6; --seq-650: #104281;
+    --surface-0: var(--bg); --surface-1: var(--surface);
+    --ink-1: var(--text); --ink-2: var(--muted); --ink-3: color-mix(in srgb, var(--muted) 75%, var(--bg));
+    --grid: color-mix(in srgb, var(--border) 70%, var(--bg)); --baseline: var(--border);
+    --deficit: var(--accent-2); --accent-ink: #ffffff;
+    --good: #2e8b57; --warning: #b7791f; --serious: #dd6b20; --critical: #c53030;
+    --seq-100: var(--seq-1); --seq-250: var(--seq-2); --seq-450: var(--seq-3); --seq-650: var(--seq-5);
   }
-  @media (prefers-color-scheme: dark) {
-    :root:where(:not([data-theme="light"])) {
-      color-scheme: dark;
-      --surface-0: #0d0d0d; --surface-1: #14181d; --surface-2: #1a1f26;
-      --ink-1: #f3f5f7; --ink-2: #c3ccd3; --ink-3: #8a97a2;
-      --grid: #262c33; --baseline: #383f47; --border: rgba(255,255,255,0.10);
-      --accent: #3987e5; --accent-ink: #ffffff; --deficit: #d95926;
-      --good: #0ca30c; --warning: #c98500; --serious: #ec835a; --critical: #e66767;
-      --seq-100: #12283f; --seq-250: #163a5c; --seq-450: #3987e5; --seq-650: #86b6ef;
-    }
-  }
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --surface-0: #0d0d0d; --surface-1: #14181d; --surface-2: #1a1f26;
-    --ink-1: #f3f5f7; --ink-2: #c3ccd3; --ink-3: #8a97a2;
-    --grid: #262c33; --baseline: #383f47; --border: rgba(255,255,255,0.10);
-    --accent: #3987e5; --accent-ink: #ffffff; --deficit: #d95926;
-    --good: #0ca30c; --warning: #c98500; --serious: #ec835a; --critical: #e66767;
-    --seq-100: #12283f; --seq-250: #163a5c; --seq-450: #3987e5; --seq-650: #86b6ef;
-  }
-
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    background: var(--surface-0);
-    color: var(--ink-1);
-    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
+  .an-wrap, #tooltip, #drawer { font-size: 14px; line-height: 1.5; }
   .num { font-variant-numeric: tabular-nums; }
   ::selection { background: color-mix(in oklab, var(--accent) 30%, transparent); }
 
   a { color: var(--accent); }
 
-  .wrap { max-width: 1280px; margin: 0 auto; padding: 36px 24px 80px; }
+  .an-wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 16px 24px; }
 
   /* ---------- Masthead ---------- */
-  header.masthead {
-    padding: 40px 24px 28px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 32px;
-  }
-  header.masthead .inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
-  .eyebrow {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
-    color: var(--accent); margin: 0 0 10px;
-  }
-  h1.title {
-    font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
-    font-weight: 500; font-size: 34px; line-height: 1.15; margin: 0 0 8px;
-    text-wrap: balance; color: var(--ink-1); letter-spacing: -0.01em;
-  }
-  .subtitle { color: var(--ink-2); font-size: 14.5px; max-width: 60ch; margin: 0; }
+  .masthead { padding: 24px 16px 8px; }
+  .masthead .inner { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  h1.title { text-wrap: balance; }
+  .subtitle { color: var(--ink-2); font-size: 1.05rem; max-width: 60ch; margin: 0; }
   .source-tag {
     text-align: right; font-size: 12px; color: var(--ink-3); white-space: nowrap;
   }
@@ -90,7 +46,7 @@
 
   section { margin-bottom: 44px; }
   h2.section-title {
-    font-family: ui-serif, Georgia, serif; font-weight: 500; font-size: 19px;
+    font-family: var(--serif); font-weight: 600; font-size: 19px;
     margin: 0 0 4px; color: var(--ink-1);
   }
   p.section-note { color: var(--ink-2); font-size: 13px; margin: 0 0 18px; max-width: 72ch; }
@@ -102,7 +58,7 @@
     padding-bottom: 12px; border-bottom: 1px solid var(--border);
   }
   .divide-group-head h2 {
-    font-family: ui-serif, Georgia, serif; font-weight: 500; font-size: 21px; margin: 0; color: var(--ink-1);
+    font-family: var(--serif); font-weight: 600; font-size: 21px; margin: 0; color: var(--ink-1);
   }
   .divide-tier {
     font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
@@ -209,6 +165,7 @@
     display: grid; grid-template-columns: 22px 150px 1fr 64px; align-items: center; gap: 10px;
     padding: 5px 6px; border-radius: 5px; cursor: pointer;
   }
+  @media (max-width: 480px) { .ranked-row { grid-template-columns: 18px minmax(0,110px) minmax(0,1fr) 52px; gap: 6px; } }
   .ranked-row:hover { background: var(--surface-2); }
   .ranked-row.selected { background: var(--surface-2); box-shadow: inset 2px 0 0 var(--ink-1); }
   .ranked-row .rk { font-size: 11px; color: var(--ink-3); text-align: right; font-variant-numeric: tabular-nums; }
@@ -259,16 +216,16 @@
   .d-stat .val.na { color: var(--ink-3); font-size: 14px; font-weight: 400; }
 
   footer.foot {
-    max-width: 1280px; margin: 0 auto; padding: 24px 24px 0; color: var(--ink-3); font-size: 11.5px;
+    max-width: var(--maxw); margin: 0 auto; padding: 24px 0 0; color: var(--ink-3); font-size: 12px;
     border-top: 1px solid var(--border); line-height: 1.7;
   }
 
   /* ---------- tab nav ---------- */
   nav.tab-nav {
-    background: var(--surface-1); border-bottom: 1px solid var(--border);
-    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
+    position: sticky; top: 61px; z-index: 40;
   }
-  nav.tab-nav .inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; }
+  nav.tab-nav .inner { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; overflow-x: auto; display: flex; gap: 4px; }
   .tab-btn {
     appearance: none; border: none; background: transparent; cursor: pointer; font-family: inherit;
     font-size: 13.5px; font-weight: 500; color: var(--ink-2); padding: 14px 6px; margin-right: 22px;
@@ -286,7 +243,7 @@
     border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; min-width: 260px; cursor: pointer;
   }
   .profile-header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
-  .profile-header h2 { font-family: ui-serif, Georgia, serif; font-weight: 500; font-size: 28px; margin: 0; color: var(--ink-1); }
+  .profile-header h2 { font-family: var(--serif); font-weight: 600; font-size: 28px; margin: 0; color: var(--ink-1); }
   .rank-pill {
     display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600;
     padding: 5px 11px; border-radius: 100px; color: #fff;
@@ -329,6 +286,9 @@
     nav.tab-nav .inner { overflow-x: auto; }
   }
 </style>
+</head>
+<body>
+<main>
 
 <div id="tooltip"></div>
 <div id="drawer-backdrop"></div>
@@ -337,9 +297,10 @@
   <div id="drawer-content"></div>
 </aside>
 
-<header class="masthead">
+<div class="masthead">
   <div class="inner">
     <div>
+      <p class="eyebrow">Analisis</p>
       <h1 class="title" data-i18n="title">Digital inequality in Indonesia</h1>
       <p class="subtitle" data-i18n="subtitle">Who has been left behind by the internet, and where &mdash; access, infrastructure, and the gaps between urban &amp; rural, men &amp; women, across 38 provinces.</p>
     </div>
@@ -354,7 +315,7 @@
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <nav class="tab-nav">
   <div class="inner" id="tab-nav-inner">
@@ -364,7 +325,7 @@
   </div>
 </nav>
 
-<div class="wrap">
+<div class="an-wrap">
 
   <div class="tab-panel active" id="tab-overview">
 
@@ -1520,3 +1481,7 @@ document.getElementById('profile-select').value = "35";
 renderProfile("35");
 renderUsageTab();
 </script>
+</main>
+<script src="../assets/site.js"></script>
+</body>
+</html>
