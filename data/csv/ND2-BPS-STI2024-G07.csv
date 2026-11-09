@@ -1,0 +1,9 @@
+dataset_id,kode_wilayah,wilayah,tahun,kategori,nilai,satuan,keterangan_kosong,sumber
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Sinyal sangat kuat | Perkotaan / Urban [jumlah desa],11938.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Sinyal sangat kuat | Perdesaan / Rural [jumlah desa],7070.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Sinyal kuat | Perkotaan / Urban [jumlah desa],17020.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Sinyal kuat | Perdesaan / Rural [jumlah desa],30365.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Sinyal lemah | Perkotaan / Urban [jumlah desa],751.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Sinyal lemah | Perdesaan / Rural [jumlah desa],14015.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Tidak ada sinyal | Perkotaan / Urban [jumlah desa],27.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"
+ND2-BPS-STI2024-G07,00,Indonesia,2024,Tidak ada sinyal | Perdesaan / Rural [jumlah desa],3090.0,jumlah desa,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)"

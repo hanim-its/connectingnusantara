@@ -1,0 +1,11 @@
+dataset_id,kode_wilayah,wilayah,tahun,kategori,nilai,satuan,keterangan_kosong,sumber
+ND2-BPS-STI2024-G21,00,Indonesia,2020,Pelanggan [juta],355.62,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2021,Pelanggan [juta],365.87,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2022,Pelanggan [juta],342.61,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2023,Pelanggan [juta],352.16,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2024,Pelanggan [juta],347.32,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2020,Pertumbuhan [persen],4.2,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2021,Pertumbuhan [persen],2.88,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2022,Pertumbuhan [persen],-6.36,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2023,Pertumbuhan [persen],2.79,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"
+ND2-BPS-STI2024-G21,00,Indonesia,2024,Pertumbuhan [persen],-1.38,juta; persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)"

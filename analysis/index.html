@@ -1,0 +1,1522 @@
+<meta charset="utf-8">
+<title>Digital Inequality in Indonesia — 2024</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0:  #f9f9f7;
+    --surface-1:  #fcfcfb;
+    --surface-2:  #ffffff;
+    --ink-1:      #0b0f14;
+    --ink-2:      #4a5560;
+    --ink-3:      #85919c;
+    --grid:       #e2e6e9;
+    --baseline:   #c7ced4;
+    --border:     rgba(11,15,20,0.10);
+    --accent:     #2a78d6;
+    --accent-ink: #ffffff;
+    --deficit:    #eb6834;
+    --good:       #0ca30c;
+    --warning:    #c98500;
+    --serious:    #ec835a;
+    --critical:   #d03b3b;
+    --seq-100: #cde2fb; --seq-250: #86b6ef; --seq-450: #2a78d6; --seq-650: #104281;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --surface-0: #0d0d0d; --surface-1: #14181d; --surface-2: #1a1f26;
+      --ink-1: #f3f5f7; --ink-2: #c3ccd3; --ink-3: #8a97a2;
+      --grid: #262c33; --baseline: #383f47; --border: rgba(255,255,255,0.10);
+      --accent: #3987e5; --accent-ink: #ffffff; --deficit: #d95926;
+      --good: #0ca30c; --warning: #c98500; --serious: #ec835a; --critical: #e66767;
+      --seq-100: #12283f; --seq-250: #163a5c; --seq-450: #3987e5; --seq-650: #86b6ef;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-0: #0d0d0d; --surface-1: #14181d; --surface-2: #1a1f26;
+    --ink-1: #f3f5f7; --ink-2: #c3ccd3; --ink-3: #8a97a2;
+    --grid: #262c33; --baseline: #383f47; --border: rgba(255,255,255,0.10);
+    --accent: #3987e5; --accent-ink: #ffffff; --deficit: #d95926;
+    --good: #0ca30c; --warning: #c98500; --serious: #ec835a; --critical: #e66767;
+    --seq-100: #12283f; --seq-250: #163a5c; --seq-450: #3987e5; --seq-650: #86b6ef;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--surface-0);
+    color: var(--ink-1);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+  ::selection { background: color-mix(in oklab, var(--accent) 30%, transparent); }
+
+  a { color: var(--accent); }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 36px 24px 80px; }
+
+  /* ---------- Masthead ---------- */
+  header.masthead {
+    padding: 40px 24px 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  header.masthead .inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-weight: 500; font-size: 34px; line-height: 1.15; margin: 0 0 8px;
+    text-wrap: balance; color: var(--ink-1); letter-spacing: -0.01em;
+  }
+  .subtitle { color: var(--ink-2); font-size: 14.5px; max-width: 60ch; margin: 0; }
+  .source-tag {
+    text-align: right; font-size: 12px; color: var(--ink-3); white-space: nowrap;
+  }
+  .source-tag strong { color: var(--ink-2); font-weight: 600; }
+  .lang-toggle { display: flex; justify-content: flex-end; gap: 4px; margin-bottom: 10px; }
+  .lang-btn {
+    appearance: none; border: 1px solid var(--border); background: var(--surface-1); color: var(--ink-3);
+    font-family: inherit; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; cursor: pointer;
+  }
+  .lang-btn:hover { color: var(--ink-1); }
+  .lang-btn.active { background: var(--ink-1); color: var(--surface-1); border-color: var(--ink-1); }
+
+  section { margin-bottom: 44px; }
+  h2.section-title {
+    font-family: ui-serif, Georgia, serif; font-weight: 500; font-size: 19px;
+    margin: 0 0 4px; color: var(--ink-1);
+  }
+  p.section-note { color: var(--ink-2); font-size: 13px; margin: 0 0 18px; max-width: 72ch; }
+
+  /* ---------- divide-level grouping (Access & Infrastructure / Internet Usage) ---------- */
+  .divide-group { margin-bottom: 52px; }
+  .divide-group-head {
+    display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+  .divide-group-head h2 {
+    font-family: ui-serif, Georgia, serif; font-weight: 500; font-size: 21px; margin: 0; color: var(--ink-1);
+  }
+  .divide-tier {
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent); background: color-mix(in oklab, var(--accent) 12%, var(--surface-1));
+    padding: 3px 9px; border-radius: 100px; white-space: nowrap;
+  }
+  .divide-group-note { color: var(--ink-2); font-size: 13px; margin: -12px 0 24px; max-width: 76ch; }
+
+  /* ---------- KPI row ---------- */
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .kpi-tile { background: var(--surface-1); padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+  .kpi-label { font-size: 12px; color: var(--ink-2); }
+  .kpi-value { font-size: 30px; font-weight: 600; color: var(--ink-1); letter-spacing: -0.02em; }
+  .kpi-value .unit { font-size: 15px; font-weight: 500; color: var(--ink-3); margin-left: 2px; }
+  .kpi-delta { font-size: 12px; display: flex; align-items: center; gap: 4px; }
+  .kpi-delta.up { color: var(--good); }
+  .kpi-delta.down { color: var(--critical); }
+  .kpi-spark { margin-top: 2px; }
+
+  /* ---------- Cards / panels ---------- */
+  .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 22px 18px;
+  }
+  .card h3 { font-size: 13.5px; font-weight: 600; margin: 0 0 2px; color: var(--ink-1); }
+  .card .card-sub { font-size: 12px; color: var(--ink-3); margin: 0 0 14px; }
+
+  /* ---------- legend ---------- */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-2); }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+  .legend-line { width: 14px; height: 2px; border-radius: 1px; flex: none; }
+
+  /* ---------- line chart ---------- */
+  svg.chart { width: 100%; height: auto; overflow: visible; }
+  .gridline { stroke: var(--grid); stroke-width: 1; }
+  .baseline { stroke: var(--baseline); stroke-width: 1; }
+  .axis-label { fill: var(--ink-3); font-size: 10.5px; }
+  .line-path { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .area-path { opacity: 0.10; }
+  .end-dot { stroke: var(--surface-1); stroke-width: 2; }
+  .dot-hit { fill: transparent; cursor: pointer; }
+  .end-label { font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* ---------- tooltip ---------- */
+  #tooltip {
+    position: fixed; pointer-events: none; z-index: 50;
+    background: var(--ink-1); color: var(--surface-1);
+    font-size: 12px; padding: 7px 10px; border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    opacity: 0; transform: translate(-50%, -100%) translateY(-8px);
+    transition: opacity 0.08s ease; max-width: 240px;
+  }
+  #tooltip.show { opacity: 1; }
+  #tooltip .tt-title { font-weight: 600; margin-bottom: 3px; }
+  #tooltip .tt-row { display: flex; justify-content: space-between; gap: 12px; }
+  #tooltip .tt-row .k { opacity: 0.7; }
+
+  /* ---------- supply funnel bars ---------- */
+  .stack-bar { display: flex; height: 26px; border-radius: 5px; overflow: hidden; gap: 2px; background: var(--surface-1); }
+  .stack-seg { height: 100%; }
+  .supply-legend { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+  .supply-legend .li { font-size: 11.5px; color: var(--ink-2); }
+  .supply-legend .li b { display: block; color: var(--ink-1); font-size: 15px; font-variant-numeric: tabular-nums; }
+
+  /* ---------- explorer controls ---------- */
+  .explorer-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+  .metric-select { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 3px; }
+  .metric-group-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; flex: none; }
+  .metric-btn {
+    appearance: none; border: none; background: transparent; color: var(--ink-2);
+    font-size: 12.5px; font-family: inherit; padding: 7px 12px; border-radius: 6px; cursor: pointer;
+  }
+  .metric-btn:hover { color: var(--ink-1); }
+  .metric-btn.active { background: var(--accent); color: var(--accent-ink); }
+  .view-toggle { display: flex; gap: 4px; font-size: 12px; }
+  .view-toggle button {
+    appearance: none; border: 1px solid var(--border); background: var(--surface-1); color: var(--ink-2);
+    padding: 6px 12px; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 12px;
+  }
+  .view-toggle button.active { background: var(--ink-1); color: var(--surface-1); border-color: var(--ink-1); }
+
+  .metric-legend-scale { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--ink-3); margin-bottom: 14px; }
+  .scale-bar { height: 8px; width: 160px; border-radius: 4px; }
+
+  /* ---------- island grid cartogram ---------- */
+  .cartogram { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .island-col { display: flex; flex-direction: column; gap: 6px; }
+  .island-name { font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 2px; text-align: center; }
+  .prov-tile {
+    border-radius: 6px; padding: 8px 6px; cursor: pointer; border: 1px solid var(--border);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    min-height: 54px; text-align: center; transition: transform 0.08s ease, box-shadow 0.08s ease;
+  }
+  .prov-tile:hover, .prov-tile:focus-visible { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,0.14); outline: none; }
+  .prov-tile.selected { box-shadow: 0 0 0 2px var(--ink-1); }
+  .prov-tile .tile-name { font-size: 9.5px; line-height: 1.15; font-weight: 600; }
+  .prov-tile .tile-value { font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  /* ---------- ranked list ---------- */
+  .ranked-list { display: flex; flex-direction: column; gap: 3px; margin-top: 18px; }
+  .ranked-row {
+    display: grid; grid-template-columns: 22px 150px 1fr 64px; align-items: center; gap: 10px;
+    padding: 5px 6px; border-radius: 5px; cursor: pointer;
+  }
+  .ranked-row:hover { background: var(--surface-2); }
+  .ranked-row.selected { background: var(--surface-2); box-shadow: inset 2px 0 0 var(--ink-1); }
+  .ranked-row .rk { font-size: 11px; color: var(--ink-3); text-align: right; font-variant-numeric: tabular-nums; }
+  .ranked-row .nm { font-size: 12.5px; color: var(--ink-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ranked-row .bar-track { height: 14px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+  .ranked-row .bar-fill { display: block; height: 100%; border-radius: 3px 0 0 3px; }
+  .ranked-row .vv { font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+
+  /* ---------- data table ---------- */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+  table.data-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 900px; }
+  table.data-table th, table.data-table td { padding: 8px 12px; text-align: right; white-space: nowrap; }
+  table.data-table th:first-child, table.data-table td:first-child { text-align: left; }
+  table.data-table th {
+    position: sticky; top: 0; background: var(--surface-2); color: var(--ink-2); font-weight: 600;
+    border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  table.data-table th.active { color: var(--accent); }
+  table.data-table td { border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; color: var(--ink-1); }
+  table.data-table tbody tr:hover { background: var(--surface-2); }
+
+  /* ---------- detail drawer ---------- */
+  #drawer-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.35); opacity: 0; pointer-events: none;
+    transition: opacity 0.15s ease; z-index: 60;
+  }
+  #drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+  #drawer {
+    position: fixed; top: 0; right: 0; height: 100%; width: 400px; max-width: 92vw;
+    background: var(--surface-1); border-left: 1px solid var(--border); z-index: 61;
+    transform: translateX(100%); transition: transform 0.18s ease;
+    padding: 26px 26px 40px; overflow-y: auto;
+  }
+  #drawer.open { transform: translateX(0); }
+  #drawer .close-btn {
+    position: absolute; top: 20px; right: 20px; background: none; border: none; cursor: pointer;
+    color: var(--ink-3); font-size: 20px; line-height: 1; padding: 4px;
+  }
+  #drawer .close-btn:hover { color: var(--ink-1); }
+  #drawer .d-island { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+  #drawer h3 { font-family: ui-serif, Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 4px; }
+  #drawer .d-rank { color: var(--ink-3); font-size: 12.5px; margin-bottom: 20px; }
+  .d-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+  .d-stat { }
+  .d-stat .lbl { font-size: 11px; color: var(--ink-3); margin-bottom: 2px; }
+  .d-stat .val { font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .d-stat .val.na { color: var(--ink-3); font-size: 14px; font-weight: 400; }
+
+  footer.foot {
+    max-width: 1280px; margin: 0 auto; padding: 24px 24px 0; color: var(--ink-3); font-size: 11.5px;
+    border-top: 1px solid var(--border); line-height: 1.7;
+  }
+
+  /* ---------- tab nav ---------- */
+  nav.tab-nav {
+    background: var(--surface-1); border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 40;
+  }
+  nav.tab-nav .inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; }
+  .tab-btn {
+    appearance: none; border: none; background: transparent; cursor: pointer; font-family: inherit;
+    font-size: 13.5px; font-weight: 500; color: var(--ink-2); padding: 14px 6px; margin-right: 22px;
+    border-bottom: 2px solid transparent; transition: color 0.1s ease;
+  }
+  .tab-btn:hover { color: var(--ink-1); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ---------- province profile ---------- */
+  .profile-picker-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+  select.province-select {
+    font-family: inherit; font-size: 14px; color: var(--ink-1); background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; min-width: 260px; cursor: pointer;
+  }
+  .profile-header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
+  .profile-header h2 { font-family: ui-serif, Georgia, serif; font-weight: 500; font-size: 28px; margin: 0; color: var(--ink-1); }
+  .rank-pill {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600;
+    padding: 5px 11px; border-radius: 100px; color: #fff;
+  }
+  .profile-sub { color: var(--ink-3); font-size: 13px; margin: 0 0 26px; }
+
+  .compare-kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 28px; }
+  .compare-kpi { background: var(--surface-1); padding: 16px 18px; }
+  .compare-kpi .lbl { font-size: 12px; color: var(--ink-2); margin-bottom: 6px; }
+  .compare-kpi .val { font-size: 26px; font-weight: 600; color: var(--ink-1); letter-spacing: -0.02em; margin-bottom: 8px; }
+  .compare-kpi .val .unit { font-size: 14px; font-weight: 500; color: var(--ink-3); }
+  .compare-kpi .refs { display: flex; flex-direction: column; gap: 3px; font-size: 11.5px; color: var(--ink-3); }
+  .compare-kpi .refs b { color: var(--ink-2); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .compare-kpi .rank-note { margin-top: 8px; font-size: 11px; color: var(--ink-3); padding-top: 8px; border-top: 1px solid var(--border); }
+
+  .range-row { display: grid; grid-template-columns: 190px 1fr 90px; align-items: center; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--grid); }
+  .range-row:last-child { border-bottom: none; }
+  .range-row .rl-label { font-size: 12.5px; color: var(--ink-2); }
+  .range-row .rl-track { position: relative; height: 22px; }
+  .range-row .rl-line { position: absolute; top: 50%; left: 0; right: 0; height: 3px; background: var(--grid); border-radius: 2px; transform: translateY(-50%); }
+  .range-row .rl-fill { position: absolute; top: 50%; left: 0; height: 3px; background: color-mix(in oklab, var(--accent) 35%, var(--grid)); border-radius: 2px; transform: translateY(-50%); }
+  .range-row .rl-marker { position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--surface-1); transform: translate(-50%, -50%); box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+  .range-row .rl-tick { position: absolute; top: 50%; width: 2px; height: 14px; background: var(--ink-3); transform: translate(-50%, -50%); border-radius: 1px; }
+  .range-row .rl-tick.island { background: var(--deficit); }
+  .range-row .rl-value { font-size: 12.5px; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-1); }
+  .range-legend { display: flex; gap: 18px; font-size: 11.5px; color: var(--ink-3); margin: 14px 0 4px; }
+  .range-legend .rli { display: flex; align-items: center; gap: 5px; }
+  .range-legend .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .range-legend .tickmark { width: 2px; height: 10px; }
+
+  .profile-detail-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 920px) {
+    .panel-grid { grid-template-columns: 1fr; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .cartogram { grid-template-columns: repeat(3, 1fr); }
+    .ranked-row { grid-template-columns: 20px 110px 1fr 50px; }
+    .compare-kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .profile-detail-grid { grid-template-columns: repeat(2, 1fr); }
+    .range-row { grid-template-columns: 110px 1fr 70px; }
+    nav.tab-nav .inner { overflow-x: auto; }
+  }
+</style>
+
+<div id="tooltip"></div>
+<div id="drawer-backdrop"></div>
+<aside id="drawer">
+  <button class="close-btn" id="drawer-close" aria-label="Close">&times;</button>
+  <div id="drawer-content"></div>
+</aside>
+
+<header class="masthead">
+  <div class="inner">
+    <div>
+      <h1 class="title" data-i18n="title">Digital inequality in Indonesia</h1>
+      <p class="subtitle" data-i18n="subtitle">Who has been left behind by the internet, and where &mdash; access, infrastructure, and the gaps between urban &amp; rural, men &amp; women, across 38 provinces.</p>
+    </div>
+    <div>
+      <div class="lang-toggle" id="lang-toggle">
+        <button class="lang-btn" data-lang="id">Bahasa</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+      <div class="source-tag">
+        <span data-i18n="data_year_label">Data year</span> <strong>2024</strong> &middot; <span data-i18n="trend_label">trend</span> 2021&ndash;2024<br>
+        <span data-i18n="source_label">Source: BPS, Susenas &amp; Podes</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <div class="inner" id="tab-nav-inner">
+    <button class="tab-btn active" data-tab="overview" data-i18n="tab_overview">Overview</button>
+    <button class="tab-btn" data-tab="compare" data-i18n="tab_compare">Compare provinces</button>
+    <button class="tab-btn" data-tab="profile" data-i18n="tab_profile">Province profile</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="tab-panel active" id="tab-overview">
+
+  <p class="section-note" style="max-width:88ch;margin-bottom:36px;" data-i18n-html="divide_intro">Digital divide research separates two questions: can people get online at all (<strong>access &amp; infrastructure</strong>, the first-level divide), and what do they actually do once they are (<strong>internet usage</strong>, the second-level divide). Indonesia has largely closed the first gap for anyone within signal range &mdash; the second is where the remaining inequality actually lives.</p>
+
+  <div class="divide-group">
+    <div class="divide-group-head">
+      <h2 data-i18n="group_access">Access &amp; infrastructure</h2>
+      <span class="divide-tier" data-i18n="tier_first">First-level divide</span>
+    </div>
+
+    <section id="kpi-section">
+      <div class="kpi-row" id="kpi-row"></div>
+    </section>
+
+    <section>
+      <h3 style="margin-bottom:4px;" data-i18n="trend_heading">Access is rising &mdash; the rural gap is not closing at the same pace</h3>
+      <p class="card-sub" style="margin-bottom:18px;" data-i18n="trend_note">Percentage of the population who accessed the internet in the past 3 months, national trend. A widening gap between the lines means rural areas are falling further behind even as both rise.</p>
+      <div class="panel-grid">
+        <div class="card">
+          <h3 data-i18n="card_by_area">By area classification</h3>
+          <p class="card-sub" data-i18n="card_urban_rural_sub">Urban vs. rural, 2021&ndash;2024</p>
+          <div id="chart-urbanrural"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="card_by_gender">By gender</h3>
+          <p class="card-sub" data-i18n="card_gender_sub">Male vs. female, 2021&ndash;2024</p>
+          <div id="chart-gender"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 style="margin-bottom:4px;" data-i18n="village_heading">Village-level infrastructure</h3>
+      <p class="card-sub" style="margin-bottom:18px;" data-i18n="village_note">Podes (village census) supply-side data &mdash; signal reach and public internet facilities.</p>
+      <div class="panel-grid">
+        <div class="card">
+          <h3 data-i18n="card_signal_title">Cellular signal strength across villages</h3>
+          <p class="card-sub" data-i18n="card_signal_sub">Share of villages/kelurahan by strongest signal received, 2024</p>
+          <div id="signal-bar"></div>
+          <div class="supply-legend" id="signal-legend"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="card_facility_title">Village-office internet facilities, by condition</h3>
+          <p class="card-sub" data-i18n="card_facility_sub">Of villages with an internet facility at the office, share that's actually functional</p>
+          <div id="facility-bar"></div>
+          <div class="supply-legend" id="facility-legend"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="divide-group">
+    <div class="divide-group-head">
+      <h2 data-i18n="group_usage">Internet usage</h2>
+      <span class="divide-tier" data-i18n="tier_second">Second-level divide</span>
+    </div>
+    <p class="divide-group-note" data-i18n="usage_note">Susenas asks people what they actually did online &mdash; not just whether they went online at all. This is the part of the divide that infrastructure spending alone doesn't fix.</p>
+
+    <section>
+      <div class="card" style="margin-bottom:24px;">
+        <h3 data-i18n="card_purpose_title">What people use the internet for</h3>
+        <p class="card-sub" data-i18n="card_purpose_sub">Share of internet users nationally engaging in each purpose, 2024 &mdash; not mutually exclusive, people report multiple purposes</p>
+        <div id="purpose-ranked-list" class="ranked-list"></div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="card">
+          <h3 data-i18n="card_freq_title">How often people go online</h3>
+          <p class="card-sub" data-i18n="card_freq_sub">Frequency of internet access, national, 2024</p>
+          <div id="freq-bar"></div>
+          <div class="supply-legend" id="freq-legend"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="card_media_title">What device people use</h3>
+          <p class="card-sub" data-i18n="card_media_sub">Share of users accessing via each media type &mdash; not mutually exclusive</p>
+          <div id="media-bars"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  </div>
+
+  <div class="tab-panel" id="tab-compare">
+
+  <section>
+    <h2 class="section-title" data-i18n="explorer_heading">Province explorer</h2>
+    <p class="section-note" data-i18n="explorer_note">Provinces are grouped west&ndash;to&ndash;east by island, the way they sit across the archipelago. Pick a metric &mdash; spanning both access/infrastructure and usage &mdash; to recolor the grid; click any province for its full profile.</p>
+    <div class="explorer-controls">
+      <div class="metric-select" id="metric-select"></div>
+      <div class="view-toggle" id="view-toggle">
+        <button data-view="grid" class="active" data-i18n="view_grid">Map grid</button>
+        <button data-view="table" data-i18n="view_table">Table</button>
+      </div>
+    </div>
+    <div class="metric-legend-scale" id="metric-scale"></div>
+
+    <div id="view-grid">
+      <div class="cartogram" id="cartogram"></div>
+      <div class="ranked-list" id="ranked-list"></div>
+    </div>
+    <div id="view-table" class="table-wrap" style="display:none;">
+      <table class="data-table" id="data-table"></table>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="tab-panel" id="tab-profile">
+  <section>
+    <div class="profile-picker-row">
+      <div>
+        <h2 class="section-title" data-i18n="profile_heading">Province profile</h2>
+        <p class="section-note" data-i18n="profile_note">Pick a province for a full report &mdash; access, infrastructure, and how people there actually use the internet &mdash; benchmarked against its island and the national average.</p>
+      </div>
+      <select id="profile-select" class="province-select" data-i18n-attr="aria-label:profile_select_aria" aria-label="Select a province"></select>
+    </div>
+    <div id="profile-content"></div>
+  </section>
+  </div>
+
+  <footer class="foot">
+    <p data-i18n-html="footer_text"><strong>Source:</strong> BPS&ndash;Statistics Indonesia, <em>Statistik Telekomunikasi Indonesia 2024</em> (Vol. 13, 2025) &mdash; Susenas (individual/household survey) and Podes (village census). All 38 provincial units as reported, including Papua Barat Daya, Papua Selatan, Papua Tengah and Papua Pegunungan (split from Papua Barat and Papua between 2022&ndash;2023 &mdash; their 2021&ndash;2022 trend points are unavailable because the provinces did not yet exist). DKI Jakarta has no rural classification, so its urban&ndash;rural gap is shown as not applicable rather than zero. The Digital Inequality Index is an unweighted average of standardized (z-score) urban&ndash;rural gap, gender gap, no-signal village share, and non-functioning facility share &mdash; a relative ranking within this dataset, not an absolute scale. Purpose, frequency, and media-of-access figures ask respondents to report all that apply, so shares within a category do not sum to 100%. The Productive Use Index is an unweighted average of five purposes (online learning, work from home, selling goods/services, e-banking, digital content creation) and is a relative indicator, not a judgment of what internet use "should" look like.</p>
+  </footer>
+</div>
+
+<script>
+const DATA = {"national": {"years": [2021, 2022, 2023, 2024], "series": {"internet_all": [62.1, 66.48, 69.21, 72.78], "internet_urban": [71.81, 74.16, 76.3, 79.13], "internet_rural": [49.3, 55.92, 59.33, 63.71], "mobile_all": [65.87, 67.88, 67.29, 68.65], "mobile_urban": [72.41, 73.58, 73.02, 74.15], "mobile_rural": [57.24, 60.18, 59.29, 60.78], "computer_all": [11.67, 11.88, 12.3, 12.23], "computer_urban": [16.22, 15.95, 16.43, 16.33], "computer_rural": [5.66, 6.37, 6.56, 6.36], "internet_male": [65.05, 69.39, 72.07, 75.65], "internet_female": [59.14, 63.53, 66.35, 69.9]}, "purpose_national": {"info_news": 77.5, "info_goods": 25.85, "email": 12.89, "social_media": 77.57, "buying": 23.0, "selling": 5.16, "ebanking": 11.57, "online_learning": 9.96, "work_from_home": 1.6, "entertainment": 85.29, "content_creation": 7.12, "others": 5.16}, "purpose_labels": {"info_news": "Getting information/news", "info_goods": "Getting information on goods/services", "email": "Email", "social_media": "Social media", "buying": "Buying goods/services", "selling": "Selling goods/services", "ebanking": "Financial facilities (e-banking)", "online_learning": "Online learning", "work_from_home": "Work from home", "entertainment": "Entertainment", "content_creation": "Digital content creation", "others": "Others"}, "freq_national": {"daily": 92.92, "weekly": 5.67, "rare": 1.42}, "media_national": {"desktop": 2.62, "laptop": 10.12, "mobile": 99.08, "other": 0.27}, "signal_national": {"very_strong_pct": 22.6, "strong_pct": 56.2, "weak_pct": 17.5, "none_pct": 3.7}, "bts_national": {"g4_pct": 90.2, "g3_pct": 6.1, "g25_pct": 2.5, "none_pct": 1.3}, "facility_national": {"working_pct": 92.9, "jarang_pct": 2.5, "not_working_pct": 4.6}, "island_avg": {"Sumatera": {"internet_all": 74.11, "mobile_all": 70.07, "computer_all": 11.0, "gap_urban_rural": 12.02, "gap_gender": 4.82, "signal_none_share": 0.83, "facility_working_share": 90.88, "telecom_exp_share": 3.58, "productive_use_index": 6.21, "freq_daily": 92.45, "media_laptop": 8.43}, "Jawa": {"internet_all": 77.04, "mobile_all": 71.53, "computer_all": 15.44, "gap_urban_rural": 14.54, "gap_gender": 5.82, "signal_none_share": 0.0, "facility_working_share": 99.2, "telecom_exp_share": 3.48, "productive_use_index": 8.75, "freq_daily": 94.92, "media_laptop": 13.34}, "Bali & Nusa Tenggara": {"internet_all": 66.97, "mobile_all": 64.2, "computer_all": 12.89, "gap_urban_rural": 18.2, "gap_gender": 8.55, "signal_none_share": 0.2, "facility_working_share": 91.73, "telecom_exp_share": 3.29, "productive_use_index": 7.0, "freq_daily": 86.69, "media_laptop": 10.68}, "Kalimantan": {"internet_all": 76.7, "mobile_all": 74.84, "computer_all": 11.64, "gap_urban_rural": 13.93, "gap_gender": 4.36, "signal_none_share": 2.0, "facility_working_share": 89.12, "telecom_exp_share": 4.06, "productive_use_index": 6.06, "freq_daily": 92.87, "media_laptop": 9.47}, "Sulawesi": {"internet_all": 67.31, "mobile_all": 68.13, "computer_all": 11.68, "gap_urban_rural": 15.61, "gap_gender": 1.4, "signal_none_share": 2.03, "facility_working_share": 88.7, "telecom_exp_share": 3.61, "productive_use_index": 5.88, "freq_daily": 88.51, "media_laptop": 8.87}, "Maluku & Papua": {"internet_all": 49.25, "mobile_all": 53.86, "computer_all": 8.95, "gap_urban_rural": 36.34, "gap_gender": 4.61, "signal_none_share": 19.29, "facility_working_share": 70.34, "telecom_exp_share": 4.25, "productive_use_index": 4.51, "freq_daily": 79.5, "media_laptop": 9.57}}, "national_avg": {"internet_all": 72.78, "mobile_all": 68.65, "computer_all": 12.23, "gap_urban_rural": 15.42, "gap_gender": 5.75, "signal_none_share": 4.88, "facility_working_share": 87.36, "telecom_exp_share": 3.75}}, "provinces": [{"code": "96", "name": "Papua Tengah", "island": "Maluku & Papua", "internet_all": 28.71, "internet_urban": 82.62, "internet_rural": 12.3, "mobile_all": 33.7, "computer_all": 4.81, "internet_male": 29.79, "internet_female": 27.52, "telecom_exp_share": 4.08, "internet_trend": [null, null, null, 28.71], "mobile_trend": [null, null, null, 33.7], "computer_trend": [null, null, null, 4.81], "gap_urban_rural": 70.32, "gap_gender": 2.27, "villages_total_signal_table": 1208.0, "signal_very_strong_share": 2.6, "signal_strong_only_share": 13.3, "signal_weak_share": 31.8, "signal_strong_share": 15.9, "signal_none_share": 52.3, "bts_4g_share": 33.3, "bts_3g_share": 6.9, "bts_25g_share": 18.2, "facility_working_share": 51.2, "facility_jarang_share": 22.5, "facility_not_working_share": 26.2, "facility_total": 80.0, "purpose_info_news": 71.77, "purpose_info_goods": 10.1, "purpose_email": 8.13, "purpose_social_media": 66.99, "purpose_buying": 6.61, "purpose_selling": 2.82, "purpose_ebanking": 6.48, "purpose_online_learning": 5.27, "purpose_work_from_home": 0.52, "purpose_entertainment": 71.19, "purpose_content_creation": 7.36, "purpose_others": 5.23, "productive_use_index": 4.5, "freq_daily": 82.2, "freq_weekly": 11.11, "freq_rare": 6.69, "media_desktop": 1.73, "media_laptop": 9.55, "media_mobile": 97.81, "media_other": 0.32, "inequality_index": 2.462, "inequality_rank": 1, "rank_internet_all": 2, "rank_internet_all_of": 38, "rank_mobile_all": 2, "rank_mobile_all_of": 38, "rank_computer_all": 2, "rank_computer_all_of": 38, "rank_gap_urban_rural": 1, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 30, "rank_gap_gender_of": 38, "rank_signal_none_share": 2, "rank_signal_none_share_of": 38, "rank_facility_working_share": 2, "rank_facility_working_share_of": 38, "rank_productive_use_index": 6, "rank_productive_use_index_of": 38, "rank_freq_daily": 5, "rank_freq_daily_of": 38}, {"code": "97", "name": "Papua Pegunungan", "island": "Maluku & Papua", "internet_all": 6.76, "internet_urban": 41.86, "internet_rural": 4.15, "mobile_all": 15.76, "computer_all": 1.16, "internet_male": 7.82, "internet_female": 5.61, "telecom_exp_share": 2.91, "internet_trend": [null, null, null, 6.76], "mobile_trend": [null, null, null, 15.76], "computer_trend": [null, null, null, 1.16], "gap_urban_rural": 37.71, "gap_gender": 2.21, "villages_total_signal_table": 2634.0, "signal_very_strong_share": 2.5, "signal_strong_only_share": 14.1, "signal_weak_share": 28.0, "signal_strong_share": 16.6, "signal_none_share": 55.4, "bts_4g_share": 40.1, "bts_3g_share": 21.1, "bts_25g_share": 21.0, "facility_working_share": 22.2, "facility_jarang_share": 31.6, "facility_not_working_share": 46.2, "facility_total": 117.0, "purpose_info_news": 75.22, "purpose_info_goods": 10.37, "purpose_email": 6.57, "purpose_social_media": 71.36, "purpose_buying": 7.46, "purpose_selling": 2.79, "purpose_ebanking": 1.9, "purpose_online_learning": 3.04, "purpose_work_from_home": 0.79, "purpose_entertainment": 73.93, "purpose_content_creation": 0.4, "purpose_others": 4.15, "productive_use_index": 1.8, "freq_daily": 55.96, "freq_weekly": 38.01, "freq_rare": 6.04, "media_desktop": 1.5, "media_laptop": 7.37, "media_mobile": 98.62, "media_other": 0.29, "inequality_index": 2.368, "inequality_rank": 2, "rank_internet_all": 1, "rank_internet_all_of": 38, "rank_mobile_all": 1, "rank_mobile_all_of": 38, "rank_computer_all": 1, "rank_computer_all_of": 38, "rank_gap_urban_rural": 4, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 31, "rank_gap_gender_of": 38, "rank_signal_none_share": 1, "rank_signal_none_share_of": 38, "rank_facility_working_share": 1, "rank_facility_working_share_of": 38, "rank_productive_use_index": 1, "rank_productive_use_index_of": 38, "rank_freq_daily": 1, "rank_freq_daily_of": 38}, {"code": "95", "name": "Papua Selatan", "island": "Maluku & Papua", "internet_all": 48.44, "internet_urban": 74.09, "internet_rural": 33.58, "mobile_all": 50.08, "computer_all": 10.94, "internet_male": 52.84, "internet_female": 43.87, "telecom_exp_share": 4.48, "internet_trend": [null, null, null, 48.44], "mobile_trend": [null, null, null, 50.08], "computer_trend": [null, null, null, 10.94], "gap_urban_rural": 40.51, "gap_gender": 8.97, "villages_total_signal_table": 690.0, "signal_very_strong_share": 7.0, "signal_strong_only_share": 54.1, "signal_weak_share": 25.2, "signal_strong_share": 61.0, "signal_none_share": 13.8, "bts_4g_share": 92.8, "bts_3g_share": 3.2, "bts_25g_share": 2.4, "facility_working_share": 83.1, "facility_jarang_share": 8.5, "facility_not_working_share": 8.5, "facility_total": 71.0, "purpose_info_news": 79.27, "purpose_info_goods": 18.11, "purpose_email": 17.54, "purpose_social_media": 75.22, "purpose_buying": 9.42, "purpose_selling": 4.03, "purpose_ebanking": 13.81, "purpose_online_learning": 6.45, "purpose_work_from_home": 1.17, "purpose_entertainment": 88.73, "purpose_content_creation": 14.32, "purpose_others": 2.73, "productive_use_index": 8.0, "freq_daily": 83.15, "freq_weekly": 9.56, "freq_rare": 7.29, "media_desktop": 4.85, "media_laptop": 12.46, "media_mobile": 98.15, "media_other": 0.15, "inequality_index": 1.101, "inequality_rank": 3, "rank_internet_all": 3, "rank_internet_all_of": 38, "rank_mobile_all": 3, "rank_mobile_all_of": 38, "rank_computer_all": 18, "rank_computer_all_of": 38, "rank_gap_urban_rural": 2, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 2, "rank_gap_gender_of": 38, "rank_signal_none_share": 3, "rank_signal_none_share_of": 38, "rank_facility_working_share": 8, "rank_facility_working_share_of": 38, "rank_productive_use_index": 34, "rank_productive_use_index_of": 38, "rank_freq_daily": 7, "rank_freq_daily_of": 38}, {"code": "91", "name": "Papua Barat", "island": "Maluku & Papua", "internet_all": 62.96, "internet_urban": 79.14, "internet_rural": 55.75, "mobile_all": 68.29, "computer_all": 10.09, "internet_male": 66.03, "internet_female": 59.57, "telecom_exp_share": 4.6, "internet_trend": [54.61, 58.27, 60.01, 62.96], "mobile_trend": [68.11, 68.01, 65.76, 68.29], "computer_trend": [12.26, 11.0, 11.4, 10.09], "gap_urban_rural": 23.39, "gap_gender": 6.46, "villages_total_signal_table": 970.0, "signal_very_strong_share": 15.3, "signal_strong_only_share": 39.0, "signal_weak_share": 32.3, "signal_strong_share": 54.2, "signal_none_share": 13.5, "bts_4g_share": 85.2, "bts_3g_share": 6.6, "bts_25g_share": 4.4, "facility_working_share": 83.1, "facility_jarang_share": 5.6, "facility_not_working_share": 11.2, "facility_total": 160.0, "purpose_info_news": 72.65, "purpose_info_goods": 9.53, "purpose_email": 7.85, "purpose_social_media": 69.33, "purpose_buying": 4.85, "purpose_selling": 1.7, "purpose_ebanking": 4.97, "purpose_online_learning": 6.38, "purpose_work_from_home": 1.27, "purpose_entertainment": 85.0, "purpose_content_creation": 1.68, "purpose_others": 6.5, "productive_use_index": 3.2, "freq_daily": 82.87, "freq_weekly": 11.44, "freq_rare": 5.69, "media_desktop": 1.61, "media_laptop": 8.65, "media_mobile": 99.26, "media_other": 0.23, "inequality_index": 0.514, "inequality_rank": 4, "rank_internet_all": 10, "rank_internet_all_of": 38, "rank_mobile_all": 20, "rank_mobile_all_of": 38, "rank_computer_all": 12, "rank_computer_all_of": 38, "rank_gap_urban_rural": 9, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 11, "rank_gap_gender_of": 38, "rank_signal_none_share": 4, "rank_signal_none_share_of": 38, "rank_facility_working_share": 9, "rank_facility_working_share_of": 38, "rank_productive_use_index": 2, "rank_productive_use_index_of": 38, "rank_freq_daily": 6, "rank_freq_daily_of": 38}, {"code": "53", "name": "Nusa Tenggara Timur", "island": "Bali & Nusa Tenggara", "internet_all": 54.84, "internet_urban": 76.88, "internet_rural": 46.73, "mobile_all": 53.96, "computer_all": 11.13, "internet_male": 58.13, "internet_female": 51.64, "telecom_exp_share": 3.36, "internet_trend": [43.14, 47.39, 51.06, 54.84], "mobile_trend": [51.92, 52.73, 51.36, 53.96], "computer_trend": [10.9, 11.7, 11.31, 11.13], "gap_urban_rural": 30.15, "gap_gender": 6.49, "villages_total_signal_table": 3538.0, "signal_very_strong_share": 15.7, "signal_strong_only_share": 49.9, "signal_weak_share": 33.7, "signal_strong_share": 65.7, "signal_none_share": 0.6, "bts_4g_share": 83.5, "bts_3g_share": 10.7, "bts_25g_share": 5.2, "facility_working_share": 77.4, "facility_jarang_share": 8.0, "facility_not_working_share": 14.7, "facility_total": 1369.0, "purpose_info_news": 76.54, "purpose_info_goods": 13.8, "purpose_email": 9.96, "purpose_social_media": 75.39, "purpose_buying": 8.01, "purpose_selling": 2.42, "purpose_ebanking": 4.58, "purpose_online_learning": 8.79, "purpose_work_from_home": 1.1, "purpose_entertainment": 86.59, "purpose_content_creation": 8.28, "purpose_others": 4.67, "productive_use_index": 5.0, "freq_daily": 77.96, "freq_weekly": 17.42, "freq_rare": 4.62, "media_desktop": 2.35, "media_laptop": 8.97, "media_mobile": 99.04, "media_other": 0.19, "inequality_index": 0.489, "inequality_rank": 5, "rank_internet_all": 4, "rank_internet_all_of": 38, "rank_mobile_all": 4, "rank_mobile_all_of": 38, "rank_computer_all": 21, "rank_computer_all_of": 38, "rank_gap_urban_rural": 5, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 10, "rank_gap_gender_of": 38, "rank_signal_none_share": 22, "rank_signal_none_share_of": 38, "rank_facility_working_share": 4, "rank_facility_working_share_of": 38, "rank_productive_use_index": 11, "rank_productive_use_index_of": 38, "rank_freq_daily": 2, "rank_freq_daily_of": 38}, {"code": "94", "name": "Papua", "island": "Maluku & Papua", "internet_all": 62.24, "internet_urban": 77.56, "internet_rural": 39.32, "mobile_all": 67.97, "computer_all": 13.61, "internet_male": 63.91, "internet_female": 60.46, "telecom_exp_share": 4.52, "internet_trend": [26.49, 26.32, 29.87, 62.24], "mobile_trend": [38.94, 35.33, 37.95, 67.97], "computer_trend": [6.39, 6.08, 6.7, 13.61], "gap_urban_rural": 38.24, "gap_gender": 3.45, "villages_total_signal_table": 1029.0, "signal_very_strong_share": 19.9, "signal_strong_only_share": 44.1, "signal_weak_share": 25.7, "signal_strong_share": 64.0, "signal_none_share": 10.3, "bts_4g_share": 87.4, "bts_3g_share": 7.2, "bts_25g_share": 3.6, "facility_working_share": 83.0, "facility_jarang_share": 4.5, "facility_not_working_share": 12.5, "facility_total": 176.0, "purpose_info_news": 81.32, "purpose_info_goods": 16.59, "purpose_email": 13.48, "purpose_social_media": 77.26, "purpose_buying": 10.36, "purpose_selling": 2.27, "purpose_ebanking": 11.3, "purpose_online_learning": 9.24, "purpose_work_from_home": 2.45, "purpose_entertainment": 86.2, "purpose_content_creation": 2.03, "purpose_others": 8.26, "productive_use_index": 5.5, "freq_daily": 83.18, "freq_weekly": 13.3, "freq_rare": 3.52, "media_desktop": 2.8, "media_laptop": 12.4, "media_mobile": 98.56, "media_other": 2.02, "inequality_index": 0.477, "inequality_rank": 6, "rank_internet_all": 7, "rank_internet_all_of": 38, "rank_mobile_all": 18, "rank_mobile_all_of": 38, "rank_computer_all": 31, "rank_computer_all_of": 38, "rank_gap_urban_rural": 3, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 27, "rank_gap_gender_of": 38, "rank_signal_none_share": 5, "rank_signal_none_share_of": 38, "rank_facility_working_share": 7, "rank_facility_working_share_of": 38, "rank_productive_use_index": 14, "rank_productive_use_index_of": 38, "rank_freq_daily": 8, "rank_freq_daily_of": 38}, {"code": "92", "name": "Papua Barat Daya", "island": "Maluku & Papua", "internet_all": 65.75, "internet_urban": 77.98, "internet_rural": 53.4, "mobile_all": 67.48, "computer_all": 9.71, "internet_male": 67.86, "internet_female": 63.49, "telecom_exp_share": 4.69, "internet_trend": [null, null, null, 65.75], "mobile_trend": [null, null, null, 67.48], "computer_trend": [null, null, null, 9.71], "gap_urban_rural": 24.58, "gap_gender": 4.37, "villages_total_signal_table": 1056.0, "signal_very_strong_share": 15.1, "signal_strong_only_share": 49.5, "signal_weak_share": 29.3, "signal_strong_share": 64.6, "signal_none_share": 6.2, "bts_4g_share": 93.4, "bts_3g_share": 3.5, "bts_25g_share": 1.4, "facility_working_share": 76.4, "facility_jarang_share": 14.0, "facility_not_working_share": 9.6, "facility_total": 157.0, "purpose_info_news": 73.27, "purpose_info_goods": 13.92, "purpose_email": 11.09, "purpose_social_media": 75.56, "purpose_buying": 7.29, "purpose_selling": 3.12, "purpose_ebanking": 6.52, "purpose_online_learning": 6.32, "purpose_work_from_home": 1.42, "purpose_entertainment": 80.73, "purpose_content_creation": 0.9, "purpose_others": 2.88, "productive_use_index": 3.7, "freq_daily": 84.91, "freq_weekly": 10.17, "freq_rare": 4.92, "media_desktop": 1.66, "media_laptop": 8.02, "media_mobile": 98.92, "media_other": 0.85, "inequality_index": 0.314, "inequality_rank": 7, "rank_internet_all": 11, "rank_internet_all_of": 38, "rank_mobile_all": 17, "rank_mobile_all_of": 38, "rank_computer_all": 8, "rank_computer_all_of": 38, "rank_gap_urban_rural": 8, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 21, "rank_gap_gender_of": 38, "rank_signal_none_share": 7, "rank_signal_none_share_of": 38, "rank_facility_working_share": 3, "rank_facility_working_share_of": 38, "rank_productive_use_index": 3, "rank_productive_use_index_of": 38, "rank_freq_daily": 10, "rank_freq_daily_of": 38}, {"code": "82", "name": "Maluku Utara", "island": "Maluku & Papua", "internet_all": 59.17, "internet_urban": 80.1, "internet_rural": 50.46, "mobile_all": 64.14, "computer_all": 9.61, "internet_male": 61.58, "internet_female": 56.72, "telecom_exp_share": 4.06, "internet_trend": [42.68, 50.2, 53.48, 59.17], "mobile_trend": [59.08, 61.58, 60.85, 64.14], "computer_trend": [9.52, 9.4, 9.89, 9.61], "gap_urban_rural": 29.64, "gap_gender": 4.86, "villages_total_signal_table": 1209.0, "signal_very_strong_share": 15.7, "signal_strong_only_share": 36.6, "signal_weak_share": 46.7, "signal_strong_share": 52.3, "signal_none_share": 1.1, "bts_4g_share": 83.4, "bts_3g_share": 7.3, "bts_25g_share": 6.2, "facility_working_share": 79.9, "facility_jarang_share": 8.5, "facility_not_working_share": 11.5, "facility_total": 503.0, "purpose_info_news": 67.81, "purpose_info_goods": 14.03, "purpose_email": 10.89, "purpose_social_media": 70.94, "purpose_buying": 9.74, "purpose_selling": 2.24, "purpose_ebanking": 7.64, "purpose_online_learning": 6.96, "purpose_work_from_home": 1.18, "purpose_entertainment": 79.51, "purpose_content_creation": 1.51, "purpose_others": 5.22, "productive_use_index": 3.9, "freq_daily": 81.95, "freq_weekly": 13.95, "freq_rare": 4.1, "media_desktop": 1.31, "media_laptop": 7.91, "media_mobile": 99.38, "media_other": 0.16, "inequality_index": 0.295, "inequality_rank": 8, "rank_internet_all": 5, "rank_internet_all_of": 38, "rank_mobile_all": 8, "rank_mobile_all_of": 38, "rank_computer_all": 7, "rank_computer_all_of": 38, "rank_gap_urban_rural": 6, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 18, "rank_gap_gender_of": 38, "rank_signal_none_share": 17, "rank_signal_none_share_of": 38, "rank_facility_working_share": 5, "rank_facility_working_share_of": 38, "rank_productive_use_index": 4, "rank_productive_use_index_of": 38, "rank_freq_daily": 4, "rank_freq_daily_of": 38}, {"code": "51", "name": "Bali", "island": "Bali & Nusa Tenggara", "internet_all": 77.56, "internet_urban": 81.73, "internet_rural": 66.39, "mobile_all": 75.27, "computer_all": 17.25, "internet_male": 82.92, "internet_female": 72.15, "telecom_exp_share": 3.93, "internet_trend": [67.75, 70.59, 73.34, 77.56], "mobile_trend": [71.65, 72.82, 73.2, 75.27], "computer_trend": [14.52, 15.94, 15.69, 17.25], "gap_urban_rural": 15.34, "gap_gender": 10.77, "villages_total_signal_table": 717.0, "signal_very_strong_share": 43.0, "signal_strong_only_share": 55.2, "signal_weak_share": 1.8, "signal_strong_share": 98.2, "signal_none_share": 0.0, "bts_4g_share": 99.4, "bts_3g_share": 0.4, "bts_25g_share": 0.1, "facility_working_share": 99.9, "facility_jarang_share": 0.1, "facility_not_working_share": 0.0, "facility_total": 716.0, "purpose_info_news": 85.78, "purpose_info_goods": 34.12, "purpose_email": 15.56, "purpose_social_media": 84.87, "purpose_buying": 23.81, "purpose_selling": 6.87, "purpose_ebanking": 16.88, "purpose_online_learning": 10.61, "purpose_work_from_home": 1.51, "purpose_entertainment": 90.22, "purpose_content_creation": 11.86, "purpose_others": 0.11, "productive_use_index": 9.5, "freq_daily": 96.39, "freq_weekly": 2.79, "freq_rare": 0.81, "media_desktop": 3.91, "media_laptop": 15.18, "media_mobile": 99.24, "media_other": 0.0, "inequality_index": 0.166, "inequality_rank": 9, "rank_internet_all": 33, "rank_internet_all_of": 38, "rank_mobile_all": 33, "rank_mobile_all_of": 38, "rank_computer_all": 35, "rank_computer_all_of": 38, "rank_gap_urban_rural": 19, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 1, "rank_gap_gender_of": 38, "rank_signal_none_share": 28, "rank_signal_none_share_of": 38, "rank_facility_working_share": 36, "rank_facility_working_share_of": 38, "rank_productive_use_index": 36, "rank_productive_use_index_of": 38, "rank_freq_daily": 36, "rank_freq_daily_of": 38}, {"code": "62", "name": "Kalimantan Tengah", "island": "Kalimantan", "internet_all": 75.23, "internet_urban": 84.29, "internet_rural": 68.19, "mobile_all": 75.71, "computer_all": 10.8, "internet_male": 78.12, "internet_female": 72.16, "telecom_exp_share": 4.2, "internet_trend": [59.97, 65.79, 71.34, 75.23], "mobile_trend": [71.62, 72.83, 73.11, 75.71], "computer_trend": [10.86, 10.68, 11.05, 10.8], "gap_urban_rural": 16.1, "gap_gender": 5.96, "villages_total_signal_table": 1577.0, "signal_very_strong_share": 15.5, "signal_strong_only_share": 44.6, "signal_weak_share": 35.8, "signal_strong_share": 60.1, "signal_none_share": 4.1, "bts_4g_share": 72.2, "bts_3g_share": 16.1, "bts_25g_share": 9.7, "facility_working_share": 81.9, "facility_jarang_share": 5.1, "facility_not_working_share": 13.0, "facility_total": 1001.0, "purpose_info_news": 78.36, "purpose_info_goods": 23.05, "purpose_email": 10.47, "purpose_social_media": 76.06, "purpose_buying": 17.57, "purpose_selling": 4.65, "purpose_ebanking": 10.23, "purpose_online_learning": 7.88, "purpose_work_from_home": 1.33, "purpose_entertainment": 87.56, "purpose_content_creation": 4.49, "purpose_others": 6.39, "productive_use_index": 5.7, "freq_daily": 93.04, "freq_weekly": 5.84, "freq_rare": 1.12, "media_desktop": 1.78, "media_laptop": 8.82, "media_mobile": 99.4, "media_other": 0.17, "inequality_index": 0.145, "inequality_rank": 10, "rank_internet_all": 29, "rank_internet_all_of": 38, "rank_mobile_all": 34, "rank_mobile_all_of": 38, "rank_computer_all": 16, "rank_computer_all_of": 38, "rank_gap_urban_rural": 16, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 14, "rank_gap_gender_of": 38, "rank_signal_none_share": 8, "rank_signal_none_share_of": 38, "rank_facility_working_share": 6, "rank_facility_working_share_of": 38, "rank_productive_use_index": 17, "rank_productive_use_index_of": 38, "rank_freq_daily": 27, "rank_freq_daily_of": 38}, {"code": "61", "name": "Kalimantan Barat", "island": "Kalimantan", "internet_all": 71.57, "internet_urban": 83.78, "internet_rural": 64.02, "mobile_all": 66.97, "computer_all": 8.89, "internet_male": 74.65, "internet_female": 68.42, "telecom_exp_share": 3.79, "internet_trend": [54.8, 62.08, 66.39, 71.57], "mobile_trend": [62.39, 64.69, 64.82, 66.97], "computer_trend": [8.47, 9.05, 8.62, 8.89], "gap_urban_rural": 19.76, "gap_gender": 6.23, "villages_total_signal_table": 2157.0, "signal_very_strong_share": 12.9, "signal_strong_only_share": 41.3, "signal_weak_share": 43.8, "signal_strong_share": 54.1, "signal_none_share": 2.1, "bts_4g_share": 73.1, "bts_3g_share": 14.3, "bts_25g_share": 9.9, "facility_working_share": 86.5, "facility_jarang_share": 5.9, "facility_not_working_share": 7.6, "facility_total": 1580.0, "purpose_info_news": 76.53, "purpose_info_goods": 23.45, "purpose_email": 7.76, "purpose_social_media": 77.92, "purpose_buying": 16.85, "purpose_selling": 3.06, "purpose_ebanking": 6.89, "purpose_online_learning": 7.48, "purpose_work_from_home": 1.06, "purpose_entertainment": 86.24, "purpose_content_creation": 2.74, "purpose_others": 4.55, "productive_use_index": 4.2, "freq_daily": 90.82, "freq_weekly": 7.69, "freq_rare": 1.49, "media_desktop": 1.84, "media_laptop": 7.64, "media_mobile": 99.38, "media_other": 0.08, "inequality_index": 0.121, "inequality_rank": 11, "rank_internet_all": 21, "rank_internet_all_of": 38, "rank_mobile_all": 14, "rank_mobile_all_of": 38, "rank_computer_all": 5, "rank_computer_all_of": 38, "rank_gap_urban_rural": 13, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 13, "rank_gap_gender_of": 38, "rank_signal_none_share": 11, "rank_signal_none_share_of": 38, "rank_facility_working_share": 13, "rank_facility_working_share_of": 38, "rank_productive_use_index": 5, "rank_productive_use_index_of": 38, "rank_freq_daily": 18, "rank_freq_daily_of": 38}, {"code": "81", "name": "Maluku", "island": "Maluku & Papua", "internet_all": 59.96, "internet_urban": 74.74, "internet_rural": 48.44, "mobile_all": 63.44, "computer_all": 11.67, "internet_male": 62.08, "internet_female": 57.83, "telecom_exp_share": 4.65, "internet_trend": [49.74, 55.22, 58.54, 59.96], "mobile_trend": [62.41, 63.85, 63.21, 63.44], "computer_trend": [12.59, 12.74, 13.23, 11.67], "gap_urban_rural": 26.3, "gap_gender": 4.25, "villages_total_signal_table": 1262.0, "signal_very_strong_share": 17.6, "signal_strong_only_share": 42.8, "signal_weak_share": 37.9, "signal_strong_share": 60.4, "signal_none_share": 1.7, "bts_4g_share": 91.0, "bts_3g_share": 3.6, "bts_25g_share": 1.8, "facility_working_share": 83.8, "facility_jarang_share": 5.6, "facility_not_working_share": 10.6, "facility_total": 585.0, "purpose_info_news": 80.45, "purpose_info_goods": 17.9, "purpose_email": 12.23, "purpose_social_media": 80.33, "purpose_buying": 8.88, "purpose_selling": 2.13, "purpose_ebanking": 8.5, "purpose_online_learning": 7.8, "purpose_work_from_home": 2.31, "purpose_entertainment": 87.42, "purpose_content_creation": 6.96, "purpose_others": 6.13, "productive_use_index": 5.5, "freq_daily": 81.81, "freq_weekly": 15.7, "freq_rare": 2.49, "media_desktop": 2.84, "media_laptop": 10.21, "media_mobile": 99.21, "media_other": 0.17, "inequality_index": 0.113, "inequality_rank": 12, "rank_internet_all": 6, "rank_internet_all_of": 38, "rank_mobile_all": 7, "rank_mobile_all_of": 38, "rank_computer_all": 25, "rank_computer_all_of": 38, "rank_gap_urban_rural": 7, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 22, "rank_gap_gender_of": 38, "rank_signal_none_share": 12, "rank_signal_none_share_of": 38, "rank_facility_working_share": 11, "rank_facility_working_share_of": 38, "rank_productive_use_index": 15, "rank_productive_use_index_of": 38, "rank_freq_daily": 3, "rank_freq_daily_of": 38}, {"code": "11", "name": "Aceh", "island": "Sumatera", "internet_all": 62.93, "internet_urban": 70.8, "internet_rural": 58.66, "mobile_all": 64.64, "computer_all": 9.37, "internet_male": 66.87, "internet_female": 59.04, "telecom_exp_share": 3.27, "internet_trend": [49.23, 52.99, 59.3, 62.93], "mobile_trend": [61.2, 62.65, 62.87, 64.64], "computer_trend": [9.99, 8.97, 9.32, 9.37], "gap_urban_rural": 12.14, "gap_gender": 7.83, "villages_total_signal_table": 6516.0, "signal_very_strong_share": 21.0, "signal_strong_only_share": 65.8, "signal_weak_share": 12.4, "signal_strong_share": 86.8, "signal_none_share": 0.8, "bts_4g_share": 90.5, "bts_3g_share": 7.9, "bts_25g_share": 1.3, "facility_working_share": 85.6, "facility_jarang_share": 6.0, "facility_not_working_share": 8.4, "facility_total": 3691.0, "purpose_info_news": 80.37, "purpose_info_goods": 20.8, "purpose_email": 12.0, "purpose_social_media": 77.0, "purpose_buying": 14.76, "purpose_selling": 2.26, "purpose_ebanking": 9.67, "purpose_online_learning": 7.53, "purpose_work_from_home": 1.64, "purpose_entertainment": 82.91, "purpose_content_creation": 3.98, "purpose_others": 8.83, "productive_use_index": 5.0, "freq_daily": 90.88, "freq_weekly": 7.24, "freq_rare": 1.88, "media_desktop": 2.12, "media_laptop": 8.55, "media_mobile": 99.16, "media_other": 0.25, "inequality_index": 0.101, "inequality_rank": 13, "rank_internet_all": 9, "rank_internet_all_of": 38, "rank_mobile_all": 11, "rank_mobile_all_of": 38, "rank_computer_all": 6, "rank_computer_all_of": 38, "rank_gap_urban_rural": 27, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 5, "rank_gap_gender_of": 38, "rank_signal_none_share": 20, "rank_signal_none_share_of": 38, "rank_facility_working_share": 12, "rank_facility_working_share_of": 38, "rank_productive_use_index": 12, "rank_productive_use_index_of": 38, "rank_freq_daily": 19, "rank_freq_daily_of": 38}, {"code": "36", "name": "Banten", "island": "Jawa", "internet_all": 75.17, "internet_urban": 79.82, "internet_rural": 56.77, "mobile_all": 71.32, "computer_all": 13.72, "internet_male": 78.89, "internet_female": 71.37, "telecom_exp_share": 3.27, "internet_trend": [67.14, 70.73, 71.73, 75.17], "mobile_trend": [68.2, 70.25, 69.87, 71.32], "computer_trend": [11.8, 12.5, 13.83, 13.72], "gap_urban_rural": 23.05, "gap_gender": 7.52, "villages_total_signal_table": 1552.0, "signal_very_strong_share": 19.9, "signal_strong_only_share": 64.0, "signal_weak_share": 16.1, "signal_strong_share": 83.9, "signal_none_share": 0.0, "bts_4g_share": 91.4, "bts_3g_share": 7.0, "bts_25g_share": 1.5, "facility_working_share": 97.9, "facility_jarang_share": 0.8, "facility_not_working_share": 1.4, "facility_total": 1535.0, "purpose_info_news": 80.46, "purpose_info_goods": 26.24, "purpose_email": 16.17, "purpose_social_media": 74.14, "purpose_buying": 30.19, "purpose_selling": 5.96, "purpose_ebanking": 16.28, "purpose_online_learning": 10.99, "purpose_work_from_home": 2.29, "purpose_entertainment": 82.63, "purpose_content_creation": 2.96, "purpose_others": 5.38, "productive_use_index": 7.7, "freq_daily": 94.0, "freq_weekly": 4.8, "freq_rare": 1.2, "media_desktop": 3.19, "media_laptop": 12.64, "media_mobile": 98.57, "media_other": 1.02, "inequality_index": 0.061, "inequality_rank": 14, "rank_internet_all": 28, "rank_internet_all_of": 38, "rank_mobile_all": 27, "rank_mobile_all_of": 38, "rank_computer_all": 32, "rank_computer_all_of": 38, "rank_gap_urban_rural": 10, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 6, "rank_gap_gender_of": 38, "rank_signal_none_share": 29, "rank_signal_none_share_of": 38, "rank_facility_working_share": 30, "rank_facility_working_share_of": 38, "rank_productive_use_index": 32, "rank_productive_use_index_of": 38, "rank_freq_daily": 30, "rank_freq_daily_of": 38}, {"code": "16", "name": "Sumatera Selatan", "island": "Sumatera", "internet_all": 70.54, "internet_urban": 80.34, "internet_rural": 64.5, "mobile_all": 67.34, "computer_all": 8.79, "internet_male": 73.92, "internet_female": 67.1, "telecom_exp_share": 3.29, "internet_trend": [56.89, 62.57, 66.66, 70.54], "mobile_trend": [64.53, 66.25, 66.23, 67.34], "computer_trend": [8.56, 8.99, 9.09, 8.79], "gap_urban_rural": 15.84, "gap_gender": 6.82, "villages_total_signal_table": 3283.0, "signal_very_strong_share": 20.1, "signal_strong_only_share": 57.7, "signal_weak_share": 21.8, "signal_strong_share": 77.8, "signal_none_share": 0.4, "bts_4g_share": 87.7, "bts_3g_share": 9.2, "bts_25g_share": 2.7, "facility_working_share": 88.3, "facility_jarang_share": 4.9, "facility_not_working_share": 6.9, "facility_total": 1791.0, "purpose_info_news": 74.77, "purpose_info_goods": 26.45, "purpose_email": 10.22, "purpose_social_media": 77.56, "purpose_buying": 21.16, "purpose_selling": 4.02, "purpose_ebanking": 7.26, "purpose_online_learning": 9.75, "purpose_work_from_home": 1.15, "purpose_entertainment": 86.08, "purpose_content_creation": 10.98, "purpose_others": 7.7, "productive_use_index": 6.6, "freq_daily": 91.24, "freq_weekly": 7.06, "freq_rare": 1.7, "media_desktop": 1.43, "media_laptop": 6.76, "media_mobile": 99.2, "media_other": 0.34, "inequality_index": 0.028, "inequality_rank": 15, "rank_internet_all": 19, "rank_internet_all_of": 38, "rank_mobile_all": 16, "rank_mobile_all_of": 38, "rank_computer_all": 4, "rank_computer_all_of": 38, "rank_gap_urban_rural": 17, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 8, "rank_gap_gender_of": 38, "rank_signal_none_share": 27, "rank_signal_none_share_of": 38, "rank_facility_working_share": 17, "rank_facility_working_share_of": 38, "rank_productive_use_index": 23, "rank_productive_use_index_of": 38, "rank_freq_daily": 21, "rank_freq_daily_of": 38}, {"code": "17", "name": "Bengkulu", "island": "Sumatera", "internet_all": 70.72, "internet_urban": 81.96, "internet_rural": 65.01, "mobile_all": 67.1, "computer_all": 11.34, "internet_male": 73.45, "internet_female": 67.92, "telecom_exp_share": 3.62, "internet_trend": [54.97, 63.14, 66.25, 70.72], "mobile_trend": [64.34, 66.81, 66.49, 67.1], "computer_trend": [11.77, 11.49, 12.11, 11.34], "gap_urban_rural": 16.95, "gap_gender": 5.53, "villages_total_signal_table": 1514.0, "signal_very_strong_share": 19.2, "signal_strong_only_share": 62.6, "signal_weak_share": 17.6, "signal_strong_share": 81.8, "signal_none_share": 0.5, "bts_4g_share": 89.5, "bts_3g_share": 6.8, "bts_25g_share": 3.3, "facility_working_share": 88.3, "facility_jarang_share": 1.8, "facility_not_working_share": 10.0, "facility_total": 1082.0, "purpose_info_news": 76.05, "purpose_info_goods": 24.9, "purpose_email": 10.32, "purpose_social_media": 81.23, "purpose_buying": 21.02, "purpose_selling": 5.06, "purpose_ebanking": 8.4, "purpose_online_learning": 8.19, "purpose_work_from_home": 1.22, "purpose_entertainment": 84.82, "purpose_content_creation": 9.21, "purpose_others": 5.76, "productive_use_index": 6.4, "freq_daily": 91.91, "freq_weekly": 6.85, "freq_rare": 1.24, "media_desktop": 1.47, "media_laptop": 9.03, "media_mobile": 99.3, "media_other": 0.3, "inequality_index": -0.066, "inequality_rank": 16, "rank_internet_all": 20, "rank_internet_all_of": 38, "rank_mobile_all": 15, "rank_mobile_all_of": 38, "rank_computer_all": 24, "rank_computer_all_of": 38, "rank_gap_urban_rural": 14, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 15, "rank_gap_gender_of": 38, "rank_signal_none_share": 23, "rank_signal_none_share_of": 38, "rank_facility_working_share": 18, "rank_facility_working_share_of": 38, "rank_productive_use_index": 21, "rank_productive_use_index_of": 38, "rank_freq_daily": 22, "rank_freq_daily_of": 38}, {"code": "35", "name": "Jawa Timur", "island": "Jawa", "internet_all": 69.36, "internet_urban": 75.22, "internet_rural": 61.69, "mobile_all": 66.23, "computer_all": 10.92, "internet_male": 73.37, "internet_female": 65.46, "telecom_exp_share": 3.27, "internet_trend": [59.34, 64.28, 66.17, 69.36], "mobile_trend": [62.99, 65.22, 64.6, 66.23], "computer_trend": [10.44, 11.14, 11.56, 10.92], "gap_urban_rural": 13.53, "gap_gender": 7.91, "villages_total_signal_table": 8494.0, "signal_very_strong_share": 37.4, "signal_strong_only_share": 58.0, "signal_weak_share": 4.6, "signal_strong_share": 95.4, "signal_none_share": 0.0, "bts_4g_share": 96.4, "bts_3g_share": 3.2, "bts_25g_share": 0.4, "facility_working_share": 98.6, "facility_jarang_share": 0.6, "facility_not_working_share": 0.7, "facility_total": 8267.0, "purpose_info_news": 78.91, "purpose_info_goods": 27.01, "purpose_email": 12.72, "purpose_social_media": 76.03, "purpose_buying": 23.95, "purpose_selling": 5.88, "purpose_ebanking": 10.06, "purpose_online_learning": 10.51, "purpose_work_from_home": 1.6, "purpose_entertainment": 84.2, "purpose_content_creation": 7.24, "purpose_others": 4.79, "productive_use_index": 7.1, "freq_daily": 95.15, "freq_weekly": 3.63, "freq_rare": 1.22, "media_desktop": 2.86, "media_laptop": 10.1, "media_mobile": 99.02, "media_other": 0.22, "inequality_index": -0.111, "inequality_rank": 17, "rank_internet_all": 16, "rank_internet_all_of": 38, "rank_mobile_all": 13, "rank_mobile_all_of": 38, "rank_computer_all": 17, "rank_computer_all_of": 38, "rank_gap_urban_rural": 24, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 4, "rank_gap_gender_of": 38, "rank_signal_none_share": 30, "rank_signal_none_share_of": 38, "rank_facility_working_share": 32, "rank_facility_working_share_of": 38, "rank_productive_use_index": 27, "rank_productive_use_index_of": 38, "rank_freq_daily": 33, "rank_freq_daily_of": 38}, {"code": "15", "name": "Jambi", "island": "Sumatera", "internet_all": 71.76, "internet_urban": 78.17, "internet_rural": 68.55, "mobile_all": 70.2, "computer_all": 10.0, "internet_male": 75.03, "internet_female": 68.43, "telecom_exp_share": 3.66, "internet_trend": [56.07, 64.06, 68.14, 71.76], "mobile_trend": [67.32, 69.64, 69.23, 70.2], "computer_trend": [11.13, 9.77, 9.51, 10.0], "gap_urban_rural": 9.62, "gap_gender": 6.6, "villages_total_signal_table": 1585.0, "signal_very_strong_share": 21.4, "signal_strong_only_share": 60.5, "signal_weak_share": 16.8, "signal_strong_share": 81.9, "signal_none_share": 1.3, "bts_4g_share": 89.8, "bts_3g_share": 7.3, "bts_25g_share": 2.5, "facility_working_share": 90.6, "facility_jarang_share": 3.1, "facility_not_working_share": 6.4, "facility_total": 1207.0, "purpose_info_news": 75.89, "purpose_info_goods": 24.87, "purpose_email": 10.02, "purpose_social_media": 76.34, "purpose_buying": 18.52, "purpose_selling": 4.46, "purpose_ebanking": 8.71, "purpose_online_learning": 9.46, "purpose_work_from_home": 1.28, "purpose_entertainment": 86.56, "purpose_content_creation": 10.6, "purpose_others": 6.2, "productive_use_index": 6.9, "freq_daily": 92.27, "freq_weekly": 6.74, "freq_rare": 0.99, "media_desktop": 1.92, "media_laptop": 8.01, "media_mobile": 99.16, "media_other": 0.34, "inequality_index": -0.142, "inequality_rank": 18, "rank_internet_all": 22, "rank_internet_all_of": 38, "rank_mobile_all": 23, "rank_mobile_all_of": 38, "rank_computer_all": 10, "rank_computer_all_of": 38, "rank_gap_urban_rural": 31, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 9, "rank_gap_gender_of": 38, "rank_signal_none_share": 15, "rank_signal_none_share_of": 38, "rank_facility_working_share": 23, "rank_facility_working_share_of": 38, "rank_productive_use_index": 25, "rank_productive_use_index_of": 38, "rank_freq_daily": 25, "rank_freq_daily_of": 38}, {"code": "52", "name": "Nusa Tenggara Barat", "island": "Bali & Nusa Tenggara", "internet_all": 68.52, "internet_urban": 72.88, "internet_rural": 63.76, "mobile_all": 63.38, "computer_all": 10.29, "internet_male": 72.77, "internet_female": 64.38, "telecom_exp_share": 2.58, "internet_trend": [52.96, 59.39, 63.2, 68.52], "mobile_trend": [59.16, 61.11, 61.48, 63.38], "computer_trend": [9.99, 9.46, 9.57, 10.29], "gap_urban_rural": 9.12, "gap_gender": 8.39, "villages_total_signal_table": 1166.0, "signal_very_strong_share": 46.1, "signal_strong_only_share": 47.1, "signal_weak_share": 6.9, "signal_strong_share": 93.1, "signal_none_share": 0.0, "bts_4g_share": 96.2, "bts_3g_share": 3.0, "bts_25g_share": 0.7, "facility_working_share": 97.9, "facility_jarang_share": 0.8, "facility_not_working_share": 1.3, "facility_total": 1095.0, "purpose_info_news": 68.41, "purpose_info_goods": 22.61, "purpose_email": 9.44, "purpose_social_media": 70.12, "purpose_buying": 18.09, "purpose_selling": 4.37, "purpose_ebanking": 6.43, "purpose_online_learning": 9.54, "purpose_work_from_home": 1.52, "purpose_entertainment": 91.87, "purpose_content_creation": 10.5, "purpose_others": 5.44, "productive_use_index": 6.5, "freq_daily": 85.73, "freq_weekly": 12.06, "freq_rare": 2.22, "media_desktop": 1.63, "media_laptop": 7.9, "media_mobile": 99.45, "media_other": 0.03, "inequality_index": -0.145, "inequality_rank": 19, "rank_internet_all": 15, "rank_internet_all_of": 38, "rank_mobile_all": 6, "rank_mobile_all_of": 38, "rank_computer_all": 14, "rank_computer_all_of": 38, "rank_gap_urban_rural": 34, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 3, "rank_gap_gender_of": 38, "rank_signal_none_share": 31, "rank_signal_none_share_of": 38, "rank_facility_working_share": 31, "rank_facility_working_share_of": 38, "rank_productive_use_index": 22, "rank_productive_use_index_of": 38, "rank_freq_daily": 11, "rank_freq_daily_of": 38}, {"code": "74", "name": "Sulawesi Tenggara", "island": "Sulawesi", "internet_all": 70.36, "internet_urban": 78.79, "internet_rural": 64.96, "mobile_all": 71.95, "computer_all": 12.29, "internet_male": 72.41, "internet_female": 68.34, "telecom_exp_share": 3.82, "internet_trend": [57.21, 61.88, 65.83, 70.36], "mobile_trend": [68.22, 70.0, 70.94, 71.95], "computer_trend": [12.32, 11.73, 12.11, 12.29], "gap_urban_rural": 13.83, "gap_gender": 4.07, "villages_total_signal_table": 2292.0, "signal_very_strong_share": 16.4, "signal_strong_only_share": 53.2, "signal_weak_share": 29.3, "signal_strong_share": 69.6, "signal_none_share": 1.1, "bts_4g_share": 90.3, "bts_3g_share": 6.1, "bts_25g_share": 1.9, "facility_working_share": 83.5, "facility_jarang_share": 4.7, "facility_not_working_share": 11.8, "facility_total": 965.0, "purpose_info_news": 77.33, "purpose_info_goods": 22.24, "purpose_email": 10.07, "purpose_social_media": 78.42, "purpose_buying": 15.0, "purpose_selling": 3.57, "purpose_ebanking": 8.43, "purpose_online_learning": 8.64, "purpose_work_from_home": 0.88, "purpose_entertainment": 89.49, "purpose_content_creation": 10.14, "purpose_others": 3.85, "productive_use_index": 6.3, "freq_daily": 90.12, "freq_weekly": 7.99, "freq_rare": 1.89, "media_desktop": 1.67, "media_laptop": 9.21, "media_mobile": 99.27, "media_other": 0.14, "inequality_index": -0.166, "inequality_rank": 20, "rank_internet_all": 18, "rank_internet_all_of": 38, "rank_mobile_all": 30, "rank_mobile_all_of": 38, "rank_computer_all": 27, "rank_computer_all_of": 38, "rank_gap_urban_rural": 23, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 24, "rank_gap_gender_of": 38, "rank_signal_none_share": 18, "rank_signal_none_share_of": 38, "rank_facility_working_share": 10, "rank_facility_working_share_of": 38, "rank_productive_use_index": 20, "rank_productive_use_index_of": 38, "rank_freq_daily": 14, "rank_freq_daily_of": 38}, {"code": "76", "name": "Sulawesi Barat", "island": "Sulawesi", "internet_all": 66.61, "internet_urban": 77.28, "internet_rural": 63.9, "mobile_all": 62.39, "computer_all": 10.02, "internet_male": 68.28, "internet_female": 64.94, "telecom_exp_share": 3.5, "internet_trend": [48.73, 55.38, 59.89, 66.61], "mobile_trend": [59.51, 61.07, 61.89, 62.39], "computer_trend": [10.06, 9.41, 10.78, 10.02], "gap_urban_rural": 13.38, "gap_gender": 3.34, "villages_total_signal_table": 650.0, "signal_very_strong_share": 16.2, "signal_strong_only_share": 50.2, "signal_weak_share": 25.7, "signal_strong_share": 66.3, "signal_none_share": 8.0, "bts_4g_share": 89.5, "bts_3g_share": 6.9, "bts_25g_share": 2.2, "facility_working_share": 88.4, "facility_jarang_share": 4.7, "facility_not_working_share": 6.9, "facility_total": 423.0, "purpose_info_news": 72.49, "purpose_info_goods": 20.22, "purpose_email": 7.62, "purpose_social_media": 72.1, "purpose_buying": 14.48, "purpose_selling": 2.46, "purpose_ebanking": 4.13, "purpose_online_learning": 8.38, "purpose_work_from_home": 1.29, "purpose_entertainment": 85.27, "purpose_content_creation": 6.71, "purpose_others": 3.95, "productive_use_index": 4.6, "freq_daily": 83.9, "freq_weekly": 11.78, "freq_rare": 4.32, "media_desktop": 1.83, "media_laptop": 6.9, "media_mobile": 98.79, "media_other": 0.14, "inequality_index": -0.186, "inequality_rank": 21, "rank_internet_all": 13, "rank_internet_all_of": 38, "rank_mobile_all": 5, "rank_mobile_all_of": 38, "rank_computer_all": 11, "rank_computer_all_of": 38, "rank_gap_urban_rural": 25, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 28, "rank_gap_gender_of": 38, "rank_signal_none_share": 6, "rank_signal_none_share_of": 38, "rank_facility_working_share": 19, "rank_facility_working_share_of": 38, "rank_productive_use_index": 7, "rank_productive_use_index_of": 38, "rank_freq_daily": 9, "rank_freq_daily_of": 38}, {"code": "63", "name": "Kalimantan Selatan", "island": "Kalimantan", "internet_all": 74.82, "internet_urban": 80.63, "internet_rural": 68.96, "mobile_all": 70.93, "computer_all": 11.22, "internet_male": 77.92, "internet_female": 71.68, "telecom_exp_share": 3.63, "internet_trend": [66.01, 70.26, 72.13, 74.82], "mobile_trend": [69.49, 70.51, 68.98, 70.93], "computer_trend": [11.55, 11.36, 11.8, 11.22], "gap_urban_rural": 11.67, "gap_gender": 6.24, "villages_total_signal_table": 2015.0, "signal_very_strong_share": 23.6, "signal_strong_only_share": 62.4, "signal_weak_share": 13.4, "signal_strong_share": 86.0, "signal_none_share": 0.5, "bts_4g_share": 89.5, "bts_3g_share": 7.7, "bts_25g_share": 2.4, "facility_working_share": 93.8, "facility_jarang_share": 1.4, "facility_not_working_share": 4.8, "facility_total": 1806.0, "purpose_info_news": 75.25, "purpose_info_goods": 26.82, "purpose_email": 11.75, "purpose_social_media": 78.99, "purpose_buying": 22.46, "purpose_selling": 4.87, "purpose_ebanking": 12.2, "purpose_online_learning": 9.13, "purpose_work_from_home": 1.37, "purpose_entertainment": 88.93, "purpose_content_creation": 11.89, "purpose_others": 6.72, "productive_use_index": 7.9, "freq_daily": 94.45, "freq_weekly": 4.67, "freq_rare": 0.89, "media_desktop": 2.18, "media_laptop": 9.46, "media_mobile": 99.3, "media_other": 0.13, "inequality_index": -0.207, "inequality_rank": 22, "rank_internet_all": 27, "rank_internet_all_of": 38, "rank_mobile_all": 26, "rank_mobile_all_of": 38, "rank_computer_all": 23, "rank_computer_all_of": 38, "rank_gap_urban_rural": 28, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 12, "rank_gap_gender_of": 38, "rank_signal_none_share": 24, "rank_signal_none_share_of": 38, "rank_facility_working_share": 25, "rank_facility_working_share_of": 38, "rank_productive_use_index": 33, "rank_productive_use_index_of": 38, "rank_freq_daily": 32, "rank_freq_daily_of": 38}, {"code": "14", "name": "Riau", "island": "Sumatera", "internet_all": 77.68, "internet_urban": 84.3, "internet_rural": 73.2, "mobile_all": 74.74, "computer_all": 10.3, "internet_male": 80.2, "internet_female": 75.06, "telecom_exp_share": 3.95, "internet_trend": [62.83, 68.85, 73.02, 77.68], "mobile_trend": [70.57, 73.47, 72.4, 74.74], "computer_trend": [11.02, 10.78, 11.17, 10.3], "gap_urban_rural": 11.1, "gap_gender": 5.14, "villages_total_signal_table": 1870.0, "signal_very_strong_share": 23.3, "signal_strong_only_share": 57.7, "signal_weak_share": 17.6, "signal_strong_share": 81.0, "signal_none_share": 1.4, "bts_4g_share": 91.4, "bts_3g_share": 6.0, "bts_25g_share": 2.4, "facility_working_share": 89.2, "facility_jarang_share": 2.9, "facility_not_working_share": 7.9, "facility_total": 1496.0, "purpose_info_news": 77.32, "purpose_info_goods": 22.9, "purpose_email": 9.94, "purpose_social_media": 76.55, "purpose_buying": 17.89, "purpose_selling": 3.27, "purpose_ebanking": 8.7, "purpose_online_learning": 9.19, "purpose_work_from_home": 1.13, "purpose_entertainment": 89.05, "purpose_content_creation": 6.3, "purpose_others": 7.03, "productive_use_index": 5.7, "freq_daily": 92.58, "freq_weekly": 6.54, "freq_rare": 0.88, "media_desktop": 2.11, "media_laptop": 7.09, "media_mobile": 99.28, "media_other": 0.19, "inequality_index": -0.219, "inequality_rank": 23, "rank_internet_all": 34, "rank_internet_all_of": 38, "rank_mobile_all": 32, "rank_mobile_all_of": 38, "rank_computer_all": 15, "rank_computer_all_of": 38, "rank_gap_urban_rural": 29, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 17, "rank_gap_gender_of": 38, "rank_signal_none_share": 14, "rank_signal_none_share_of": 38, "rank_facility_working_share": 21, "rank_facility_working_share_of": 38, "rank_productive_use_index": 18, "rank_productive_use_index_of": 38, "rank_freq_daily": 26, "rank_freq_daily_of": 38}, {"code": "73", "name": "Sulawesi Selatan", "island": "Sulawesi", "internet_all": 70.1, "internet_urban": 78.63, "internet_rural": 62.43, "mobile_all": 70.36, "computer_all": 12.97, "internet_male": 71.97, "internet_female": 68.32, "telecom_exp_share": 3.5, "internet_trend": [59.69, 64.14, 66.95, 70.1], "mobile_trend": [69.13, 71.1, 69.83, 70.36], "computer_trend": [13.28, 13.48, 12.67, 12.97], "gap_urban_rural": 16.2, "gap_gender": 3.65, "villages_total_signal_table": 3060.0, "signal_very_strong_share": 23.1, "signal_strong_only_share": 62.0, "signal_weak_share": 14.1, "signal_strong_share": 85.1, "signal_none_share": 0.8, "bts_4g_share": 94.2, "bts_3g_share": 4.4, "bts_25g_share": 1.1, "facility_working_share": 87.8, "facility_jarang_share": 3.0, "facility_not_working_share": 9.1, "facility_total": 2353.0, "purpose_info_news": 77.99, "purpose_info_goods": 23.02, "purpose_email": 11.69, "purpose_social_media": 78.25, "purpose_buying": 17.44, "purpose_selling": 4.36, "purpose_ebanking": 8.95, "purpose_online_learning": 12.21, "purpose_work_from_home": 1.65, "purpose_entertainment": 85.1, "purpose_content_creation": 7.77, "purpose_others": 5.81, "productive_use_index": 7.0, "freq_daily": 92.22, "freq_weekly": 6.32, "freq_rare": 1.46, "media_desktop": 1.8, "media_laptop": 10.75, "media_mobile": 99.11, "media_other": 0.26, "inequality_index": -0.239, "inequality_rank": 24, "rank_internet_all": 17, "rank_internet_all_of": 38, "rank_mobile_all": 24, "rank_mobile_all_of": 38, "rank_computer_all": 30, "rank_computer_all_of": 38, "rank_gap_urban_rural": 15, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 26, "rank_gap_gender_of": 38, "rank_signal_none_share": 21, "rank_signal_none_share_of": 38, "rank_facility_working_share": 15, "rank_facility_working_share_of": 38, "rank_productive_use_index": 26, "rank_productive_use_index_of": 38, "rank_freq_daily": 24, "rank_freq_daily_of": 38}, {"code": "12", "name": "Sumatera Utara", "island": "Sumatera", "internet_all": 74.15, "internet_urban": 77.43, "internet_rural": 69.69, "mobile_all": 68.43, "computer_all": 9.95, "internet_male": 76.26, "internet_female": 72.05, "telecom_exp_share": 3.55, "internet_trend": [59.17, 65.68, 70.29, 74.15], "mobile_trend": [65.05, 67.71, 67.42, 68.43], "computer_trend": [10.55, 10.83, 10.29, 9.95], "gap_urban_rural": 7.74, "gap_gender": 4.21, "villages_total_signal_table": 6113.0, "signal_very_strong_share": 18.9, "signal_strong_only_share": 56.7, "signal_weak_share": 22.0, "signal_strong_share": 75.7, "signal_none_share": 2.3, "bts_4g_share": 88.5, "bts_3g_share": 7.9, "bts_25g_share": 2.5, "facility_working_share": 87.9, "facility_jarang_share": 3.5, "facility_not_working_share": 8.6, "facility_total": 3634.0, "purpose_info_news": 76.81, "purpose_info_goods": 20.73, "purpose_email": 10.59, "purpose_social_media": 76.18, "purpose_buying": 15.64, "purpose_selling": 2.86, "purpose_ebanking": 8.23, "purpose_online_learning": 8.04, "purpose_work_from_home": 1.02, "purpose_entertainment": 86.22, "purpose_content_creation": 4.5, "purpose_others": 5.46, "productive_use_index": 4.9, "freq_daily": 92.07, "freq_weekly": 6.72, "freq_rare": 1.2, "media_desktop": 1.68, "media_laptop": 7.72, "media_mobile": 99.05, "media_other": 0.17, "inequality_index": -0.331, "inequality_rank": 25, "rank_internet_all": 25, "rank_internet_all_of": 38, "rank_mobile_all": 21, "rank_mobile_all_of": 38, "rank_computer_all": 9, "rank_computer_all_of": 38, "rank_gap_urban_rural": 35, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 23, "rank_gap_gender_of": 38, "rank_signal_none_share": 9, "rank_signal_none_share_of": 38, "rank_facility_working_share": 16, "rank_facility_working_share_of": 38, "rank_productive_use_index": 9, "rank_productive_use_index_of": 38, "rank_freq_daily": 23, "rank_freq_daily_of": 38}, {"code": "32", "name": "Jawa Barat", "island": "Jawa", "internet_all": 76.62, "internet_urban": 79.42, "internet_rural": 65.35, "mobile_all": 70.58, "computer_all": 14.54, "internet_male": 79.24, "internet_female": 73.93, "telecom_exp_share": 3.52, "internet_trend": [68.37, 71.12, 72.54, 76.62], "mobile_trend": [67.83, 70.37, 68.87, 70.58], "computer_trend": [12.31, 13.03, 13.31, 14.54], "gap_urban_rural": 14.07, "gap_gender": 5.31, "villages_total_signal_table": 5957.0, "signal_very_strong_share": 25.9, "signal_strong_only_share": 68.9, "signal_weak_share": 5.1, "signal_strong_share": 94.9, "signal_none_share": 0.0, "bts_4g_share": 98.5, "bts_3g_share": 1.5, "bts_25g_share": 0.1, "facility_working_share": 98.9, "facility_jarang_share": 0.4, "facility_not_working_share": 0.6, "facility_total": 5871.0, "purpose_info_news": 77.24, "purpose_info_goods": 26.79, "purpose_email": 13.9, "purpose_social_media": 76.72, "purpose_buying": 29.18, "purpose_selling": 5.32, "purpose_ebanking": 13.5, "purpose_online_learning": 11.41, "purpose_work_from_home": 1.86, "purpose_entertainment": 83.96, "purpose_content_creation": 4.74, "purpose_others": 5.07, "productive_use_index": 7.4, "freq_daily": 93.97, "freq_weekly": 4.86, "freq_rare": 1.18, "media_desktop": 2.82, "media_laptop": 10.49, "media_mobile": 99.08, "media_other": 0.16, "inequality_index": -0.344, "inequality_rank": 26, "rank_internet_all": 31, "rank_internet_all_of": 38, "rank_mobile_all": 25, "rank_mobile_all_of": 38, "rank_computer_all": 33, "rank_computer_all_of": 38, "rank_gap_urban_rural": 22, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 16, "rank_gap_gender_of": 38, "rank_signal_none_share": 32, "rank_signal_none_share_of": 38, "rank_facility_working_share": 34, "rank_facility_working_share_of": 38, "rank_productive_use_index": 28, "rank_productive_use_index_of": 38, "rank_freq_daily": 29, "rank_freq_daily_of": 38}, {"code": "72", "name": "Sulawesi Tengah", "island": "Sulawesi", "internet_all": 62.44, "internet_urban": 75.99, "internet_rural": 55.7, "mobile_all": 64.32, "computer_all": 10.99, "internet_male": 63.09, "internet_female": 61.78, "telecom_exp_share": 3.68, "internet_trend": [50.15, 54.49, 58.22, 62.44], "mobile_trend": [61.1, 62.39, 61.02, 64.32], "computer_trend": [10.72, 10.16, 11.32, 10.99], "gap_urban_rural": 20.29, "gap_gender": 1.31, "villages_total_signal_table": 2022.0, "signal_very_strong_share": 17.8, "signal_strong_only_share": 56.5, "signal_weak_share": 25.2, "signal_strong_share": 74.3, "signal_none_share": 0.5, "bts_4g_share": 93.8, "bts_3g_share": 3.3, "bts_25g_share": 1.6, "facility_working_share": 86.9, "facility_jarang_share": 4.0, "facility_not_working_share": 9.2, "facility_total": 1492.0, "purpose_info_news": 74.63, "purpose_info_goods": 21.78, "purpose_email": 10.58, "purpose_social_media": 76.06, "purpose_buying": 13.74, "purpose_selling": 4.08, "purpose_ebanking": 7.39, "purpose_online_learning": 8.87, "purpose_work_from_home": 1.47, "purpose_entertainment": 86.16, "purpose_content_creation": 2.44, "purpose_others": 4.21, "productive_use_index": 4.8, "freq_daily": 87.93, "freq_weekly": 9.26, "freq_rare": 2.81, "media_desktop": 2.49, "media_laptop": 8.86, "media_mobile": 99.2, "media_other": 0.24, "inequality_index": -0.36, "inequality_rank": 27, "rank_internet_all": 8, "rank_internet_all_of": 38, "rank_mobile_all": 9, "rank_mobile_all_of": 38, "rank_computer_all": 20, "rank_computer_all_of": 38, "rank_gap_urban_rural": 12, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 35, "rank_gap_gender_of": 38, "rank_signal_none_share": 25, "rank_signal_none_share_of": 38, "rank_facility_working_share": 14, "rank_facility_working_share_of": 38, "rank_productive_use_index": 8, "rank_productive_use_index_of": 38, "rank_freq_daily": 13, "rank_freq_daily_of": 38}, {"code": "33", "name": "Jawa Tengah", "island": "Jawa", "internet_all": 73.15, "internet_urban": 76.08, "internet_rural": 69.78, "mobile_all": 65.47, "computer_all": 10.1, "internet_male": 76.66, "internet_female": 69.7, "telecom_exp_share": 3.43, "internet_trend": [62.2, 67.73, 70.0, 73.15], "mobile_trend": [62.76, 65.15, 64.74, 65.47], "computer_trend": [9.33, 9.57, 10.29, 10.1], "gap_urban_rural": 6.3, "gap_gender": 6.96, "villages_total_signal_table": 8563.0, "signal_very_strong_share": 24.2, "signal_strong_only_share": 70.4, "signal_weak_share": 5.4, "signal_strong_share": 94.6, "signal_none_share": 0.0, "bts_4g_share": 97.1, "bts_3g_share": 2.6, "bts_25g_share": 0.3, "facility_working_share": 99.8, "facility_jarang_share": 0.1, "facility_not_working_share": 0.1, "facility_total": 8561.0, "purpose_info_news": 76.31, "purpose_info_goods": 27.66, "purpose_email": 10.74, "purpose_social_media": 80.13, "purpose_buying": 23.22, "purpose_selling": 6.19, "purpose_ebanking": 9.55, "purpose_online_learning": 9.1, "purpose_work_from_home": 1.09, "purpose_entertainment": 85.92, "purpose_content_creation": 10.84, "purpose_others": 4.74, "productive_use_index": 7.4, "freq_daily": 93.6, "freq_weekly": 4.84, "freq_rare": 1.56, "media_desktop": 2.99, "media_laptop": 8.07, "media_mobile": 99.29, "media_other": 0.29, "inequality_index": -0.368, "inequality_rank": 28, "rank_internet_all": 23, "rank_internet_all_of": 38, "rank_mobile_all": 12, "rank_mobile_all_of": 38, "rank_computer_all": 13, "rank_computer_all_of": 38, "rank_gap_urban_rural": 36, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 7, "rank_gap_gender_of": 38, "rank_signal_none_share": 33, "rank_signal_none_share_of": 38, "rank_facility_working_share": 35, "rank_facility_working_share_of": 38, "rank_productive_use_index": 29, "rank_productive_use_index_of": 38, "rank_freq_daily": 28, "rank_freq_daily_of": 38}, {"code": "21", "name": "Kepulauan Riau", "island": "Sumatera", "internet_all": 89.26, "internet_urban": 91.52, "internet_rural": 69.66, "mobile_all": 83.9, "computer_all": 18.34, "internet_male": 90.08, "internet_female": 88.41, "telecom_exp_share": 4.0, "internet_trend": [81.03, 82.4, 86.71, 89.26], "mobile_trend": [80.51, 79.88, 80.37, 83.9], "computer_trend": [20.53, 16.54, 20.49, 18.34], "gap_urban_rural": 21.86, "gap_gender": 1.67, "villages_total_signal_table": 430.0, "signal_very_strong_share": 25.3, "signal_strong_only_share": 51.2, "signal_weak_share": 23.5, "signal_strong_share": 76.5, "signal_none_share": 0.0, "bts_4g_share": 90.7, "bts_3g_share": 6.5, "bts_25g_share": 2.8, "facility_working_share": 90.8, "facility_jarang_share": 3.2, "facility_not_working_share": 5.9, "facility_total": 371.0, "purpose_info_news": 80.24, "purpose_info_goods": 23.49, "purpose_email": 17.48, "purpose_social_media": 79.07, "purpose_buying": 23.11, "purpose_selling": 6.23, "purpose_ebanking": 20.48, "purpose_online_learning": 10.41, "purpose_work_from_home": 2.05, "purpose_entertainment": 89.53, "purpose_content_creation": 1.7, "purpose_others": 4.27, "productive_use_index": 8.2, "freq_daily": 97.38, "freq_weekly": 2.13, "freq_rare": 0.49, "media_desktop": 3.85, "media_laptop": 14.3, "media_mobile": 98.39, "media_other": 1.12, "inequality_index": -0.374, "inequality_rank": 29, "rank_internet_all": 38, "rank_internet_all_of": 38, "rank_mobile_all": 38, "rank_mobile_all_of": 38, "rank_computer_all": 36, "rank_computer_all_of": 38, "rank_gap_urban_rural": 11, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 34, "rank_gap_gender_of": 38, "rank_signal_none_share": 34, "rank_signal_none_share_of": 38, "rank_facility_working_share": 24, "rank_facility_working_share_of": 38, "rank_productive_use_index": 35, "rank_productive_use_index_of": 38, "rank_freq_daily": 38, "rank_freq_daily_of": 38}, {"code": "34", "name": "DI Yogyakarta", "island": "Jawa", "internet_all": 80.1, "internet_urban": 83.98, "internet_rural": 68.24, "mobile_all": 72.17, "computer_all": 19.91, "internet_male": 82.37, "internet_female": 77.88, "telecom_exp_share": 3.94, "internet_trend": [74.0, 75.38, 78.61, 80.1], "mobile_trend": [69.81, 70.37, 71.37, 72.17], "computer_trend": [20.17, 18.69, 19.37, 19.91], "gap_urban_rural": 15.74, "gap_gender": 4.49, "villages_total_signal_table": 438.0, "signal_very_strong_share": 24.4, "signal_strong_only_share": 68.5, "signal_weak_share": 7.1, "signal_strong_share": 92.9, "signal_none_share": 0.0, "bts_4g_share": 94.3, "bts_3g_share": 4.6, "bts_25g_share": 0.9, "facility_working_share": 100.0, "facility_jarang_share": 0.0, "facility_not_working_share": 0.0, "facility_total": 438.0, "purpose_info_news": 77.67, "purpose_info_goods": 33.74, "purpose_email": 18.34, "purpose_social_media": 82.93, "purpose_buying": 29.48, "purpose_selling": 9.97, "purpose_ebanking": 17.26, "purpose_online_learning": 10.52, "purpose_work_from_home": 2.65, "purpose_entertainment": 82.89, "purpose_content_creation": 14.45, "purpose_others": 5.5, "productive_use_index": 11.0, "freq_daily": 96.47, "freq_weekly": 2.66, "freq_rare": 0.87, "media_desktop": 4.53, "media_laptop": 17.67, "media_mobile": 98.8, "media_other": 0.74, "inequality_index": -0.404, "inequality_rank": 30, "rank_internet_all": 35, "rank_internet_all_of": 38, "rank_mobile_all": 31, "rank_mobile_all_of": 38, "rank_computer_all": 37, "rank_computer_all_of": 38, "rank_gap_urban_rural": 18, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 20, "rank_gap_gender_of": 38, "rank_signal_none_share": 35, "rank_signal_none_share_of": 38, "rank_facility_working_share": 37, "rank_facility_working_share_of": 38, "rank_productive_use_index": 37, "rank_productive_use_index_of": 38, "rank_freq_daily": 37, "rank_freq_daily_of": 38}, {"code": "13", "name": "Sumatera Barat", "island": "Sumatera", "internet_all": 74.59, "internet_urban": 79.16, "internet_rural": 69.78, "mobile_all": 68.45, "computer_all": 12.83, "internet_male": 76.87, "internet_female": 72.34, "telecom_exp_share": 3.59, "internet_trend": [58.14, 63.13, 68.64, 74.59], "mobile_trend": [65.34, 68.24, 67.78, 68.45], "computer_trend": [13.95, 13.22, 13.12, 12.83], "gap_urban_rural": 9.38, "gap_gender": 4.53, "villages_total_signal_table": 1286.0, "signal_very_strong_share": 27.8, "signal_strong_only_share": 57.5, "signal_weak_share": 13.2, "signal_strong_share": 85.2, "signal_none_share": 1.6, "bts_4g_share": 94.3, "bts_3g_share": 4.0, "bts_25g_share": 1.3, "facility_working_share": 94.8, "facility_jarang_share": 1.9, "facility_not_working_share": 3.4, "facility_total": 1188.0, "purpose_info_news": 76.55, "purpose_info_goods": 24.37, "purpose_email": 12.44, "purpose_social_media": 78.62, "purpose_buying": 18.81, "purpose_selling": 3.24, "purpose_ebanking": 8.13, "purpose_online_learning": 9.38, "purpose_work_from_home": 1.31, "purpose_entertainment": 88.31, "purpose_content_creation": 5.25, "purpose_others": 5.18, "productive_use_index": 5.5, "freq_daily": 91.1, "freq_weekly": 7.99, "freq_rare": 0.91, "media_desktop": 3.2, "media_laptop": 8.45, "media_mobile": 99.3, "media_other": 0.13, "inequality_index": -0.406, "inequality_rank": 31, "rank_internet_all": 26, "rank_internet_all_of": 38, "rank_mobile_all": 22, "rank_mobile_all_of": 38, "rank_computer_all": 28, "rank_computer_all_of": 38, "rank_gap_urban_rural": 33, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 19, "rank_gap_gender_of": 38, "rank_signal_none_share": 13, "rank_signal_none_share_of": 38, "rank_facility_working_share": 27, "rank_facility_working_share_of": 38, "rank_productive_use_index": 16, "rank_productive_use_index_of": 38, "rank_freq_daily": 20, "rank_freq_daily_of": 38}, {"code": "65", "name": "Kalimantan Utara", "island": "Kalimantan", "internet_all": 77.44, "internet_urban": 81.92, "internet_rural": 69.24, "mobile_all": 77.5, "computer_all": 11.81, "internet_male": 78.05, "internet_female": 76.78, "telecom_exp_share": 4.36, "internet_trend": [69.26, 77.43, 77.03, 77.44], "mobile_trend": [76.02, 78.62, 77.57, 77.5], "computer_trend": [14.51, 15.84, 15.37, 11.81], "gap_urban_rural": 12.68, "gap_gender": 1.27, "villages_total_signal_table": 484.0, "signal_very_strong_share": 14.3, "signal_strong_only_share": 42.4, "signal_weak_share": 42.4, "signal_strong_share": 56.6, "signal_none_share": 1.0, "bts_4g_share": 67.6, "bts_3g_share": 12.3, "bts_25g_share": 10.0, "facility_working_share": 88.4, "facility_jarang_share": 6.3, "facility_not_working_share": 5.2, "facility_total": 363.0, "purpose_info_news": 72.04, "purpose_info_goods": 19.83, "purpose_email": 10.22, "purpose_social_media": 78.46, "purpose_buying": 17.12, "purpose_selling": 4.13, "purpose_ebanking": 7.52, "purpose_online_learning": 9.07, "purpose_work_from_home": 1.02, "purpose_entertainment": 83.26, "purpose_content_creation": 2.84, "purpose_others": 2.8, "productive_use_index": 4.9, "freq_daily": 90.68, "freq_weekly": 7.42, "freq_rare": 1.9, "media_desktop": 1.94, "media_laptop": 8.78, "media_mobile": 99.12, "media_other": 0.97, "inequality_index": -0.536, "inequality_rank": 32, "rank_internet_all": 32, "rank_internet_all_of": 38, "rank_mobile_all": 35, "rank_mobile_all_of": 38, "rank_computer_all": 26, "rank_computer_all_of": 38, "rank_gap_urban_rural": 26, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 36, "rank_gap_gender_of": 38, "rank_signal_none_share": 19, "rank_signal_none_share_of": 38, "rank_facility_working_share": 20, "rank_facility_working_share_of": 38, "rank_productive_use_index": 10, "rank_productive_use_index_of": 38, "rank_freq_daily": 16, "rank_freq_daily_of": 38}, {"code": "18", "name": "Lampung", "island": "Sumatera", "internet_all": 73.37, "internet_urban": 77.24, "internet_rural": 71.37, "mobile_all": 64.52, "computer_all": 7.88, "internet_male": 75.27, "internet_female": 71.39, "telecom_exp_share": 3.28, "internet_trend": [59.94, 65.21, 70.68, 73.37], "mobile_trend": [63.83, 66.08, 65.0, 64.52], "computer_trend": [7.27, 7.39, 8.63, 7.88], "gap_urban_rural": 5.87, "gap_gender": 3.88, "villages_total_signal_table": 2657.0, "signal_very_strong_share": 22.0, "signal_strong_only_share": 64.2, "signal_weak_share": 13.9, "signal_strong_share": 86.1, "signal_none_share": 0.0, "bts_4g_share": 91.8, "bts_3g_share": 6.8, "bts_25g_share": 1.3, "facility_working_share": 94.6, "facility_jarang_share": 2.1, "facility_not_working_share": 3.3, "facility_total": 2292.0, "purpose_info_news": 71.43, "purpose_info_goods": 21.3, "purpose_email": 8.4, "purpose_social_media": 75.98, "purpose_buying": 16.58, "purpose_selling": 5.6, "purpose_ebanking": 6.66, "purpose_online_learning": 9.52, "purpose_work_from_home": 1.2, "purpose_entertainment": 84.55, "purpose_content_creation": 7.94, "purpose_others": 4.79, "productive_use_index": 6.2, "freq_daily": 90.73, "freq_weekly": 7.55, "freq_rare": 1.73, "media_desktop": 1.45, "media_laptop": 5.78, "media_mobile": 99.36, "media_other": 0.14, "inequality_index": -0.567, "inequality_rank": 33, "rank_internet_all": 24, "rank_internet_all_of": 38, "rank_mobile_all": 10, "rank_mobile_all_of": 38, "rank_computer_all": 3, "rank_computer_all_of": 38, "rank_gap_urban_rural": 37, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 25, "rank_gap_gender_of": 38, "rank_signal_none_share": 36, "rank_signal_none_share_of": 38, "rank_facility_working_share": 26, "rank_facility_working_share_of": 38, "rank_productive_use_index": 19, "rank_productive_use_index_of": 38, "rank_freq_daily": 17, "rank_freq_daily_of": 38}, {"code": "64", "name": "Kalimantan Timur", "island": "Kalimantan", "internet_all": 84.44, "internet_urban": 87.33, "internet_rural": 77.91, "mobile_all": 83.1, "computer_all": 15.48, "internet_male": 85.46, "internet_female": 83.35, "telecom_exp_share": 4.3, "internet_trend": [74.47, 80.56, 80.46, 84.44], "mobile_trend": [81.1, 82.37, 81.75, 83.1], "computer_trend": [17.56, 16.26, 15.77, 15.48], "gap_urban_rural": 9.42, "gap_gender": 2.11, "villages_total_signal_table": 1052.0, "signal_very_strong_share": 19.7, "signal_strong_only_share": 51.1, "signal_weak_share": 26.9, "signal_strong_share": 70.8, "signal_none_share": 2.3, "bts_4g_share": 84.0, "bts_3g_share": 9.5, "bts_25g_share": 5.0, "facility_working_share": 95.0, "facility_jarang_share": 2.5, "facility_not_working_share": 2.5, "facility_total": 967.0, "purpose_info_news": 78.15, "purpose_info_goods": 23.18, "purpose_email": 13.69, "purpose_social_media": 79.43, "purpose_buying": 19.68, "purpose_selling": 5.02, "purpose_ebanking": 19.29, "purpose_online_learning": 8.55, "purpose_work_from_home": 1.31, "purpose_entertainment": 86.32, "purpose_content_creation": 3.95, "purpose_others": 4.31, "productive_use_index": 7.6, "freq_daily": 95.38, "freq_weekly": 3.72, "freq_rare": 0.9, "media_desktop": 2.79, "media_laptop": 12.65, "media_mobile": 99.03, "media_other": 0.31, "inequality_index": -0.616, "inequality_rank": 34, "rank_internet_all": 36, "rank_internet_all_of": 38, "rank_mobile_all": 36, "rank_mobile_all_of": 38, "rank_computer_all": 34, "rank_computer_all_of": 38, "rank_gap_urban_rural": 32, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 32, "rank_gap_gender_of": 38, "rank_signal_none_share": 10, "rank_signal_none_share_of": 38, "rank_facility_working_share": 28, "rank_facility_working_share_of": 38, "rank_productive_use_index": 31, "rank_productive_use_index_of": 38, "rank_freq_daily": 34, "rank_freq_daily_of": 38}, {"code": "31", "name": "DKI Jakarta", "island": "Jawa", "internet_all": 87.84, "internet_urban": 87.84, "internet_rural": null, "mobile_all": 83.43, "computer_all": 23.47, "internet_male": 89.24, "internet_female": 86.48, "telecom_exp_share": 3.45, "internet_trend": [85.55, 84.65, 86.5, 87.84], "mobile_trend": [81.83, 82.27, 82.47, 83.43], "computer_trend": [23.87, 23.52, 25.47, 23.47], "gap_urban_rural": null, "gap_gender": 2.76, "villages_total_signal_table": 267.0, "signal_very_strong_share": 70.4, "signal_strong_only_share": 29.6, "signal_weak_share": 0.0, "signal_strong_share": 100.0, "signal_none_share": 0.0, "bts_4g_share": 100.0, "bts_3g_share": 0.0, "bts_25g_share": 0.0, "facility_working_share": 100.0, "facility_jarang_share": 0.0, "facility_not_working_share": 0.0, "facility_total": 266.0, "purpose_info_news": 83.8, "purpose_info_goods": 36.89, "purpose_email": 27.06, "purpose_social_media": 80.56, "purpose_buying": 34.34, "purpose_selling": 7.21, "purpose_ebanking": 27.97, "purpose_online_learning": 11.21, "purpose_work_from_home": 3.4, "purpose_entertainment": 83.05, "purpose_content_creation": 9.81, "purpose_others": 4.85, "productive_use_index": 11.9, "freq_daily": 96.34, "freq_weekly": 2.59, "freq_rare": 1.06, "media_desktop": 3.41, "media_laptop": 21.04, "media_mobile": 98.4, "media_other": 0.25, "inequality_index": -0.663, "inequality_rank": 35, "rank_internet_all": 37, "rank_internet_all_of": 38, "rank_mobile_all": 37, "rank_mobile_all_of": 38, "rank_computer_all": 38, "rank_computer_all_of": 38, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 29, "rank_gap_gender_of": 38, "rank_signal_none_share": 37, "rank_signal_none_share_of": 38, "rank_facility_working_share": 38, "rank_facility_working_share_of": 38, "rank_productive_use_index": 38, "rank_productive_use_index_of": 38, "rank_freq_daily": 35, "rank_freq_daily_of": 38}, {"code": "19", "name": "Kepulauan Bangka Belitung", "island": "Sumatera", "internet_all": 76.06, "internet_urban": 80.08, "internet_rural": 70.41, "mobile_all": 71.38, "computer_all": 11.21, "internet_male": 77.03, "internet_female": 75.06, "telecom_exp_share": 3.6, "internet_trend": [60.94, 68.7, 72.03, 76.06], "mobile_trend": [68.22, 73.16, 71.43, 71.38], "computer_trend": [10.69, 11.09, 11.69, 11.21], "gap_urban_rural": 9.67, "gap_gender": 1.97, "villages_total_signal_table": 393.0, "signal_very_strong_share": 52.9, "signal_strong_only_share": 44.3, "signal_weak_share": 2.8, "signal_strong_share": 97.2, "signal_none_share": 0.0, "bts_4g_share": 98.7, "bts_3g_share": 1.3, "bts_25g_share": 0.0, "facility_working_share": 98.7, "facility_jarang_share": 0.3, "facility_not_working_share": 1.1, "facility_total": 374.0, "purpose_info_news": 77.88, "purpose_info_goods": 32.75, "purpose_email": 10.8, "purpose_social_media": 96.13, "purpose_buying": 30.34, "purpose_selling": 5.11, "purpose_ebanking": 10.67, "purpose_online_learning": 8.92, "purpose_work_from_home": 1.2, "purpose_entertainment": 91.89, "purpose_content_creation": 7.51, "purpose_others": 3.32, "productive_use_index": 6.7, "freq_daily": 94.35, "freq_weekly": 5.05, "freq_rare": 0.61, "media_desktop": 2.2, "media_laptop": 8.65, "media_mobile": 99.33, "media_other": 0.21, "inequality_index": -0.737, "inequality_rank": 36, "rank_internet_all": 30, "rank_internet_all_of": 38, "rank_mobile_all": 28, "rank_mobile_all_of": 38, "rank_computer_all": 22, "rank_computer_all_of": 38, "rank_gap_urban_rural": 30, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 33, "rank_gap_gender_of": 38, "rank_signal_none_share": 38, "rank_signal_none_share_of": 38, "rank_facility_working_share": 33, "rank_facility_working_share_of": 38, "rank_productive_use_index": 24, "rank_productive_use_index_of": 38, "rank_freq_daily": 31, "rank_freq_daily_of": 38}, {"code": "71", "name": "Sulawesi Utara", "island": "Sulawesi", "internet_all": 68.44, "internet_urban": 75.08, "internet_rural": 60.13, "mobile_all": 71.7, "computer_all": 10.97, "internet_male": 67.65, "internet_female": 69.25, "telecom_exp_share": 3.8, "internet_trend": [59.73, 61.63, 64.81, 68.44], "mobile_trend": [70.32, 71.12, 70.22, 71.7], "computer_trend": [12.38, 11.37, 11.66, 10.97], "gap_urban_rural": 14.95, "gap_gender": -1.6, "villages_total_signal_table": 1838.0, "signal_very_strong_share": 28.4, "signal_strong_only_share": 55.9, "signal_weak_share": 14.5, "signal_strong_share": 84.3, "signal_none_share": 1.3, "bts_4g_share": 95.4, "bts_3g_share": 2.5, "bts_25g_share": 1.2, "facility_working_share": 89.2, "facility_jarang_share": 2.7, "facility_not_working_share": 8.1, "facility_total": 1011.0, "purpose_info_news": 78.25, "purpose_info_goods": 25.48, "purpose_email": 12.96, "purpose_social_media": 82.75, "purpose_buying": 17.72, "purpose_selling": 5.95, "purpose_ebanking": 9.08, "purpose_online_learning": 10.23, "purpose_work_from_home": 2.09, "purpose_entertainment": 84.37, "purpose_content_creation": 10.0, "purpose_others": 7.29, "productive_use_index": 7.5, "freq_daily": 90.43, "freq_weekly": 8.25, "freq_rare": 1.32, "media_desktop": 2.02, "media_laptop": 7.78, "media_mobile": 99.08, "media_other": 0.06, "inequality_index": -0.761, "inequality_rank": 37, "rank_internet_all": 14, "rank_internet_all_of": 38, "rank_mobile_all": 29, "rank_mobile_all_of": 38, "rank_computer_all": 19, "rank_computer_all_of": 38, "rank_gap_urban_rural": 21, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 37, "rank_gap_gender_of": 38, "rank_signal_none_share": 16, "rank_signal_none_share_of": 38, "rank_facility_working_share": 22, "rank_facility_working_share_of": 38, "rank_productive_use_index": 30, "rank_productive_use_index_of": 38, "rank_freq_daily": 15, "rank_freq_daily_of": 38}, {"code": "75", "name": "Gorontalo", "island": "Sulawesi", "internet_all": 65.92, "internet_urban": 74.03, "internet_rural": 59.04, "mobile_all": 68.06, "computer_all": 12.86, "internet_male": 64.74, "internet_female": 67.09, "telecom_exp_share": 3.38, "internet_trend": [56.03, 60.31, 63.77, 65.92], "mobile_trend": [64.64, 67.73, 67.55, 68.06], "computer_trend": [11.83, 13.39, 13.86, 12.86], "gap_urban_rural": 14.99, "gap_gender": -2.35, "villages_total_signal_table": 732.0, "signal_very_strong_share": 39.1, "signal_strong_only_share": 43.9, "signal_weak_share": 16.5, "signal_strong_share": 82.9, "signal_none_share": 0.5, "bts_4g_share": 90.8, "bts_3g_share": 5.9, "bts_25g_share": 2.9, "facility_working_share": 96.4, "facility_jarang_share": 1.9, "facility_not_working_share": 1.7, "facility_total": 693.0, "purpose_info_news": 76.21, "purpose_info_goods": 20.76, "purpose_email": 10.74, "purpose_social_media": 80.71, "purpose_buying": 13.99, "purpose_selling": 4.38, "purpose_ebanking": 7.11, "purpose_online_learning": 7.48, "purpose_work_from_home": 1.3, "purpose_entertainment": 84.44, "purpose_content_creation": 5.32, "purpose_others": 3.46, "productive_use_index": 5.1, "freq_daily": 86.47, "freq_weekly": 11.26, "freq_rare": 2.27, "media_desktop": 3.57, "media_laptop": 9.73, "media_mobile": 99.11, "media_other": 0.22, "inequality_index": -0.973, "inequality_rank": 38, "rank_internet_all": 12, "rank_internet_all_of": 38, "rank_mobile_all": 19, "rank_mobile_all_of": 38, "rank_computer_all": 29, "rank_computer_all_of": 38, "rank_gap_urban_rural": 20, "rank_gap_urban_rural_of": 37, "rank_gap_gender": 38, "rank_gap_gender_of": 38, "rank_signal_none_share": 26, "rank_signal_none_share_of": 38, "rank_facility_working_share": 29, "rank_facility_working_share_of": 38, "rank_productive_use_index": 13, "rank_productive_use_index_of": 38, "rank_freq_daily": 12, "rank_freq_daily_of": 38}], "source_year": 2024};
+
+/* ============ i18n ============ */
+let LANG = "id";
+const I18N = {
+  id: {
+    title: "Ketimpangan digital di Indonesia",
+    subtitle: "Siapa yang tertinggal dari internet, dan di mana — akses, infrastruktur, dan kesenjangan antara kota & desa, pria & wanita, di 38 provinsi.",
+    data_year_label: "Tahun data",
+    trend_label: "tren",
+    source_label: "Sumber: BPS, Susenas & Podes",
+    tab_overview: "Ringkasan",
+    tab_compare: "Bandingkan provinsi",
+    tab_profile: "Profil provinsi",
+    divide_intro: "Penelitian kesenjangan digital memisahkan dua pertanyaan: apakah masyarakat bisa mengakses internet sama sekali (<strong>akses & infrastruktur</strong>, kesenjangan tingkat pertama), dan apa yang sebenarnya mereka lakukan setelah terhubung (<strong>penggunaan internet</strong>, kesenjangan tingkat kedua). Indonesia sebagian besar telah menutup kesenjangan pertama bagi siapa pun yang berada dalam jangkauan sinyal — kesenjangan kedua adalah tempat ketimpangan yang tersisa sebenarnya berada.",
+    group_access: "Akses & infrastruktur",
+    tier_first: "Kesenjangan tingkat pertama",
+    group_usage: "Penggunaan internet",
+    tier_second: "Kesenjangan tingkat kedua",
+    tier_composite: "Komposit",
+    kpi_internet_access: "Akses internet nasional",
+    kpi_gap_ur: "Kesenjangan kota − desa",
+    kpi_gap_gender: "Kesenjangan pria − wanita",
+    kpi_no_signal: "Desa tanpa sinyal seluler",
+    kpi_delta_suffix: "poin vs 2023",
+    trend_heading: "Akses terus naik — kesenjangan desa tidak menutup dengan laju yang sama",
+    trend_note: "Persentase penduduk yang mengakses internet dalam 3 bulan terakhir, tren nasional. Kesenjangan yang melebar antar garis berarti wilayah perdesaan semakin tertinggal meski keduanya naik.",
+    card_by_area: "Menurut klasifikasi wilayah",
+    card_urban_rural_sub: "Kota vs. desa, 2021–2024",
+    card_by_gender: "Menurut jenis kelamin",
+    card_gender_sub: "Pria vs. wanita, 2021–2024",
+    short_urban: "Kota", short_rural: "Desa", short_male: "Pria", short_female: "Wanita",
+    short_internet: "Internet", short_mobile: "Seluler", short_computer: "Komputer",
+    village_heading: "Infrastruktur tingkat desa",
+    village_note: "Data sisi penyediaan Podes (Pendataan Potensi Desa) — jangkauan sinyal dan fasilitas internet publik.",
+    card_signal_title: "Kekuatan sinyal seluler antar desa",
+    card_signal_sub: "Proporsi desa/kelurahan menurut sinyal terkuat yang diterima, 2024",
+    card_facility_title: "Fasilitas internet kantor desa, menurut kondisi",
+    card_facility_sub: "Dari desa yang memiliki fasilitas internet di kantornya, proporsi yang benar-benar berfungsi",
+    signal_very_strong: "Sinyal sangat kuat", signal_strong: "Sinyal kuat", signal_weak: "Sinyal lemah", signal_none: "Tidak ada sinyal",
+    facility_working: "Berfungsi", facility_jarang: "Jarang berfungsi", facility_not_working: "Tidak berfungsi",
+    usage_note: "Susenas menanyakan apa yang sebenarnya dilakukan masyarakat secara daring — bukan sekadar apakah mereka mengakses internet. Ini bagian dari kesenjangan yang tidak serta-merta ditutup oleh belanja infrastruktur.",
+    card_purpose_title: "Untuk apa masyarakat menggunakan internet",
+    card_purpose_sub: "Proporsi pengguna internet nasional menurut tujuan penggunaan, 2024 — tidak saling eksklusif, responden dapat melaporkan lebih dari satu tujuan",
+    card_freq_title: "Seberapa sering masyarakat mengakses internet",
+    card_freq_sub: "Frekuensi akses internet, nasional, 2024",
+    card_media_title: "Perangkat yang digunakan untuk mengakses",
+    card_media_sub: "Proporsi pengguna menurut jenis media akses — tidak saling eksklusif",
+    purpose_info_news: "Mendapat informasi/berita",
+    purpose_info_goods: "Mendapat informasi mengenai barang/jasa",
+    purpose_email: "Surel (email)",
+    purpose_social_media: "Media sosial",
+    purpose_buying: "Membeli barang/jasa",
+    purpose_selling: "Menjual barang/jasa",
+    purpose_ebanking: "Fasilitas finansial (e-banking)",
+    purpose_online_learning: "Pembelajaran daring",
+    purpose_work_from_home: "Bekerja daring dari rumah",
+    purpose_entertainment: "Hiburan",
+    purpose_content_creation: "Pembuatan konten digital",
+    purpose_others: "Lainnya",
+    freq_daily_label: "Minimal satu kali sehari",
+    freq_weekly_label: "Minimal seminggu sekali, tidak setiap hari",
+    freq_rare_label: "Kurang dari seminggu sekali",
+    media_mobile_label: "Telepon seluler",
+    media_laptop_label: "Laptop/netbook/tablet",
+    media_desktop_label: "Komputer desktop",
+    media_other_label: "Lainnya",
+    explorer_heading: "Eksplorasi provinsi",
+    explorer_note: "Provinsi dikelompokkan dari barat ke timur menurut pulau, sesuai posisinya di sepanjang kepulauan. Pilih indikator — mencakup akses/infrastruktur maupun penggunaan — untuk mewarnai ulang peta; klik provinsi mana pun untuk melihat profil lengkapnya.",
+    view_grid: "Peta grid", view_table: "Tabel",
+    scale_lower: "Lebih rendah", scale_higher_inequality: "Ketimpangan lebih tinggi",
+    metric_internet_all: "Akses internet",
+    metric_gap_urban_rural: "Kesenjangan kota−desa",
+    metric_gap_gender: "Kesenjangan gender",
+    metric_signal_none_share: "Desa tanpa sinyal",
+    metric_facility_working_share: "Fasilitas berfungsi",
+    metric_productive_use_index: "Indeks penggunaan produktif",
+    metric_inequality_index: "Indeks ketimpangan",
+    metric_mobile_all: "Kepemilikan seluler",
+    metric_computer_all: "Penggunaan komputer",
+    metric_telecom_exp_share: "Porsi belanja telekomunikasi",
+    metric_freq_daily: "Tingkat akses harian",
+    metric_media_laptop: "Akses laptop/komputer",
+    metric_internet_urban: "Akses perkotaan", metric_internet_rural: "Akses perdesaan",
+    metric_internet_male: "Akses pria", metric_internet_female: "Akses wanita",
+    metric_signal_strong_share: "Desa sinyal kuat+", metric_bts_4g_share: "4G di antara desa BTS",
+    word_of: "dari",
+    col_province: "Provinsi", col_rank: "Peringkat",
+    col_internet_pct: "Internet %", col_mobile_pct: "Seluler %",
+    col_no_signal_pct: "Desa tanpa sinyal %", col_facility_working_pct: "Fasilitas berfungsi %",
+    profile_heading: "Profil provinsi",
+    profile_note: "Pilih provinsi untuk laporan lengkap — akses, infrastruktur, dan bagaimana masyarakat di sana menggunakan internet — dibandingkan dengan rata-rata pulau dan rata-rata nasional.",
+    profile_select_aria: "Pilih provinsi",
+    profile_rank_label: (rank, total) => `Peringkat ketimpangan ${rank} dari ${total}`,
+    profile_index_note: "(semakin tinggi = semakin timpang dalam himpunan data ini)",
+    profile_trend_title: "Tren akses",
+    profile_trend_sub: (name) => `Penggunaan internet, seluler, dan komputer, ${name}, 2021–2024`,
+    profile_compare_title: (name) => `Bagaimana posisi ${name}`,
+    profile_compare_sub: "Provinsi ini dibandingkan dengan rata-rata pulau dan rata-rata nasional, di sepanjang rentang penuh 38 provinsi",
+    avg_national: "Rata-rata nasional",
+    avg_island: (island) => `Rata-rata ${island}`,
+    profile_signal_title: "Kekuatan sinyal seluler",
+    profile_facility_title: "Fasilitas internet kantor desa",
+    by_condition: "Menurut kondisi",
+    profile_purpose_title: (name) => `Untuk apa masyarakat menggunakan internet di ${name}`,
+    profile_purpose_sub: "Proporsi pengguna internet menurut tujuan penggunaan, 2024 — tidak saling eksklusif",
+    profile_freq_sub2: "Frekuensi akses internet",
+    profile_media_sub2: "Tidak saling eksklusif",
+    rank_of_provinces: (rank, total) => `Peringkat ${rank} dari ${total} provinsi`,
+    open_full_profile: "Buka profil lengkap →",
+    drawer_trend_title: "Tren akses internet",
+    tooltip_value: "nilai",
+    footer_text: "<strong>Sumber:</strong> Badan Pusat Statistik (BPS) – Statistik Indonesia, <em>Statistik Telekomunikasi Indonesia 2024</em> (Vol. 13, 2025) — Susenas (survei individu/rumah tangga) dan Podes (pendataan potensi desa). Seluruh 38 unit provinsi sesuai publikasi, termasuk Papua Barat Daya, Papua Selatan, Papua Tengah, dan Papua Pegunungan (dimekarkan dari Papua Barat dan Papua pada 2022–2023 — titik tren 2021–2022 tidak tersedia karena provinsi tersebut belum terbentuk). DKI Jakarta tidak memiliki klasifikasi perdesaan, sehingga kesenjangan kota−desanya ditampilkan sebagai tidak berlaku, bukan nol. Indeks Ketimpangan Digital adalah rata-rata tidak berbobot dari standardisasi (z-score) kesenjangan kota−desa, kesenjangan gender, proporsi desa tanpa sinyal, dan proporsi fasilitas tidak berfungsi — peringkat relatif dalam himpunan data ini, bukan skala absolut. Data tujuan, frekuensi, dan media akses menanyakan seluruh pilihan yang berlaku pada responden, sehingga proporsi dalam satu kategori tidak berjumlah 100%. Indeks Penggunaan Produktif adalah rata-rata tidak berbobot dari lima tujuan (pembelajaran daring, bekerja dari rumah, menjual barang/jasa, e-banking, pembuatan konten digital) dan merupakan indikator relatif, bukan penilaian tentang bagaimana penggunaan internet \"seharusnya\".",
+  },
+  en: {
+    title: "Digital inequality in Indonesia",
+    subtitle: "Who has been left behind by the internet, and where — access, infrastructure, and the gaps between urban & rural, men & women, across 38 provinces.",
+    data_year_label: "Data year",
+    trend_label: "trend",
+    source_label: "Source: BPS, Susenas & Podes",
+    tab_overview: "Overview",
+    tab_compare: "Compare provinces",
+    tab_profile: "Province profile",
+    divide_intro: "Digital divide research separates two questions: can people get online at all (<strong>access & infrastructure</strong>, the first-level divide), and what do they actually do once they are (<strong>internet usage</strong>, the second-level divide). Indonesia has largely closed the first gap for anyone within signal range — the second is where the remaining inequality actually lives.",
+    group_access: "Access & infrastructure",
+    tier_first: "First-level divide",
+    group_usage: "Internet usage",
+    tier_second: "Second-level divide",
+    tier_composite: "Composite",
+    kpi_internet_access: "National internet access",
+    kpi_gap_ur: "Urban − rural gap",
+    kpi_gap_gender: "Male − female gap",
+    kpi_no_signal: "Villages with no cellular signal",
+    kpi_delta_suffix: "pt vs 2023",
+    trend_heading: "Access is rising — the rural gap is not closing at the same pace",
+    trend_note: "Percentage of the population who accessed the internet in the past 3 months, national trend. A widening gap between the lines means rural areas are falling further behind even as both rise.",
+    card_by_area: "By area classification",
+    card_urban_rural_sub: "Urban vs. rural, 2021–2024",
+    card_by_gender: "By gender",
+    card_gender_sub: "Male vs. female, 2021–2024",
+    short_urban: "Urban", short_rural: "Rural", short_male: "Male", short_female: "Female",
+    short_internet: "Internet", short_mobile: "Mobile", short_computer: "Computer",
+    village_heading: "Village-level infrastructure",
+    village_note: "Podes (village census) supply-side data — signal reach and public internet facilities.",
+    card_signal_title: "Cellular signal strength across villages",
+    card_signal_sub: "Share of villages/kelurahan by strongest signal received, 2024",
+    card_facility_title: "Village-office internet facilities, by condition",
+    card_facility_sub: "Of villages with an internet facility at the office, share that's actually functional",
+    signal_very_strong: "Very strong signal", signal_strong: "Strong signal", signal_weak: "Weak signal", signal_none: "No signal",
+    facility_working: "Working", facility_jarang: "Working, not properly", facility_not_working: "Not working at all",
+    usage_note: "Susenas asks people what they actually did online — not just whether they went online at all. This is the part of the divide that infrastructure spending alone doesn't fix.",
+    card_purpose_title: "What people use the internet for",
+    card_purpose_sub: "Share of internet users nationally engaging in each purpose, 2024 — not mutually exclusive, people report multiple purposes",
+    card_freq_title: "How often people go online",
+    card_freq_sub: "Frequency of internet access, national, 2024",
+    card_media_title: "What device people use",
+    card_media_sub: "Share of users accessing via each media type — not mutually exclusive",
+    purpose_info_news: "Getting information/news",
+    purpose_info_goods: "Getting information on goods/services",
+    purpose_email: "Email",
+    purpose_social_media: "Social media",
+    purpose_buying: "Buying goods/services",
+    purpose_selling: "Selling goods/services",
+    purpose_ebanking: "Financial facilities (e-banking)",
+    purpose_online_learning: "Online learning",
+    purpose_work_from_home: "Work from home",
+    purpose_entertainment: "Entertainment",
+    purpose_content_creation: "Digital content creation",
+    purpose_others: "Others",
+    freq_daily_label: "At least once a day",
+    freq_weekly_label: "At least weekly, not daily",
+    freq_rare_label: "Less than weekly",
+    media_mobile_label: "Cellular mobile phone",
+    media_laptop_label: "Laptop/netbook/tablet",
+    media_desktop_label: "Desktop computer",
+    media_other_label: "Other",
+    explorer_heading: "Province explorer",
+    explorer_note: "Provinces are grouped west–to–east by island, the way they sit across the archipelago. Pick a metric — spanning both access/infrastructure and usage — to recolor the grid; click any province for its full profile.",
+    view_grid: "Map grid", view_table: "Table",
+    scale_lower: "Lower", scale_higher_inequality: "Higher inequality",
+    metric_internet_all: "Internet access",
+    metric_gap_urban_rural: "Urban−rural gap",
+    metric_gap_gender: "Gender gap",
+    metric_signal_none_share: "Villages with no signal",
+    metric_facility_working_share: "Facilities working",
+    metric_productive_use_index: "Productive use index",
+    metric_inequality_index: "Inequality index",
+    metric_mobile_all: "Mobile ownership",
+    metric_computer_all: "Computer use",
+    metric_telecom_exp_share: "Telecom share of spending",
+    metric_freq_daily: "Daily access rate",
+    metric_media_laptop: "Laptop/computer access",
+    metric_internet_urban: "Urban access", metric_internet_rural: "Rural access",
+    metric_internet_male: "Male access", metric_internet_female: "Female access",
+    metric_signal_strong_share: "Strong+ signal villages", metric_bts_4g_share: "4G among BTS villages",
+    word_of: "of",
+    col_province: "Province", col_rank: "Rank",
+    col_internet_pct: "Internet %", col_mobile_pct: "Mobile %",
+    col_no_signal_pct: "No-signal villages %", col_facility_working_pct: "Facilities working %",
+    profile_heading: "Province profile",
+    profile_note: "Pick a province for a full report — access, infrastructure, and how people there actually use the internet — benchmarked against its island and the national average.",
+    profile_select_aria: "Select a province",
+    profile_rank_label: (rank, total) => `Inequality rank ${rank} of ${total}`,
+    profile_index_note: "(higher = more unequal within this dataset)",
+    profile_trend_title: "Access trend",
+    profile_trend_sub: (name) => `Internet, mobile, and computer use, ${name}, 2021–2024`,
+    profile_compare_title: (name) => `How ${name} compares`,
+    profile_compare_sub: "This province against its island average and the national average, across the full 38-province range",
+    avg_national: "National avg",
+    avg_island: (island) => `${island} avg`,
+    profile_signal_title: "Cellular signal strength",
+    profile_facility_title: "Village-office internet facilities",
+    by_condition: "By condition",
+    profile_purpose_title: (name) => `What people use the internet for in ${name}`,
+    profile_purpose_sub: "Share of internet users engaging in each purpose, 2024 — not mutually exclusive",
+    profile_freq_sub2: "Frequency of internet access",
+    profile_media_sub2: "Not mutually exclusive",
+    rank_of_provinces: (rank, total) => `Rank ${rank} of ${total} provinces`,
+    open_full_profile: "Open full profile →",
+    drawer_trend_title: "Internet access trend",
+    tooltip_value: "value",
+    footer_text: "<strong>Source:</strong> BPS–Statistics Indonesia, <em>Statistik Telekomunikasi Indonesia 2024</em> (Vol. 13, 2025) — Susenas (individual/household survey) and Podes (village census). All 38 provincial units as reported, including Papua Barat Daya, Papua Selatan, Papua Tengah and Papua Pegunungan (split from Papua Barat and Papua between 2022–2023 — their 2021–2022 trend points are unavailable because the provinces did not yet exist). DKI Jakarta has no rural classification, so its urban−rural gap is shown as not applicable rather than zero. The Digital Inequality Index is an unweighted average of standardized (z-score) urban−rural gap, gender gap, no-signal village share, and non-functioning facility share — a relative ranking within this dataset, not an absolute scale. Purpose, frequency, and media-of-access figures ask respondents to report all that apply, so shares within a category do not sum to 100%. The Productive Use Index is an unweighted average of five purposes (online learning, work from home, selling goods/services, e-banking, digital content creation) and is a relative indicator, not a judgment of what internet use \"should\" look like.",
+  },
+};
+function t(key, ...args){
+  const entry = (I18N[LANG] && I18N[LANG][key] !== undefined) ? I18N[LANG][key] : I18N.en[key];
+  return typeof entry === 'function' ? entry(...args) : entry;
+}
+function applyStaticI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+    const [attr, key] = el.dataset.i18nAttr.split(':');
+    el.setAttribute(attr, t(key));
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === LANG));
+}
+function setLang(lang){
+  LANG = lang;
+  applyStaticI18n();
+  renderKPIs();
+  lineChart(document.getElementById('chart-urbanrural'), DATA.national.years,
+    DATA.national.series.internet_urban, DATA.national.series.internet_rural,
+    t('short_urban'), t('short_rural'), "var(--accent)", "var(--deficit)", "%");
+  lineChart(document.getElementById('chart-gender'), DATA.national.years,
+    DATA.national.series.internet_male, DATA.national.series.internet_female,
+    t('short_male'), t('short_female'), "var(--accent)", "var(--deficit)", "%");
+  renderSupply();
+  renderUsageTab();
+  renderExplorer();
+  if(selectedProvince) openDrawer(selectedProvince);
+  const currentProfileCode = document.getElementById('profile-select').value;
+  populateProfileSelect();
+  document.getElementById('profile-select').value = currentProfileCode;
+  renderProfile(currentProfileCode);
+}
+
+const ISLANDS = ["Sumatera","Jawa","Bali & Nusa Tenggara","Kalimantan","Sulawesi","Maluku & Papua"];
+const fmt1 = v => v === null || v === undefined ? "—" : v.toFixed(1);
+const fmtpp = v => v === null || v === undefined ? "n/a" : (v>=0?"+":"") + v.toFixed(1) + " pp";
+
+const tooltip = document.getElementById('tooltip');
+function showTooltip(x, y, html){
+  tooltip.innerHTML = html;
+  tooltip.style.left = x + "px";
+  tooltip.style.top = y + "px";
+  tooltip.classList.add('show');
+}
+function hideTooltip(){ tooltip.classList.remove('show'); }
+
+/* ============ KPI row ============ */
+function sparkline(values, color){
+  const w = 100, h = 28, pad = 3;
+  const vals = values.filter(v => v !== null && v !== undefined);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const span = (max - min) || 1;
+  const pts = values.map((v,i) => {
+    const x = pad + (i/(values.length-1)) * (w - pad*2);
+    const y = h - pad - ((v - min)/span) * (h - pad*2);
+    return [x,y];
+  });
+  const d = pts.map((p,i)=> (i===0?"M":"L")+p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ");
+  const last = pts[pts.length-1];
+  return `<svg class="kpi-spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+    <path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${last[0]}" cy="${last[1]}" r="3" fill="${color}" stroke="var(--surface-1)" stroke-width="1.5"/>
+  </svg>`;
+}
+
+function renderKPIs(){
+  const n = DATA.national;
+  const last = a => a[a.length-1];
+  const prev = a => a[a.length-2];
+  const delta = (a) => last(a) - prev(a);
+
+  const gapUR = last(n.series.internet_urban) - last(n.series.internet_rural);
+  const gapURprev = prev(n.series.internet_urban) - prev(n.series.internet_rural);
+  const gapG = last(n.series.internet_male) - last(n.series.internet_female);
+  const gapGprev = prev(n.series.internet_male) - prev(n.series.internet_female);
+  const noSignal = n.signal_national.none_pct;
+
+  const tiles = [
+    { label: t('kpi_internet_access'), value: last(n.series.internet_all), unit: "%",
+      delta: delta(n.series.internet_all), trend: n.series.internet_all, good: true },
+    { label: t('kpi_gap_ur'), value: gapUR, unit: "pp",
+      delta: gapUR - gapURprev, trend: n.series.internet_urban.map((u,i)=>u - n.series.internet_rural[i]), good: false },
+    { label: t('kpi_gap_gender'), value: gapG, unit: "pp",
+      delta: gapG - gapGprev, trend: n.series.internet_male.map((m,i)=>m - n.series.internet_female[i]), good: false },
+    { label: t('kpi_no_signal'), value: noSignal, unit: "%",
+      delta: null, trend: null, good: false },
+  ];
+
+  const row = document.getElementById('kpi-row');
+  row.innerHTML = tiles.map(tile => {
+    let deltaHtml = "";
+    if (tile.delta !== null){
+      const isUp = tile.delta > 0;
+      const goodDir = tile.good ? isUp : !isUp;
+      deltaHtml = `<div class="kpi-delta ${goodDir?'up':'down'}">${isUp?'↑':'↓'} ${Math.abs(tile.delta).toFixed(1)} ${t('kpi_delta_suffix')}</div>`;
+    }
+    const spark = tile.trend ? sparkline(tile.trend, tile.good ? 'var(--accent)' : 'var(--deficit)') : '';
+    return `<div class="kpi-tile">
+      <div class="kpi-label">${tile.label}</div>
+      <div class="kpi-value">${fmt1(tile.value)}<span class="unit">${tile.unit}</span></div>
+      ${deltaHtml}
+      ${spark}
+    </div>`;
+  }).join("");
+}
+
+/* ============ Line charts (urban/rural, gender) ============ */
+function lineChart(el, years, seriesA, seriesB, labelA, labelB, colorA, colorB, unit){
+  const w = 460, h = 200, padL = 30, padR = 66, padT = 14, padB = 26;
+  const allVals = seriesA.concat(seriesB).filter(v=>v!==null);
+  let min = Math.min(...allVals), max = Math.max(...allVals);
+  const span = max - min;
+  min = Math.max(0, min - span*0.15);
+  max = max + span*0.15;
+
+  const x = i => padL + (i/(years.length-1)) * (w - padL - padR);
+  const y = v => (h - padB) - ((v - min)/(max - min)) * (h - padB - padT);
+
+  function pathFor(series){
+    return series.map((v,i)=> v===null ? null : [x(i), y(v)]).filter(Boolean)
+      .map((p,i)=> (i===0?"M":"L")+p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ");
+  }
+  function areaFor(series){
+    const pts = series.map((v,i)=> v===null?null:[x(i),y(v)]).filter(Boolean);
+    if(!pts.length) return "";
+    const base = y(min);
+    return "M"+pts[0][0].toFixed(1)+","+base.toFixed(1)+" "+
+      pts.map(p=>"L"+p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ") +
+      " L"+pts[pts.length-1][0].toFixed(1)+","+base.toFixed(1)+" Z";
+  }
+
+  const gridLines = [0,1,2,3].map(k=>{
+    const gv = min + (max-min)*k/3;
+    const gy = y(gv);
+    return `<line class="gridline" x1="${padL}" x2="${w-padR}" y1="${gy.toFixed(1)}" y2="${gy.toFixed(1)}"/>
+      <text class="axis-label" x="${w-padR+8}" y="${(gy+3.5).toFixed(1)}">${gv.toFixed(0)}${unit}</text>`;
+  }).join("");
+
+  const xLabels = years.map((yr,i)=> `<text class="axis-label" x="${x(i)}" y="${h-6}" text-anchor="middle">${yr}</text>`).join("");
+
+  function dots(series, color){
+    return series.map((v,i)=>{
+      if(v===null) return "";
+      return `<circle class="end-dot" cx="${x(i)}" cy="${y(v).toFixed(1)}" r="4" fill="${color}"
+        onmouseenter="window.__ttEnter(event,'${years[i]}','${v.toFixed(2)}')" onmouseleave="window.__ttLeave()"></circle>
+        <circle class="dot-hit" cx="${x(i)}" cy="${y(v).toFixed(1)}" r="10"
+        onmouseenter="window.__ttEnter(event,'${years[i]}','${v.toFixed(2)}')" onmouseleave="window.__ttLeave()"></circle>`;
+    }).join("");
+  }
+
+  const lastA = seriesA[seriesA.length-1], lastB = seriesB[seriesB.length-1];
+
+  el.innerHTML = `
+  <div class="legend">
+    <span class="legend-item"><span class="legend-line" style="background:${colorA}"></span>${labelA}</span>
+    <span class="legend-item"><span class="legend-line" style="background:${colorB}"></span>${labelB}</span>
+  </div>
+  <svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
+    <line class="baseline" x1="${padL}" x2="${w-padR}" y1="${h-padB}" y2="${h-padB}"/>
+    ${gridLines}
+    ${xLabels}
+    <path class="area-path" d="${areaFor(seriesA)}" fill="${colorA}"/>
+    <path class="line-path" d="${pathFor(seriesA)}" stroke="${colorA}"/>
+    <path class="line-path" d="${pathFor(seriesB)}" stroke="${colorB}"/>
+    ${dots(seriesA, colorA)}
+    ${dots(seriesB, colorB)}
+    <text class="end-label" x="${x(years.length-1)+10}" y="${y(lastA)+4}" fill="${colorA}">${lastA.toFixed(1)}${unit}</text>
+    <text class="end-label" x="${x(years.length-1)+10}" y="${y(lastB)+4}" fill="${colorB}">${lastB.toFixed(1)}${unit}</text>
+  </svg>`;
+}
+
+window.__ttEnter = function(evt, year, val){
+  showTooltip(evt.clientX, evt.clientY, `<div class="tt-title">${year}</div><div class="tt-row"><span class="k">${t('tooltip_value')}</span><span>${(+val).toFixed(1)}%</span></div>`);
+};
+window.__ttLeave = hideTooltip;
+
+/* ============ Supply-side stacked bars ============ */
+function supplyBar(container, legendEl, segments){
+  // segments: [{label, pct, color}]
+  container.innerHTML = `<div class="stack-bar">${
+    segments.map(s => `<div class="stack-seg" style="width:${s.pct}%;background:${s.color}" title="${s.label}: ${s.pct}%"></div>`).join("")
+  }</div>`;
+  legendEl.innerHTML = segments.map(s => `<div class="li"><b style="color:${s.color}">${s.pct.toFixed(1)}%</b>${s.label}</div>`).join("");
+}
+
+function renderSupply(){
+  const sig = DATA.national.signal_national;
+  supplyBar(
+    document.getElementById('signal-bar'), document.getElementById('signal-legend'),
+    [
+      {label:t('signal_very_strong'), pct: sig.very_strong_pct, color: "var(--seq-650)"},
+      {label:t('signal_strong'), pct: sig.strong_pct, color: "var(--seq-450)"},
+      {label:t('signal_weak'), pct: sig.weak_pct, color: "var(--seq-250)"},
+      {label:t('signal_none'), pct: sig.none_pct, color: "var(--deficit)"},
+    ]
+  );
+  const fac = DATA.national.facility_national;
+  supplyBar(
+    document.getElementById('facility-bar'), document.getElementById('facility-legend'),
+    [
+      {label:t('facility_working'), pct: fac.working_pct, color: "var(--good)"},
+      {label:t('facility_jarang'), pct: fac.jarang_pct, color: "var(--warning)"},
+      {label:t('facility_not_working'), pct: fac.not_working_pct, color: "var(--critical)"},
+      {label:"", pct: 0, color: "transparent"},
+    ]
+  );
+}
+
+/* ============ Usage & purpose (second-level divide) ============ */
+function provincePurposeObj(p){
+  const out = {};
+  for(const key of Object.keys(DATA.national.purpose_labels)) out[key] = p[`purpose_${key}`];
+  return out;
+}
+function provinceFreqObj(p){ return {daily: p.freq_daily, weekly: p.freq_weekly, rare: p.freq_rare}; }
+function provinceMediaObj(p){ return {desktop: p.media_desktop, laptop: p.media_laptop, mobile: p.media_mobile, other: p.media_other}; }
+
+function renderPurposeRankedList(elId, purposeObj){
+  const el = document.getElementById(elId);
+  const items = Object.entries(purposeObj)
+    .map(([key,v]) => ({key, label: t('purpose_'+key), v}))
+    .sort((a,b)=> b.v - a.v);
+  const max = Math.max(...items.map(i=>i.v)) || 1;
+  el.innerHTML = items.map((it,i)=>`
+    <div class="ranked-row" style="grid-template-columns: 22px 240px 1fr 64px;">
+      <span class="rk">${i+1}</span>
+      <span class="nm">${it.label}</span>
+      <span class="bar-track"><span class="bar-fill" style="width:${(it.v/max*100).toFixed(1)}%;background:var(--accent)"></span></span>
+      <span class="vv">${it.v.toFixed(1)}%</span>
+    </div>`).join("");
+}
+
+function renderFreq(barId, legendId, f){
+  supplyBar(
+    document.getElementById(barId), document.getElementById(legendId),
+    [
+      {label:t('freq_daily_label'), pct: f.daily, color: "var(--seq-650)"},
+      {label:t('freq_weekly_label'), pct: f.weekly, color: "var(--seq-450)"},
+      {label:t('freq_rare_label'), pct: f.rare, color: "var(--deficit)"},
+      {label:"", pct: 0, color: "transparent"},
+    ]
+  );
+}
+
+function renderMedia(elId, m){
+  const items = [
+    {label:t('media_mobile_label'), v:m.mobile, color:"var(--accent)"},
+    {label:t('media_laptop_label'), v:m.laptop, color:"var(--good)"},
+    {label:t('media_desktop_label'), v:m.desktop, color:"var(--warning)"},
+    {label:t('media_other_label'), v:m.other, color:"var(--ink-3)"},
+  ].sort((a,b)=>b.v-a.v);
+  const max = Math.max(...items.map(i=>i.v)) || 1;
+  document.getElementById(elId).innerHTML = items.map(it=>`
+    <div class="ranked-row" style="grid-template-columns: 150px 1fr 56px;">
+      <span class="nm">${it.label}</span>
+      <span class="bar-track"><span class="bar-fill" style="width:${(it.v/max*100).toFixed(1)}%;background:${it.color}"></span></span>
+      <span class="vv">${it.v.toFixed(1)}%</span>
+    </div>`).join("");
+}
+
+function renderUsageTab(){
+  renderPurposeRankedList('purpose-ranked-list', DATA.national.purpose_national);
+  renderFreq('freq-bar', 'freq-legend', DATA.national.freq_national);
+  renderMedia('media-bars', DATA.national.media_national);
+}
+
+/* ============ Province explorer ============ */
+const METRICS = [
+  { key: "internet_all", label: "Internet access", unit: "%", kind: "seq", higherWorse: false, group: "access" },
+  { key: "gap_urban_rural", label: "Urban−rural gap", unit: "pp", kind: "deficit", higherWorse: true, group: "access" },
+  { key: "gap_gender", label: "Gender gap", unit: "pp", kind: "deficit", higherWorse: true, group: "access" },
+  { key: "signal_none_share", label: "Villages with no signal", unit: "%", kind: "deficit", higherWorse: true, group: "access" },
+  { key: "facility_working_share", label: "Facilities working", unit: "%", kind: "seq", higherWorse: false, group: "access" },
+  { key: "productive_use_index", label: "Productive use index", unit: "%", kind: "seq", higherWorse: false, group: "usage" },
+  { key: "inequality_index", label: "Inequality index", unit: "", kind: "status", higherWorse: true, group: "composite" },
+];
+const METRIC_GROUP_KEYS = { access: "group_access", usage: "group_usage", composite: "tier_composite" };
+
+let currentMetric = METRICS[0];
+let selectedProvince = null;
+
+function metricRange(key){
+  const vals = DATA.provinces.map(p=>p[key]).filter(v=>v!==null && v!==undefined);
+  return [Math.min(...vals), Math.max(...vals)];
+}
+
+function colorForValue(metric, value){
+  if(value === null || value === undefined) return "var(--grid)";
+  if(metric.kind === "status"){
+    const vals = DATA.provinces.map(p=>p.inequality_index).slice().sort((a,b)=>a-b);
+    const q = f => vals[Math.floor(f*(vals.length-1))];
+    if(value <= q(0.25)) return "var(--good)";
+    if(value <= q(0.5)) return "var(--warning)";
+    if(value <= q(0.75)) return "var(--serious)";
+    return "var(--critical)";
+  }
+  const [min,max] = metricRange(metric.key);
+  const t = max>min ? (value-min)/(max-min) : 0.5;
+  const hue = metric.kind === "deficit" ? "var(--deficit)" : "var(--accent)";
+  const pct = Math.round(12 + t*72);
+  return `color-mix(in oklab, ${hue} ${pct}%, var(--surface-2))`;
+}
+
+function textColorForValue(metric, value){
+  if(metric.kind !== "status" && value !== null){
+    const [min,max] = metricRange(metric.key);
+    const t = max>min ? (value-min)/(max-min) : 0.5;
+    if(t > 0.55) return "#ffffff";
+  }
+  if(metric.kind === "status" && value !== null){
+    const vals = DATA.provinces.map(p=>p.inequality_index).slice().sort((a,b)=>a-b);
+    const q = f => vals[Math.floor(f*(vals.length-1))];
+    if(value > q(0.25)) return "#ffffff";
+  }
+  return "var(--ink-1)";
+}
+
+function renderMetricSelect(){
+  const el = document.getElementById('metric-select');
+  let html = "";
+  let prevGroup = null;
+  METRICS.forEach(m => {
+    if(prevGroup !== null && m.group !== prevGroup) html += `<span class="metric-group-divider" title="${t(METRIC_GROUP_KEYS[m.group])}"></span>`;
+    html += `<button class="metric-btn ${m===currentMetric?'active':''}" data-key="${m.key}" title="${t(METRIC_GROUP_KEYS[m.group])}">${t('metric_'+m.key)}</button>`;
+    prevGroup = m.group;
+  });
+  el.innerHTML = html;
+  el.querySelectorAll('.metric-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      currentMetric = METRICS.find(m=>m.key===btn.dataset.key);
+      renderExplorer();
+    });
+  });
+}
+
+function renderScale(){
+  const el = document.getElementById('metric-scale');
+  if(currentMetric.kind === "status"){
+    el.innerHTML = `
+      <span>${t('scale_lower')}</span>
+      <span class="legend-swatch" style="background:var(--good)"></span>
+      <span class="legend-swatch" style="background:var(--warning)"></span>
+      <span class="legend-swatch" style="background:var(--serious)"></span>
+      <span class="legend-swatch" style="background:var(--critical)"></span>
+      <span>${t('scale_higher_inequality')}</span>`;
+  } else {
+    const [min,max] = metricRange(currentMetric.key);
+    const hue = currentMetric.kind === "deficit" ? "var(--deficit)" : "var(--accent)";
+    el.innerHTML = `<span>${min.toFixed(1)}${currentMetric.unit}</span>
+      <span class="scale-bar" style="background:linear-gradient(90deg, color-mix(in oklab, ${hue} 12%, var(--surface-2)), ${hue})"></span>
+      <span>${max.toFixed(1)}${currentMetric.unit}</span>`;
+  }
+}
+
+function renderCartogram(){
+  const el = document.getElementById('cartogram');
+  el.innerHTML = ISLANDS.map(island => {
+    const provs = DATA.provinces.filter(p=>p.island===island);
+    const tiles = provs.map(p => {
+      const v = p[currentMetric.key];
+      const bg = colorForValue(currentMetric, v);
+      const fg = textColorForValue(currentMetric, v);
+      const shortName = p.name.replace("Kepulauan ","Kep. ");
+      return `<div class="prov-tile ${p.code===selectedProvince?'selected':''}" style="background:${bg};color:${fg}"
+        data-code="${p.code}" tabindex="0" role="button" aria-label="${p.name}">
+        <span class="tile-name">${shortName}</span>
+        <span class="tile-value">${v===null?'n/a':v.toFixed(1)+currentMetric.unit}</span>
+      </div>`;
+    }).join("");
+    return `<div class="island-col"><div class="island-name">${island}</div>${tiles}</div>`;
+  }).join("");
+
+  el.querySelectorAll('.prov-tile').forEach(tileEl=>{
+    tileEl.addEventListener('click', ()=> selectProvince(tileEl.dataset.code));
+    tileEl.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); selectProvince(tileEl.dataset.code);} });
+    tileEl.addEventListener('mouseenter', e=>{
+      const p = DATA.provinces.find(p=>p.code===tileEl.dataset.code);
+      const v = p[currentMetric.key];
+      showTooltip(e.clientX, e.clientY, `<div class="tt-title">${p.name}</div><div class="tt-row"><span class="k">${t('metric_'+currentMetric.key)}</span><span>${v===null?'n/a':v.toFixed(1)+currentMetric.unit}</span></div>`);
+    });
+    tileEl.addEventListener('mousemove', e=>{ tooltip.style.left=e.clientX+"px"; tooltip.style.top=e.clientY+"px"; });
+    tileEl.addEventListener('mouseleave', hideTooltip);
+  });
+}
+
+function renderRankedList(){
+  const el = document.getElementById('ranked-list');
+  const rows = DATA.provinces.slice().filter(p=>p[currentMetric.key]!==null)
+    .sort((a,b)=> currentMetric.higherWorse ? b[currentMetric.key]-a[currentMetric.key] : b[currentMetric.key]-a[currentMetric.key]);
+  const [min,max] = metricRange(currentMetric.key);
+  const barColor = currentMetric.kind === "deficit" ? "var(--deficit)" : (currentMetric.kind === "status" ? "var(--ink-2)" : "var(--accent)");
+  el.innerHTML = rows.map((p,i)=>{
+    const v = p[currentMetric.key];
+    const w = max>min ? Math.max(3, ((v-Math.min(0,min))/(max-Math.min(0,min)))*100) : 50;
+    return `<div class="ranked-row ${p.code===selectedProvince?'selected':''}" data-code="${p.code}">
+      <span class="rk">${i+1}</span>
+      <span class="nm">${p.name}</span>
+      <span class="bar-track"><span class="bar-fill" style="width:${w}%;background:${colorForValue(currentMetric,v)}"></span></span>
+      <span class="vv">${v.toFixed(1)}${currentMetric.unit}</span>
+    </div>`;
+  }).join("");
+  el.querySelectorAll('.ranked-row').forEach(r=>{
+    r.addEventListener('click', ()=> selectProvince(r.dataset.code));
+  });
+}
+
+function renderTable(){
+  const cols = [
+    {key:"name", label:t('col_province')},
+    {key:"internet_all", label:t('col_internet_pct')},
+    {key:"gap_urban_rural", label:t('metric_gap_urban_rural')},
+    {key:"gap_gender", label:t('metric_gap_gender')},
+    {key:"mobile_all", label:t('col_mobile_pct')},
+    {key:"signal_none_share", label:t('col_no_signal_pct')},
+    {key:"facility_working_share", label:t('col_facility_working_pct')},
+    {key:"inequality_index", label:t('metric_inequality_index')},
+    {key:"inequality_rank", label:t('col_rank')},
+  ];
+  if(!window.__tableSort) window.__tableSort = {key:"inequality_rank", dir:1};
+  const sort = window.__tableSort;
+  const rows = DATA.provinces.slice().sort((a,b)=>{
+    const av=a[sort.key], bv=b[sort.key];
+    if(av===null) return 1; if(bv===null) return -1;
+    if(typeof av === "string") return av.localeCompare(bv)*sort.dir;
+    return (av-bv)*sort.dir;
+  });
+  const thead = `<thead><tr>${cols.map(c=>`<th class="${c.key===sort.key?'active':''}" data-key="${c.key}">${c.label}${c.key===sort.key?(sort.dir>0?' ↑':' ↓'):''}</th>`).join("")}</tr></thead>`;
+  const tbody = "<tbody>" + rows.map(p=>`<tr data-code="${p.code}">${cols.map(c=>{
+    const v = p[c.key];
+    if(c.key==="name") return `<td>${v}</td>`;
+    return `<td>${v===null||v===undefined?'n/a':(typeof v==='number'? v.toFixed(c.key==='inequality_rank'?0:(c.key==='inequality_index'?2:1)) : v)}</td>`;
+  }).join("")}</tr>`).join("") + "</tbody>";
+  const table = document.getElementById('data-table');
+  table.innerHTML = thead + tbody;
+  table.querySelectorAll('th').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const key = th.dataset.key;
+      if(window.__tableSort.key===key) window.__tableSort.dir *= -1;
+      else window.__tableSort = {key, dir: 1};
+      renderTable();
+    });
+  });
+  table.querySelectorAll('tbody tr').forEach(tr=>{
+    tr.addEventListener('click', ()=> selectProvince(tr.dataset.code));
+  });
+}
+
+function selectProvince(code){
+  selectedProvince = code;
+  renderCartogram();
+  renderRankedList();
+  openDrawer(code);
+}
+
+function openDrawer(code){
+  const p = DATA.provinces.find(p=>p.code===code);
+  const years = DATA.national.years;
+  const content = document.getElementById('drawer-content');
+
+  const statHtml = (label, val, unit) => `<div class="d-stat"><div class="lbl">${label}</div><div class="val ${val===null?'na':''}">${val===null?'n/a':val.toFixed(1)+unit}</div></div>`;
+
+  content.innerHTML = `
+    <div class="d-island">${p.island}</div>
+    <h3>${p.name}</h3>
+    <div class="d-rank">${t('profile_rank_label', p.inequality_rank, DATA.provinces.length)} &middot; index ${p.inequality_index!==null?p.inequality_index.toFixed(2):'n/a'}</div>
+    <div id="drawer-trend"></div>
+    <div class="d-stat-grid" style="margin-top:20px;">
+      ${statHtml(t('metric_internet_all'), p.internet_all, "%")}
+      ${statHtml(t('metric_mobile_all'), p.mobile_all, "%")}
+      ${statHtml(t('metric_internet_urban'), p.internet_urban, "%")}
+      ${statHtml(t('metric_internet_rural'), p.internet_rural, "%")}
+      ${statHtml(t('metric_internet_male'), p.internet_male, "%")}
+      ${statHtml(t('metric_internet_female'), p.internet_female, "%")}
+      ${statHtml(t('metric_gap_urban_rural'), p.gap_urban_rural, " pp")}
+      ${statHtml(t('metric_gap_gender'), p.gap_gender, " pp")}
+      ${statHtml(t('metric_signal_strong_share'), p.signal_strong_share, "%")}
+      ${statHtml(t('metric_signal_none_share'), p.signal_none_share, "%")}
+      ${statHtml(t('metric_bts_4g_share'), p.bts_4g_share, "%")}
+      ${statHtml(t('metric_facility_working_share'), p.facility_working_share, "%")}
+      ${statHtml(t('metric_productive_use_index'), p.productive_use_index, "%")}
+      ${statHtml(t('metric_freq_daily'), p.freq_daily, "%")}
+    </div>
+    <button class="tab-btn" id="drawer-open-profile" style="padding:0;margin-top:20px;border-bottom:1px solid var(--accent);" data-code="${p.code}">${t('open_full_profile')}</button>
+  `;
+  document.getElementById('drawer-open-profile').addEventListener('click', ()=>{
+    closeDrawer();
+    switchTab('profile');
+    document.getElementById('profile-select').value = code;
+    renderProfile(code);
+  });
+
+  const trendEl = document.getElementById('drawer-trend');
+  const w=340,h=110,padL=28,padR=10,padT=10,padB=22;
+  const vals = p.internet_trend.filter(v=>v!==null);
+  const min = 0, max = Math.max(...vals)*1.15;
+  const x = i => padL + (i/(years.length-1))*(w-padL-padR);
+  const y = v => (h-padB) - ((v-min)/(max-min))*(h-padB-padT);
+  const pts = p.internet_trend.map((v,i)=> v===null?null:[x(i),y(v)]).filter(Boolean);
+  const path = pts.map((pt,i)=>(i===0?"M":"L")+pt[0].toFixed(1)+","+pt[1].toFixed(1)).join(" ");
+  const dots = p.internet_trend.map((v,i)=> v===null?"":`<circle cx="${x(i)}" cy="${y(v).toFixed(1)}" r="4" fill="var(--accent)" stroke="var(--surface-1)" stroke-width="2"/>`).join("");
+  const labels = years.map((yr,i)=>`<text class="axis-label" x="${x(i)}" y="${h-6}" text-anchor="middle">${yr}</text>`).join("");
+  trendEl.innerHTML = `<p class="card-sub" style="margin-bottom:8px;">${t('drawer_trend_title')}</p>
+    <svg class="chart" viewBox="0 0 ${w} ${h}"><line class="baseline" x1="${padL}" x2="${w-padR}" y1="${h-padB}" y2="${h-padB}"/>
+    <path class="line-path" d="${path}" stroke="var(--accent)"/>${dots}${labels}</svg>`;
+
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawer-backdrop').classList.add('open');
+}
+
+document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+document.getElementById('drawer-backdrop').addEventListener('click', closeDrawer);
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawer-backdrop').classList.remove('open');
+}
+
+document.getElementById('view-toggle').addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  document.querySelectorAll('#view-toggle button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const view = btn.dataset.view;
+  document.getElementById('view-grid').style.display = view==='grid' ? '' : 'none';
+  document.getElementById('view-table').style.display = view==='table' ? '' : 'none';
+  if(view==='table') renderTable();
+});
+
+function renderExplorer(){
+  renderMetricSelect();
+  renderScale();
+  renderCartogram();
+  renderRankedList();
+  if(document.getElementById('view-table').style.display !== 'none') renderTable();
+}
+
+/* ============ Tab nav ============ */
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn[data-tab]').forEach(b=> b.classList.toggle('active', b.dataset.tab===tab));
+  document.querySelectorAll('.tab-panel').forEach(p=> p.classList.toggle('active', p.id==='tab-'+tab));
+  window.scrollTo({top:0, behavior:'instant'});
+}
+document.getElementById('tab-nav-inner').addEventListener('click', e=>{
+  const btn = e.target.closest('.tab-btn[data-tab]');
+  if(!btn) return;
+  switchTab(btn.dataset.tab);
+});
+
+/* ============ Province profile ============ */
+const PROFILE_METRICS = [
+  { key: "internet_all", label: "Internet access", unit: "%" },
+  { key: "mobile_all", label: "Mobile ownership", unit: "%" },
+  { key: "computer_all", label: "Computer use", unit: "%" },
+  { key: "gap_urban_rural", label: "Urban−rural gap", unit: "pp" },
+  { key: "gap_gender", label: "Gender gap", unit: "pp" },
+  { key: "signal_none_share", label: "Villages with no signal", unit: "%" },
+  { key: "facility_working_share", label: "Facilities working", unit: "%" },
+  { key: "telecom_exp_share", label: "Telecom share of spending", unit: "%" },
+  { key: "productive_use_index", label: "Productive use index", unit: "%" },
+  { key: "freq_daily", label: "Daily access rate", unit: "%" },
+  { key: "media_laptop", label: "Laptop/computer access", unit: "%" },
+];
+
+function populateProfileSelect(){
+  const sel = document.getElementById('profile-select');
+  sel.innerHTML = ISLANDS.map(island => {
+    const opts = DATA.provinces
+      .filter(p=>p.island===island)
+      .slice()
+      .sort((a,b)=>a.name.localeCompare(b.name))
+      .map(p=>`<option value="${p.code}">${p.name}</option>`).join("");
+    return `<optgroup label="${island}">${opts}</optgroup>`;
+  }).join("");
+  sel.addEventListener('change', ()=> renderProfile(sel.value));
+}
+
+function tripleLineChart(el, years, series, labels, colors, unit){
+  const w = 700, h = 210, padL = 34, padR = 74, padT = 14, padB = 26;
+  const allVals = series.flat().filter(v=>v!==null);
+  let min = Math.min(0, ...allVals), max = Math.max(...allVals);
+  max = max + (max-min)*0.15;
+  const x = i => padL + (i/(years.length-1)) * (w - padL - padR);
+  const y = v => (h - padB) - ((v - min)/(max - min)) * (h - padB - padT);
+
+  function pathFor(s){
+    return s.map((v,i)=> v===null ? null : [x(i), y(v)]).filter(Boolean)
+      .map((p,i)=> (i===0?"M":"L")+p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ");
+  }
+  const gridLines = [0,1,2,3].map(k=>{
+    const gv = min + (max-min)*k/3;
+    const gy = y(gv);
+    return `<line class="gridline" x1="${padL}" x2="${w-padR}" y1="${gy.toFixed(1)}" y2="${gy.toFixed(1)}"/>
+      <text class="axis-label" x="${w-padR+8}" y="${(gy+3.5).toFixed(1)}">${gv.toFixed(0)}${unit}</text>`;
+  }).join("");
+  const xLabels = years.map((yr,i)=> `<text class="axis-label" x="${x(i)}" y="${h-6}" text-anchor="middle">${yr}</text>`).join("");
+
+  function dots(s, color, label){
+    return s.map((v,i)=>{
+      if(v===null) return "";
+      return `<circle class="end-dot" cx="${x(i)}" cy="${y(v).toFixed(1)}" r="4" fill="${color}"
+        onmouseenter="window.__ttEnter(event,'${years[i]} &middot; ${label}','${v.toFixed(2)}')" onmouseleave="window.__ttLeave()"></circle>`;
+    }).join("");
+  }
+
+  const legend = `<div class="legend">${labels.map((l,i)=>`<span class="legend-item"><span class="legend-line" style="background:${colors[i]}"></span>${l}</span>`).join("")}</div>`;
+  const lastLabels = series.map((s,i)=>{
+    const lastIdx = [...s].reverse().findIndex(v=>v!==null);
+    if(lastIdx===-1) return "";
+    const idx = s.length-1-lastIdx;
+    const v = s[idx];
+    return `<text class="end-label" x="${x(idx)+10}" y="${y(v)+4}" fill="${colors[i]}">${v.toFixed(1)}${unit}</text>`;
+  }).join("");
+
+  el.innerHTML = `${legend}
+  <svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
+    <line class="baseline" x1="${padL}" x2="${w-padR}" y1="${y(Math.max(0,min)).toFixed(1)}" y2="${y(Math.max(0,min)).toFixed(1)}"/>
+    ${gridLines}
+    ${xLabels}
+    ${series.map((s,i)=>`<path class="line-path" d="${pathFor(s)}" stroke="${colors[i]}"/>`).join("")}
+    ${series.map((s,i)=>dots(s, colors[i], labels[i])).join("")}
+    ${lastLabels}
+  </svg>`;
+}
+
+function rangeRow(metric, p){
+  const vals = DATA.provinces.map(pr=>pr[metric.key]).filter(v=>v!==null && v!==undefined);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const span = (max-min) || 1;
+  const v = p[metric.key];
+  const islandAvg = DATA.national.island_avg[p.island][metric.key];
+  const natAvg = DATA.national.national_avg[metric.key];
+  const pct = x => x===null||x===undefined ? null : Math.max(0, Math.min(100, ((x-min)/span)*100));
+  const vPct = pct(v), islPct = pct(islandAvg), natPct = pct(natAvg);
+  const rankKey = `rank_${metric.key}`;
+  const rankTxt = p[rankKey] ? `#${p[rankKey]} ${t('word_of')} ${p[rankKey+'_of']}` : "";
+  return `<div class="range-row">
+    <div class="rl-label">${t('metric_'+metric.key)}</div>
+    <div class="rl-track">
+      <div class="rl-line"></div>
+      ${vPct!==null ? `<div class="rl-fill" style="width:${vPct}%"></div>` : ""}
+      ${natPct!==null ? `<div class="rl-tick" style="left:${natPct}%" title="${t('avg_national')} ${natAvg}${metric.unit}"></div>` : ""}
+      ${islPct!==null ? `<div class="rl-tick island" style="left:${islPct}%" title="${t('avg_island',p.island)} ${islandAvg}${metric.unit}"></div>` : ""}
+      ${vPct!==null ? `<div class="rl-marker" style="left:${vPct}%" title="${p.name} ${v}${metric.unit}"></div>` : ""}
+    </div>
+    <div class="rl-value">${v===null||v===undefined?'n/a':v.toFixed(1)+metric.unit}<br><span style="font-weight:400;color:var(--ink-3);font-size:10.5px;">${rankTxt}</span></div>
+  </div>`;
+}
+
+function compareKpi(metricKey, p, key, unit){
+  const v = p[key];
+  const nat = DATA.national.national_avg[key];
+  const isl = DATA.national.island_avg[p.island][key];
+  const rank = p[`rank_${key}`], rankOf = p[`rank_${key}_of`];
+  return `<div class="compare-kpi">
+    <div class="lbl">${t('metric_'+metricKey)}</div>
+    <div class="val">${v===null?'n/a':v.toFixed(1)}<span class="unit">${unit}</span></div>
+    <div class="refs">
+      <span>${t('avg_national')} &nbsp;<b>${nat!==null&&nat!==undefined?nat.toFixed(1)+unit:'n/a'}</b></span>
+      <span>${t('avg_island',p.island)} &nbsp;<b>${isl!==null&&isl!==undefined?isl.toFixed(1)+unit:'n/a'}</b></span>
+    </div>
+    ${rank?`<div class="rank-note">${t('rank_of_provinces', rank, rankOf)}</div>`:""}
+  </div>`;
+}
+
+function renderProfile(code){
+  const p = DATA.provinces.find(pr=>pr.code===code);
+  if(!p) return;
+  const years = DATA.national.years;
+  const el = document.getElementById('profile-content');
+
+  const badgeColor = colorForValue(METRICS.find(m=>m.key==='inequality_index'), p.inequality_index);
+
+  el.innerHTML = `
+    <div class="profile-header">
+      <h2>${p.name}</h2>
+      <span class="rank-pill" style="background:${badgeColor}">${t('profile_rank_label', p.inequality_rank, DATA.provinces.length)}</span>
+    </div>
+    <p class="profile-sub">${p.island} &middot; index ${p.inequality_index!==null?p.inequality_index.toFixed(2):'n/a'} ${t('profile_index_note')}</p>
+
+    <div class="divide-group">
+      <div class="divide-group-head">
+        <h2>${t('group_access')}</h2>
+        <span class="divide-tier">${t('tier_first')}</span>
+      </div>
+
+      <div class="compare-kpi-row">
+        ${compareKpi("internet_all", p, "internet_all", "%")}
+        ${compareKpi("gap_urban_rural", p, "gap_urban_rural", " pp")}
+        ${compareKpi("gap_gender", p, "gap_gender", " pp")}
+        ${compareKpi("signal_none_share", p, "signal_none_share", "%")}
+      </div>
+
+      <div class="card" style="margin-bottom:24px;">
+        <h3>${t('profile_trend_title')}</h3>
+        <p class="card-sub">${t('profile_trend_sub', p.name)}</p>
+        <div id="profile-trend"></div>
+      </div>
+
+      <div class="card" style="margin-bottom:24px;">
+        <h3>${t('profile_compare_title', p.name)}</h3>
+        <p class="card-sub">${t('profile_compare_sub')}</p>
+        <div class="range-legend">
+          <span class="rli"><span class="dot" style="background:var(--accent)"></span>${p.name}</span>
+          <span class="rli"><span class="tickmark" style="background:var(--ink-3)"></span>${t('avg_national')}</span>
+          <span class="rli"><span class="tickmark" style="background:var(--deficit)"></span>${t('avg_island', p.island)}</span>
+        </div>
+        ${PROFILE_METRICS.map(m=>rangeRow(m,p)).join("")}
+      </div>
+
+      <div class="panel-grid">
+        <div class="card">
+          <h3>${t('profile_signal_title')}</h3>
+          <p class="card-sub">${t('card_signal_sub')}</p>
+          <div id="profile-signal-bar"></div>
+          <div class="supply-legend" id="profile-signal-legend"></div>
+        </div>
+        <div class="card">
+          <h3>${t('profile_facility_title')}</h3>
+          <p class="card-sub">${t('by_condition')}</p>
+          <div id="profile-facility-bar"></div>
+          <div class="supply-legend" id="profile-facility-legend"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divide-group" style="margin-bottom:0;">
+      <div class="divide-group-head">
+        <h2>${t('group_usage')}</h2>
+        <span class="divide-tier">${t('tier_second')}</span>
+      </div>
+
+      <div class="card" style="margin-bottom:24px;">
+        <h3>${t('profile_purpose_title', p.name)}</h3>
+        <p class="card-sub">${t('profile_purpose_sub')}</p>
+        <div id="profile-purpose-list" class="ranked-list"></div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="card">
+          <h3>${t('card_freq_title')}</h3>
+          <p class="card-sub">${t('profile_freq_sub2')}</p>
+          <div id="profile-freq-bar"></div>
+          <div class="supply-legend" id="profile-freq-legend"></div>
+        </div>
+        <div class="card">
+          <h3>${t('card_media_title')}</h3>
+          <p class="card-sub">${t('profile_media_sub2')}</p>
+          <div id="profile-media-bars"></div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  tripleLineChart(document.getElementById('profile-trend'), years,
+    [p.internet_trend, p.mobile_trend, p.computer_trend],
+    [t('short_internet'), t('short_mobile'), t('short_computer')],
+    ["var(--accent)", "var(--deficit)", "var(--good)"], "%");
+
+  supplyBar(
+    document.getElementById('profile-signal-bar'), document.getElementById('profile-signal-legend'),
+    [
+      {label:t('signal_very_strong'), pct: p.signal_very_strong_share ?? 0, color: "var(--seq-650)"},
+      {label:t('signal_strong'), pct: p.signal_strong_only_share ?? 0, color: "var(--seq-450)"},
+      {label:t('signal_weak'), pct: p.signal_weak_share ?? 0, color: "var(--seq-250)"},
+      {label:t('signal_none'), pct: p.signal_none_share ?? 0, color: "var(--deficit)"},
+    ]
+  );
+  supplyBar(
+    document.getElementById('profile-facility-bar'), document.getElementById('profile-facility-legend'),
+    [
+      {label:t('facility_working'), pct: p.facility_working_share ?? 0, color: "var(--good)"},
+      {label:t('facility_jarang'), pct: p.facility_jarang_share ?? 0, color: "var(--warning)"},
+      {label:t('facility_not_working'), pct: p.facility_not_working_share ?? 0, color: "var(--critical)"},
+      {label:"", pct: 0, color: "transparent"},
+    ]
+  );
+
+  renderPurposeRankedList('profile-purpose-list', provincePurposeObj(p));
+  renderFreq('profile-freq-bar', 'profile-freq-legend', provinceFreqObj(p));
+  renderMedia('profile-media-bars', provinceMediaObj(p));
+}
+
+/* ============ Init ============ */
+document.getElementById('lang-toggle').addEventListener('click', e=>{
+  const btn = e.target.closest('.lang-btn');
+  if(!btn) return;
+  setLang(btn.dataset.lang);
+});
+
+applyStaticI18n();
+renderKPIs();
+lineChart(document.getElementById('chart-urbanrural'), DATA.national.years,
+  DATA.national.series.internet_urban, DATA.national.series.internet_rural,
+  t('short_urban'), t('short_rural'), "var(--accent)", "var(--deficit)", "%");
+lineChart(document.getElementById('chart-gender'), DATA.national.years,
+  DATA.national.series.internet_male, DATA.national.series.internet_female,
+  t('short_male'), t('short_female'), "var(--accent)", "var(--deficit)", "%");
+renderSupply();
+renderExplorer();
+populateProfileSelect();
+document.getElementById('profile-select').value = "35";
+renderProfile("35");
+renderUsageTab();
+</script>

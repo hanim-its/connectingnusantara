@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id" data-base="../" data-page="riset/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riset &amp; Publikasi · Connecting Nusantara</title>
+<meta name="description" content="Nusantara Data 2.0: tujuan, metode, arsitektur sistem, temuan kualitas data, dan publikasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; align-items: stretch; margin: 12px 0; }
+  .flow div { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; font-size: .88rem; position: relative; }
+  .flow div strong { display: block; font-size: .92rem; margin-bottom: 2px; }
+  .pub { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 0 0 16px; }
+  .pub .t { font-weight: 650; }
+  ol.findings li { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+  <p class="eyebrow">Strategic Research Grant (SRG) Tipe D 2026 · DRPM ITS</p>
+  <h1>Nusantara Data 2.0</h1>
+  <p class="muted" style="max-width:780px"><strong>Data Warehouse dan Dashboard untuk Pemantauan Kesenjangan Digital di Indonesia.</strong>
+    Data akses digital di Indonesia tersebar, tidak terstandar, dan kadang saling bertentangan. Penelitian ini membangun portal data
+    terbuka dan terintegrasi untuk mendukung studi, pemantauan, dan perumusan kebijakan kesetaraan digital (SDG 10).</p>
+
+  <section>
+    <h2>Pertanyaan penelitian</h2>
+    <ol>
+      <li>Bagaimana menyusun metadata data akses digital BPS berdasarkan kaidah Data Catalog Vocabulary (DCAT)?</li>
+      <li>Apa kebutuhan dan fitur portal data terbuka yang ramah pengguna untuk analisis kesenjangan digital?</li>
+      <li>Bagaimana dashboard dirancang agar mendukung visualisasi, unduhan, dan interaksi dengan data, sambil menjaga asal-usul (provenance) dan keandalan data?</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Arsitektur sistem</h2>
+    <div class="flow">
+      <div><strong>1. Sumber</strong>PDF BPS <em>Statistik Telekomunikasi Indonesia 2024</em>: 72 lampiran, 6 tabel, 21 gambar</div>
+      <div><strong>2. Ekstraksi</strong>pdfplumber, penyaringan watermark, rekonstruksi tabel dari posisi kata</div>
+      <div><strong>3. Standardisasi</strong>kode wilayah BPS, label kolom terverifikasi, koreksi format, glosarium</div>
+      <div><strong>4. Metadata</strong>inventaris DCAT 90 dataset (CSV + JSON-LD)</div>
+      <div><strong>5. Warehouse</strong>skema bintang SQLite, ETL + 8 uji kualitas, 13.788 fakta</div>
+      <div><strong>6. Penyajian</strong>Data Explorer, Analisis, Katalog, unduhan terbuka</div>
+    </div>
+    <p class="small muted">Seluruh skrip dapat dijalankan ulang untuk edisi publikasi berikutnya; setiap angka dapat ditelusuri ke halaman sumbernya.</p>
+  </section>
+
+  <section id="kualitas">
+    <h2>Temuan kualitas data</h2>
+    <p class="muted" style="max-width:780px">Membangun warehouse sekaligus menjadi audit terhadap data sumber. Temuan ini memperkuat argumen penelitian:
+      data publik perlu metadata dan pemeriksaan konsistensi sebelum dipakai untuk kebijakan.</p>
+    <ol class="findings">
+      <li><strong>Inkonsistensi di dalam satu publikasi.</strong> Jumlah ISP tahun 2021 tercatat 611 (Gambar 18) dan 828 (Tabel 6).
+        Kepemilikan telepon seluler perdesaan 2021 tercatat 57,42% (Gambar 5) dan 57,24% (Lampiran 6). Dari 35 pasangan angka yang dicek silang, 33 cocok.</li>
+      <li><strong>Format angka tidak seragam.</strong> Sebagian sel di Lampiran 18 dan 36 memakai titik desimal, bukan koma; tanpa penanganan khusus,
+        96,94 terbaca sebagai 9.694. 262 nilai dikoreksi.</li>
+      <li><strong>Struktur tabel bermasalah.</strong> Indeks kolom tercetak ganda (Lampiran 43–45), label baris keliru (Lampiran 71), judul tidak sesuai isi
+        (Lampiran 72 berisi jumlah pelanggan, bukan penyelenggara), dan nama provinsi tertukar (kode 53 tercetak “Nusa Tenggara Barat”).</li>
+      <li><strong>Watermark sebagai teks.</strong> Tanda air PDF ikut terbaca sebagai karakter dan merusak angka bila diekstrak biasa.</li>
+      <li><strong>Pemekaran wilayah.</strong> Empat provinsi baru di Papua (2022) hanya memiliki data 2023–2024, sehingga deret waktu perlu harmonisasi.</li>
+    </ol>
+  </section>
+
+  <section id="publikasi">
+    <h2>Publikasi</h2>
+    <div class="pub"><div class="t">What Drives Internet Adoption, and Is It Linked to Economic Development? Panel Evidence from Four Income Tiers, 2006–2024</div>
+      <div class="small muted">Astuti, H. M., dkk. · Disiapkan untuk <em>Information Technology for Development</em> (Q1). <span class="tag warn">dalam persiapan submisi</span></div></div>
+    <p class="small muted">Publikasi terkait sebelumnya:</p>
+    <div class="pub"><div class="t">Uneven progress: Analyzing the factors behind digital technology adoption rates in Sub-Saharan Africa (SSA)</div>
+      <div class="small muted"><em>Data &amp; Policy</em>, 2025 · <a href="https://doi.org/10.1017/dap.2024.89">doi:10.1017/dap.2024.89</a></div></div>
+    <div class="pub"><div class="t">Why broadband availability differs across states in the US? Exploring the role of state administrative capacity</div>
+      <div class="small muted">dg.o 2025 · <a href="https://doi.org/10.59490/dgo.2025.1038">doi:10.59490/dgo.2025.1038</a></div></div>
+    <div class="pub"><div class="t">Towards the National Higher Education Database in Indonesia: Challenges to Data Governance Implementation from the Perspective of a Public University</div>
+      <div class="small muted">Procedia Computer Science, 2024 · <a href="https://doi.org/10.1016/j.procs.2024.03.130">doi:10.1016/j.procs.2024.03.130</a></div></div>
+  </section>
+
+  <section id="versi">
+    <h2>Versi platform</h2>
+    <div class="grid cols-2">
+      <div class="card"><span class="tag">Saat ini</span><h3 style="margin-top:8px">Nusantara Data 2.0 (2026)</h3>
+        <p class="small muted">Seluruh 90 dataset publikasi BPS, data warehouse, metadata DCAT, Data Explorer, dan unduhan terbuka. Didanai SRG Tipe D 2026.</p>
+        <a href="../explorer/">Buka Data Explorer</a></div>
+      <div class="card"><span class="tag warn">Arsip</span><h3 style="margin-top:8px">Nusantara Data 1.0 (2025)</h3>
+        <p class="small muted">Prototipe pertama dashboard akses internet tingkat provinsi (48 dataset), dikembangkan oleh mahasiswa Departemen Sistem Informasi ITS.</p>
+        <a href="../arsip-v1/">Lihat arsip versi 1.0</a></div>
+    </div>
+  </section>
+</div>
+</main>
+<script src="../assets/site.js"></script>
+</body>
+</html>

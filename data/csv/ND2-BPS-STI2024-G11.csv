@@ -1,0 +1,3 @@
+dataset_id,kode_wilayah,wilayah,tahun,kategori,nilai,satuan,keterangan_kosong,sumber
+ND2-BPS-STI2024-G11,00,Indonesia,2024,Laki-laki / Male [persen],52.04,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 11 (hlm. PDF 48)"
+ND2-BPS-STI2024-G11,00,Indonesia,2024,Perempuan / Female [persen],47.96,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 11 (hlm. PDF 48)"

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id" data-base="../" data-page="katalog/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katalog Data · Connecting Nusantara</title>
+<meta name="description" content="Katalog 90 dataset kesenjangan digital Indonesia berstandar DCAT, dengan unduhan CSV dan glosarium BPS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .filters { display: grid; gap: 10px; grid-template-columns: 2fr 1fr 1fr; margin: 16px 0; }
+  @media (max-width: 720px) { .filters { grid-template-columns: 1fr; } }
+  .ds { border-bottom: 1px solid var(--border); padding: 14px 0; }
+  .ds:target { background: var(--accent-soft); border-radius: 8px; padding: 14px; }
+  .ds h3 { margin: 0 0 4px; font-size: 1rem; }
+  .ds .facts { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .82rem; color: var(--muted); }
+  details summary { cursor: pointer; font-weight: 600; }
+  dl.gloss dt { font-weight: 650; margin-top: 12px; }
+  dl.gloss dd { margin: 2px 0 0; color: var(--muted); font-size: .92rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+  <p class="eyebrow">Data terbuka</p>
+  <h1>Katalog Data</h1>
+  <p class="muted" style="max-width:760px">Setiap dataset dideskripsikan dengan metadata berstandar <a href="https://www.w3.org/TR/vocab-dcat-3/">W3C Data Catalog Vocabulary (DCAT)</a>:
+    judul dwibahasa, tema, unit observasi, satuan, cakupan waktu dan wilayah, sumber, lisensi, dan distribusi.</p>
+  <div class="grid cols-3">
+    <div class="card"><h3>Seluruh katalog</h3><p class="small muted">Metadata semua dataset dalam format yang dapat dibaca mesin.</p>
+      <a href="../data/catalog.jsonld" download>catalog.jsonld (DCAT)</a> · <a href="../data/catalog.json" download>catalog.json</a></div>
+    <div class="card"><h3>Data warehouse</h3><p class="small muted">Basis data SQLite skema bintang: dimensi dataset, wilayah, tahun, kategori; 13.788 fakta; view analitis.</p>
+      <a href="../data/nusantara_data_dw.sqlite" download>nusantara_data_dw.sqlite (4,6 MB)</a></div>
+    <div class="card"><h3>Lisensi &amp; sitasi</h3><p class="small muted">Data publik BPS, diolah ulang. Cantumkan: “BPS, Statistik Telekomunikasi Indonesia 2024; diolah oleh Nusantara Data (ITS).”</p></div>
+  </div>
+
+  <div class="filters">
+    <input type="search" id="q" placeholder="Cari dataset (mis. internet, desa, sinyal, ISP)…" aria-label="Cari dataset">
+    <select id="f-theme" aria-label="Filter tema"><option value="">Semua tema</option></select>
+    <select id="f-unit" aria-label="Filter unit observasi"><option value="">Semua unit observasi</option></select>
+  </div>
+  <p class="small muted" id="count"></p>
+  <div id="list"></div>
+
+  <section style="margin-top:40px">
+    <h2>Glosarium konsep (BPS)</h2>
+    <p class="muted small">Definisi resmi dari Catatan Teknis publikasi sumber, dipakai sebagai kosakata baku katalog.</p>
+    <dl class="gloss" id="gloss"></dl>
+  </section>
+</div>
+</main>
+<script src="../assets/site.js"></script>
+<script>
+(async function () {
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let cat = [], gl = [];
+  try { [cat, gl] = await Promise.all([fetch("../data/catalog.json").then(r => r.json()), fetch("../data/glossary.json").then(r => r.json())]); }
+  catch (e) { document.getElementById("list").innerHTML = "<p class='muted'>Katalog tidak dapat dimuat.</p>"; return; }
+  const fill = (id, vals) => document.getElementById(id).insertAdjacentHTML("beforeend", [...new Set(vals)].map(v => `<option>${esc(v)}</option>`).join(""));
+  fill("f-theme", cat.map(d => d.theme)); fill("f-unit", cat.map(d => d.unit_of_observation));
+  function draw() {
+    const q = document.getElementById("q").value.toLowerCase(), t = document.getElementById("f-theme").value, u = document.getElementById("f-unit").value;
+    const rows = cat.filter(d => (!t || d.theme === t) && (!u || d.unit_of_observation === u) && (!q || (d.title_id + " " + d.title_en + " " + d.categories.join(" ")).toLowerCase().includes(q)));
+    document.getElementById("count").textContent = `${rows.length} dari ${cat.length} dataset`;
+    document.getElementById("list").innerHTML = rows.map(d => `<div class="ds" id="${d.identifier}">
+      <h3>${esc(d.title_id)}</h3><div class="small muted" style="margin-bottom:6px"><em>${esc(d.title_en)}</em></div>
+      <div class="facts"><span class="tag">${esc(d.theme)}</span><span>${esc(d.identifier)}</span><span>${esc(d.unit_of_observation)}</span>
+        <span>${esc(d.spatial)}</span><span>${d.temporal_start === d.temporal_end ? d.temporal_start : d.temporal_start + "–" + d.temporal_end}</span>
+        <span>Satuan: ${esc(d.measure_unit)}</span><span>${d.n_values} nilai</span></div>
+      <details style="margin-top:6px"><summary class="small">Metadata &amp; unduhan</summary>
+        <table style="margin-top:6px"><tbody>
+          <tr><th>Sumber</th><td>${esc(d.source_survey)} · ${esc(d.source_publication)}</td></tr>
+          <tr><th>Penerbit</th><td>${esc(d.publisher)}</td></tr>
+          <tr><th>Struktur</th><td>${esc(d.table_structure)} · ${esc(d.column_label_status)}</td></tr>
+          <tr><th>Kategori</th><td>${d.categories.map(esc).join(" · ")}</td></tr>
+          <tr><th>Lisensi</th><td>${esc(d.license)}</td></tr>
+          <tr><th>Diperbarui</th><td>${esc(d.modified)}</td></tr>
+          <tr><th>Distribusi</th><td><a href="../${d.csv}" download>CSV</a> · <a href="../${d.json}">JSON</a> · <a href="../explorer/#ds=${d.identifier}">Lihat di Explorer</a></td></tr>
+        </tbody></table></details></div>`).join("");
+  }
+  ["q", "f-theme", "f-unit"].forEach(id => document.getElementById(id).addEventListener("input", draw));
+  draw();
+  if (location.hash) { const el = document.getElementById(location.hash.slice(1)); if (el) { el.querySelector("details").open = true; el.scrollIntoView(); } }
+  document.getElementById("gloss").innerHTML = gl.map(g => `<dt>${esc(g.definition_id.split(/ adalah | mencakup | atau /)[0])}</dt><dd>${esc(g.definition_id)}<br><em>${esc(g.definition_en)}</em></dd>`).join("");
+})();
+</script>
+</body>
+</html>

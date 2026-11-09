@@ -1,0 +1,3531 @@
+{
+ "@context": {
+  "dcat": "http://www.w3.org/ns/dcat#",
+  "dct": "http://purl.org/dc/terms/",
+  "foaf": "http://xmlns.com/foaf/0.1/",
+  "vcard": "http://www.w3.org/2006/vcard/ns#"
+ },
+ "@type": "dcat:Catalog",
+ "dct:title": "Nusantara Data 2.0 — Katalog Data Kesenjangan Digital Indonesia",
+ "dct:publisher": {
+  "@type": "foaf:Organization",
+  "foaf:name": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+ },
+ "foaf:homepage": "https://www.connectingnusantara.com",
+ "dct:language": [
+  "id",
+  "en"
+ ],
+ "dcat:dataset": [
+  {
+   "@id": "ND2-BPS-STI2024-L01",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L01",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Menggunakan Komputer di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Used a Computer in Urban Areas by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 1",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_01.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L02",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L02",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Menggunakan Komputer di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Used a Computer in Rural Areas by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 2",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_02.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L03",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L03",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Menggunakan Komputer Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Used a Computer by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 3",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_03.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L04",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L04",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Menggunakan Komputer Menurut Provinsi dan Jenis Kelamin, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Used a Computer by Province and Gender, 2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 4",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L05",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L05",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Memiliki/Menguasai Telepon Seluler di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Owned or Had Full Access to Cellular Mobile Telephone in Urban Areas by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 5",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_05.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L06",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L06",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Memiliki/Menguasai Telepon Seluler di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Owned or Had Full Access to Cellular Mobile Telephone in Rural Areas by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 6",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_06.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L07",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L07",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Memiliki/Menguasai Telepon Seluler Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Owned or Had Full Access to Cellular Mobile Telephone by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 7",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_07.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L08",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L08",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province, 2021–2024 .....................................................................................................................................74 xv"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 8",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_08.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L09",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L09",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population who Accessed the Internet in Rural Areas by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 9",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_09.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L10",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L10",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 10",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_10.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L11",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L11",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Frekuensi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province and Frequency of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 11",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L12",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L12",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Frekuensi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Rural Areas by Province and Frequency of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 12",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L13",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L13",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Frekuensi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet by Province and Frequency of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 13",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L14",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L14",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Jenis Kelamin, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet by Province and Gender, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 14",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L15",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L15",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk Laki-laki yang Mengakses Internet Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Male Population Who Accessed the Internet by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 15",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_15.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L16",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L16",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk Perempuan yang Mengakses Internet Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Female Population Who Accessed the Internet by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 16",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_16.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L17",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L17",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Lokasi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province and Location of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 17",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L18",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L18",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Lokasi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Rural Areas by Province and Location of Internet Access, 2024 ................................................................................................84 xvi"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 18",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L19",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L19",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Lokasi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet by Province and Location of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 19",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L20",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L20",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Media Mengakses, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province and Type of Access Media, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 20",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L21",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L21",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Media Mengakses, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Rural Areas by Province and Type of Access Media, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 21",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L22",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L22",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Media Mengakses, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet by Province and Type of Access Media, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 22",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L23",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L23",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Tujuan Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province and Purpose of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 23",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L24",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L24",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Tujuan Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet in Rural Areas by Province and Purpose of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 24",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L25",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L25",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Tujuan Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of the Population Who Accessed the Internet by Province and Purpose of Internet Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 25",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L26",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L26",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Kelompok Umur, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of The Population Who Accessed the Internet by Province and Age Group, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 26",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L27",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L27",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Partisipasi Sekolah, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of The Population Who Accessed the Internet by Province and School Participation, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 27",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L28",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L28",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Jenjang Pendidikan yang Sedang Diduduki, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of The Population Who Accessed the Internet by Province and Level of Education, 2024..........................................................................................................................100 xvii"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 28",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L29",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L29",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Mengakses Internet Menurut Provinsi dan Jenjang Pendidikan Tertinggi yang Ditamatkan, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of The Population Who Accessed the Internet by Province and Highest Level of Education Attained, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 29",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L30",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L30",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Komputer di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Computer in Urban Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 30",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_30.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L31",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L31",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Komputer di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Computer in Rural Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 31",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_31.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L32",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L32",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Komputer Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Computer by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 32",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_32.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L33",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L33",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai TV Layar Datar Minimal 30 inch Menurut Provinsi dan Klasifikasi Daerah, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Flat Screen TV (at least"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 33",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L34",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L34",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Tetap Kabel di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Fixed-Line Telephone in Urban Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 34",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_34.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L35",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L35",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Tetap Kabel di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Fixed-Line Telephone in Rural Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 35",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_35.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L36",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L36",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Tetap Kabel Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Fixed-Line Telephone by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 36",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_36.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L37",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L37",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Seluler di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Mobile Cellular Telephone in Urban Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 37",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_37.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L38",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L38",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Seluler di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Mobile Cellular Telephone in Rural Area by Province, 2021–2024 .....................................................................110 xviii"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 38",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_38.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L39",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L39",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Seluler Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Owned or Had Full Access to the Mobile Cellular Telephone by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 39",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_39.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L40",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L40",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Urban Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 40",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_40.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L41",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L41",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Rural Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 41",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_41.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L42",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L42",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 42",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_42.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L43",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L43",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Lokasi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Urban Area by Province and Location of Accessing the Internet, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 43",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L44",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L44",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Lokasi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Rural Area by Province and Location of Accessing the Internet, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 44",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L45",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L45",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet Menurut Provinsi dan Lokasi Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet by Province and Location of Accessing the Internet, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 45",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L46",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L46",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Media Mengakses, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Urban Area by Province and Media of Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 46",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L47",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L47",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Media Mengakses, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Rural Area by Province and Media of Access, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 47",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L48",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L48",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet Menurut Provinsi dan Media Mengakses, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet by Province and Media of Access, 2024 ............................................................................................................................................120 xix"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 48",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L49",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L49",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perkotaan Menurut Provinsi dan Tujuan Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Urban Area by Province and the Purpose of Accessing the Internet, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 49",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L50",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L50",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet di Daerah Perdesaan Menurut Provinsi dan Tujuan Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet in Rural Area by Province and the Purpose of Accessing the Internet, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 50",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L51",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L51",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Pernah Mengakses Internet Menurut Provinsi dan Tujuan Mengakses Internet, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households That Accessed the Internet by Province and the Purpose of Accessing the Internet, 2024"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 51",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L52",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L52",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi di Daerah Perkotaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households with Telecommunication Expenditure in Urban Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 52",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_52.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L53",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L53",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi di Daerah Perdesaan Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households with Telecommunication Expenditure in Rural Area by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 53",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_53.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L54",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L54",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi Menurut Provinsi, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Households with Telecommunication Expenditure by Province, 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 54",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_54.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L55",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L55",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Rata-rata Konsumsi Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi per Bulan di Daerah Perkotaan Menurut Provinsi (rupiah), 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Average of Consumption of Households with Telecommunications Expenditure per Month in Urban Area by Province (rupiahs), 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 55",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_55.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L56",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L56",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Rata-rata Konsumsi Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi per Bulan di Daerah Perdesaan Menurut Provinsi (rupiah), 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Average of Consumption of Households with Telecommunications Expenditure per Month in Rural Area by Province (rupiahs), 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 56",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_56.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L57",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L57",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Rata-rata Konsumsi Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi per Bulan Menurut Provinsi (rupiah), 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Average of Consumption of Households with Telecommunications Expenditure per Month by Province (rupiahs), 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 57",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_57.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L58",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L58",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rata-rata Konsumsi Telekomunikasi Rumah Tangga Terhadap Konsumsi Total per Bulan di Daerah Perkotaan Menurut Provinsi (rupiah), 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Average of Household Telecommunications Consumptions Against Total Consumptions per Month in Urban Area by Province (rupiahs), 2021–2024 ..........................136 xx"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 58",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_58.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L59",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L59",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rata-rata Konsumsi Telekomunikasi Rumah Tangga Terhadap Konsumsi Total per Bulan di Daerah Perdesaan Menurut Provinsi (rupiah), 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Average of Household Telecommunications Consumptions Against Total Consumptions per Month in Rural Area by Province (rupiahs), 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 59",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_59.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L60",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L60",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rata-rata Konsumsi Telekomunikasi Rumah Tangga Terhadap Konsumsi Total per Bulan Menurut Provinsi (rupiah), 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage of Average of Household Telecommunications Consumptions Against Total Consumptions per Month by Province (rupiahs), 2021–2024"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 60",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_60.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L61",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L61",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan Berdasarkan Penerimaan Sinyal Telepon Seluler di Daerah Perkotaan Menurut Provinsi, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Cellular Phone Signal in Urban area by Province, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 61",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L62",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L62",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan Berdasarkan Penerimaan Sinyal Telepon Seluler di Daerah Perdesaan Menurut Provinsi, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Cellular Phone Signal in Rural area by Province, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 62",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L63",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L63",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan Berdasarkan Penerimaan Sinyal Telepon Seluler Menurut Provinsi, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Cellular Phone Signal by Province, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 63",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L64",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L64",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Menara BTS di Daerah Perkotaan Menurut Provinsi dan Penerimaan Sinyal Internet Telepon Seluler, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with BTS Tower in Urban Area by Province and Cellular Phone Internet Signal Reception, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 64",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L65",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L65",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Menara BTS di Daerah Perdesaan Menurut Provinsi dan Penerimaan Sinyal Internet Telepon Seluler, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with BTS Tower in Rural Area by Province and Cellular Phone Internet Signal Reception, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 65",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L66",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L66",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Menara BTS Menurut Provinsi dan Penerimaan Sinyal Internet Telepon Seluler, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with BTS Tower by Province and Cellular Phone Internet Signal Reception, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 66",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L67",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L67",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Fasilitas Internet di Kantor Desa/Lurah Menurut Provinsi dan Klasifikasi Daerah, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Internet Facility in Village Office by Province and Area Classification, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 67",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L68",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L68",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Fasilitas Internet di Kantor Desa/Lurah di Daerah Perkotaan Menurut Provinsi dan Kondisinya, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Internet Facility in Village Office in Urban Area by Province and the Condition, 2024 ....................................................................................................................146 xxi"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 68",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L69",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L69",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Fasilitas Internet di Kantor Desa/Lurah di Daerah Perdesaan Menurut Provinsi dan Kondisinya, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Internet Facility in Village Office in Rural Area by Province and the Condition, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 69",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L70",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L70",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Banyaknya Desa/Kelurahan yang Memiliki Fasilitas Internet di Kantor Desa/Lurah Menurut Provinsi dan Kondisinya, 2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Villages with Internet Facility in Village Office by Province and the Condition, 2024"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 70",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 38 provinsi",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/panel_long_enriched.csv (filter table_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L71",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L71",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Penyelenggara Telekomunikasi di Indonesia, 2022–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Telecommunication Providers in Indonesia, 2022–2024"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 71",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2022",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_71.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-L72",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-L72",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Penyelenggara Jaringan di Indonesia, 2021–2024"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Network Providers in Indonesia, 2021–2024 ..........................................................150 xxii"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Lampiran 72",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/tables_simple_wide/lampiran_72.csv",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-T01",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-T01",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Nilai Ekspor Barang Telekomunikasi menurut Kelompok Barang"
+    },
+    {
+     "@language": "en",
+     "@value": "Export Value of Telecommunication Goods by Commodity Group"
+    }
+   ],
+   "dcat:theme": "Ekonomi TIK / ICT economy",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Tabel 1 (hlm. PDF 59)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-T02",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-T02",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Nilai Impor Barang Telekomunikasi menurut Kelompok Barang"
+    },
+    {
+     "@language": "en",
+     "@value": "Import Value of Telecommunication Goods by Commodity Group"
+    }
+   ],
+   "dcat:theme": "Ekonomi TIK / ICT economy",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Tabel 2 (hlm. PDF 62)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-T03",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-T03",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Laju Pertumbuhan PDB Atas Dasar Harga Konstan menurut Lapangan Usaha"
+    },
+    {
+     "@language": "en",
+     "@value": "GDP Growth at Constant Price by Industry"
+    }
+   ],
+   "dcat:theme": "Ekonomi TIK / ICT economy",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Tabel 3 (hlm. PDF 63)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-T04",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-T04",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Distribusi Persentase PDB Atas Dasar Harga Berlaku menurut Lapangan Usaha"
+    },
+    {
+     "@language": "en",
+     "@value": "Percentage Distribution of GDP at Current Price by Industry"
+    }
+   ],
+   "dcat:theme": "Ekonomi TIK / ICT economy",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Tabel 4 (hlm. PDF 65)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-T06",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-T06",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Penyelenggara Telekomunikasi di Indonesia"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Telecommunication Providers in Indonesia"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Tabel 6 (hlm. PDF 74)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G02",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G02",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Komputer menurut Pulau"
+    },
+    {
+     "@language": "en",
+     "@value": "Households Owning a Computer by Island"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 2 (hlm. PDF 37)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2023",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 6 kelompok pulau",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G04",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G04",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Rumah Tangga yang Memiliki/Menguasai Telepon Tetap Kabel menurut Pulau"
+    },
+    {
+     "@language": "en",
+     "@value": "Households Owning a Fixed-Line Telephone by Island"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2023",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 6 kelompok pulau",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G05",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G05",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Persentase Penduduk yang Memiliki/Menguasai Telepon Seluler menurut Klasifikasi Daerah"
+    },
+    {
+     "@language": "en",
+     "@value": "Population Owning a Mobile Phone by Area"
+    }
+   ],
+   "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 5 (hlm. PDF 41)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2019",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G07",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G07",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Desa/Kelurahan menurut Penerimaan Sinyal Telepon Seluler dan Klasifikasi Daerah"
+    },
+    {
+     "@language": "en",
+     "@value": "Villages by Cellular Signal Reception and Area"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 7 (hlm. PDF 44)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G08",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G08",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Proporsi Desa/Kelurahan menurut Pulau dan Kekuatan Sinyal Telepon Seluler"
+    },
+    {
+     "@language": "en",
+     "@value": "Villages by Island and Signal Strength"
+    }
+   ],
+   "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 8 (hlm. PDF 45)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia, 6 kelompok pulau",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G11",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G11",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Komposisi Pengguna Internet menurut Jenis Kelamin"
+    },
+    {
+     "@language": "en",
+     "@value": "Internet Users by Gender (composition)"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 11 (hlm. PDF 48)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G12",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G12",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Komposisi Pengguna Internet menurut Generasi"
+    },
+    {
+     "@language": "en",
+     "@value": "Internet Users by Generation (composition)"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 12 (hlm. PDF 49)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G13",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G13",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Komposisi Pengguna Internet menurut Pendidikan Tertinggi"
+    },
+    {
+     "@language": "en",
+     "@value": "Internet Users by Highest Education (composition)"
+    }
+   ],
+   "dcat:theme": "Akses & penggunaan internet / Internet access & use",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 13 (hlm. PDF 49)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2024",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G17",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G17",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Komposisi Pengeluaran Rumah Tangga yang Memiliki Pengeluaran Telekomunikasi"
+    },
+    {
+     "@language": "en",
+     "@value": "Composition of Household Expenditure (households with telecom spending)"
+    }
+   ],
+   "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 17 (hlm. PDF 69)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2021",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G18",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G18",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Penyelenggara Jasa Internet (ISP)"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of Internet Service Providers"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 18 (hlm. PDF 76)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G19",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G19",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Pelanggan ISP"
+    },
+    {
+     "@language": "en",
+     "@value": "Number of ISP Subscribers"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 19 (hlm. PDF 77)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G20",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G20",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Pelanggan Telepon Tetap"
+    },
+    {
+     "@language": "en",
+     "@value": "Fixed-Telephone Subscribers"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 20 (hlm. PDF 78)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  },
+  {
+   "@id": "ND2-BPS-STI2024-G21",
+   "@type": "dcat:Dataset",
+   "dct:identifier": "ND2-BPS-STI2024-G21",
+   "dct:title": [
+    {
+     "@language": "id",
+     "@value": "Jumlah Pelanggan Telepon Seluler"
+    },
+    {
+     "@language": "en",
+     "@value": "Mobile Cellular Subscribers"
+    }
+   ],
+   "dcat:theme": "Industri telekomunikasi / Telecom industry",
+   "dct:publisher": "Badan Pusat Statistik (BPS)",
+   "dct:source": "Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 21 (hlm. PDF 79)",
+   "dct:temporal": {
+    "@type": "dct:PeriodOfTime",
+    "dcat:startDate": "2020",
+    "dcat:endDate": "2024"
+   },
+   "dct:spatial": "Indonesia",
+   "dcat:spatialResolutionInMeters": null,
+   "dct:issued": "2025",
+   "dct:modified": "2026-11-10",
+   "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Tim Nusantara Data, Departemen Sistem Informasi ITS"
+   },
+   "dcat:distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "dcat:downloadURL": "data_extracted/body_tables_figures.csv (filter dataset_id)",
+     "dcat:mediaType": "text/csv",
+     "dct:license": "Data publik BPS; wajib mencantumkan sumber (BPS)"
+    }
+   ]
+  }
+ ]
+}

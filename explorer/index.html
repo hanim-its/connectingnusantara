@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id" data-base="../" data-page="explorer/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Explorer · Connecting Nusantara</title>
+<meta name="description" content="Jelajahi 90 dataset kesenjangan digital Indonesia: peta provinsi, peringkat, tren, dan unduhan data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .controls { display: grid; gap: 12px; grid-template-columns: 1.2fr 2.4fr 1.6fr .8fr; align-items: end; }
+  .controls select { width: 100%; }
+  @media (max-width: 860px) { .controls { grid-template-columns: 1fr 1fr; } .controls .wide { grid-column: 1 / -1; } }
+  .ds-title { margin: 18px 0 2px; font-size: 1.25rem; }
+  .meta-line { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .85rem; color: var(--muted); margin-bottom: 14px; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; }
+  @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+  .tilemap { display: grid; grid-template-columns: repeat(18, 1fr); gap: 3px; }
+  .tile { aspect-ratio: 1; border-radius: 5px; display: grid; place-items: center; font-size: clamp(7px, 1.05vw, 11px); font-weight: 650;
+          cursor: pointer; border: 0; padding: 0; color: #08332b; background: var(--na); font-family: inherit; position: relative; }
+  .tile.dark-text { color: #fff; }
+  .tile[aria-pressed="true"] { outline: 2.5px solid var(--accent-2); outline-offset: 1px; z-index: 2; }
+  .tile:focus-visible { outline: 2.5px solid var(--text); }
+  .legend { display: flex; align-items: center; gap: 4px; font-size: .78rem; color: var(--muted); margin-top: 10px; flex-wrap: wrap; }
+  .legend span.sw { width: 26px; height: 10px; border-radius: 2px; display: inline-block; }
+  .tooltip { position: fixed; pointer-events: none; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: .8rem; z-index: 100; display: none; max-width: 240px; }
+  .rank { max-height: 560px; overflow-y: auto; }
+  .rank-row { display: grid; grid-template-columns: 22px minmax(0, 1fr) 70px; gap: 8px; align-items: center; padding: 3px 4px; font-size: .84rem; border-radius: 6px; cursor: pointer; }
+  .rank-row:hover, .rank-row.sel { background: var(--surface-2); }
+  .rank-row .bar { height: 7px; background: var(--seq-3); border-radius: 4px; margin-top: 3px; }
+  .rank-row .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .rank-row.national { font-weight: 700; }
+  .rank-row.national .bar { background: var(--accent-2); }
+  svg text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
+  #view svg { max-height: 340px; display: block; margin: 0 auto; }
+  .chart-title { font-size: .95rem; font-weight: 650; margin: 0 0 8px; }
+  .empty { padding: 30px; text-align: center; color: var(--muted); }
+  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .kpis .card { padding: 12px 14px; }
+  .kpis .v { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
+  .kpis .l { font-size: .78rem; color: var(--muted); }
+  @media (max-width: 560px) { .kpis { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+  <p class="eyebrow">Nusantara Data 2.0</p>
+  <h1>Data Explorer</h1>
+  <p class="muted" style="max-width:760px">Seluruh data dari publikasi BPS <em>Statistik Telekomunikasi Indonesia 2024</em>: 72 tabel tingkat provinsi
+    dan 18 dataset nasional/kelompok pulau. Klik provinsi di peta atau di daftar peringkat untuk melihat trennya.</p>
+
+  <div class="card controls" role="group" aria-label="Pilih data">
+    <label class="field">Tema<select id="theme"></select></label>
+    <label class="field wide">Dataset<select id="dataset"></select></label>
+    <label class="field">Kategori<select id="category"></select></label>
+    <label class="field">Tahun<select id="year"></select></label>
+  </div>
+
+  <h2 class="ds-title" id="ds-title"></h2>
+  <div class="meta-line" id="meta-line"></div>
+  <div id="view"></div>
+</div>
+</main>
+<div class="tooltip" id="tip"></div>
+<script src="../assets/site.js"></script>
+<script src="explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+dataset_id,kode_wilayah,wilayah,tahun,kategori,nilai,satuan,keterangan_kosong,sumber
+ND2-BPS-STI2024-G12,00,Indonesia,2024,Post Gen Z (lahir >=2013) [persen],10.46,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 12 (hlm. PDF 49)"
+ND2-BPS-STI2024-G12,00,Indonesia,2024,Gen Z (1997-2012) [persen],34.49,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 12 (hlm. PDF 49)"
+ND2-BPS-STI2024-G12,00,Indonesia,2024,Milenial (1981-1996) [persen],31.56,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 12 (hlm. PDF 49)"
+ND2-BPS-STI2024-G12,00,Indonesia,2024,Gen X (1965-1980) [persen],18.77,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 12 (hlm. PDF 49)"
+ND2-BPS-STI2024-G12,00,Indonesia,2024,Baby Boomer & Pre-Boomer (<=1964) [persen],4.72,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 12 (hlm. PDF 49)"

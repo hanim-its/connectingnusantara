@@ -1,0 +1,13 @@
+dataset_id,kode_wilayah,wilayah,tahun,kategori,nilai,satuan,keterangan_kosong,sumber
+ND2-BPS-STI2024-G04,ISL-BAL,Bali & Nusa Tenggara,2023,Total [persen],0.87,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-BAL,Bali & Nusa Tenggara,2024,Total [persen],0.65,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-JAW,Jawa,2023,Total [persen],1.58,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-JAW,Jawa,2024,Total [persen],1.34,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-KAL,Kalimantan,2023,Total [persen],0.52,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-KAL,Kalimantan,2024,Total [persen],0.47,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-MAL,Maluku & Papua,2023,Total [persen],0.48,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-MAL,Maluku & Papua,2024,Total [persen],0.37,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-SUL,Sulawesi,2023,Total [persen],0.49,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-SUL,Sulawesi,2024,Total [persen],0.45,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-SUM,Sumatera,2023,Total [persen],0.58,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"
+ND2-BPS-STI2024-G04,ISL-SUM,Sumatera,2024,Total [persen],0.5,persen,,"Statistik Telekomunikasi Indonesia 2024 (BPS, Vol. 13/2025), Gambar 4 (hlm. PDF 39)"

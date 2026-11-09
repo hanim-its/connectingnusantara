@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id" data-base="./" data-page="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connecting Nusantara</title>
+<meta name="description" content="Nusantara Data 2.0: data warehouse dan dashboard terbuka untuk memantau kesenjangan digital di Indonesia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Nusantara Data 2.0 · Kesenjangan digital Indonesia</p>
+      <h1>Data akses digital Indonesia, terkumpul di satu tempat.</h1>
+      <p class="lead">Kami menghimpun seluruh data telekomunikasi BPS ke dalam satu data warehouse yang terdokumentasi,
+        lalu menyajikannya sebagai dashboard terbuka untuk peneliti, pembuat kebijakan, dan publik.</p>
+      <div class="btn-row">
+        <a class="btn" href="explorer/">Buka Data Explorer</a>
+        <a class="btn secondary" href="katalog/">Unduh data &amp; metadata</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="angka">
+      <h2 id="angka" class="sr-only" style="position:absolute;left:-9999px">Angka utama</h2>
+      <div class="grid cols-4">
+        <div class="card stat"><div class="value">72,8%</div><div class="label">penduduk mengakses internet (2024)</div><div class="delta">naik dari 62,1% (2021)</div></div>
+        <div class="card stat"><div class="value">15,4 pp</div><div class="label">selisih akses internet kota (79,1%) dan desa (63,7%), 2024</div><div class="delta">menyempit dari 22,5 pp (2021)</div></div>
+        <div class="card stat"><div class="value">3.117</div><div class="label">desa/kelurahan tanpa sinyal seluler (Podes 2024)</div><div class="delta">3.090 di antaranya di perdesaan</div></div>
+        <div class="card stat"><div class="value">6,8%</div><div class="label">akses internet di Papua Pegunungan, terendah (2024)</div><div class="delta">tertinggi: Kepulauan Riau 89,3%</div></div>
+      </div>
+      <p class="small muted" style="margin-top:10px">Sumber: BPS, <em>Statistik Telekomunikasi Indonesia 2024</em> (Susenas, Podes 2024), diolah tim Nusantara Data.</p>
+    </section>
+
+    <section>
+      <h2>Apa yang ada di platform ini</h2>
+      <div class="grid cols-3">
+        <a class="card" href="explorer/" style="text-decoration:none;color:inherit">
+          <h3>Data Explorer</h3><p class="muted">Pilih indikator, tahun, dan wilayah. Peta provinsi, peringkat, tren, perbandingan kota-desa, untuk 90 dataset.</p></a>
+        <a class="card" href="analysis/" style="text-decoration:none;color:inherit">
+          <h3>Analisis kesenjangan</h3><p class="muted">Indeks Ketimpangan Digital dan Indeks Penggunaan Produktif, profil 38 provinsi, dalam Bahasa Indonesia dan Inggris.</p></a>
+        <a class="card" href="katalog/" style="text-decoration:none;color:inherit">
+          <h3>Katalog data terbuka</h3><p class="muted">Metadata berstandar W3C DCAT, unduhan CSV per dataset, glosarium resmi BPS, dan data warehouse SQLite.</p></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bagaimana data ini dibangun</h2>
+      <div class="steps">
+        <div class="card"><h3>Inventarisasi</h3><p class="muted small">Seluruh tabel dan grafik dalam publikasi BPS didata dan diberi metadata DCAT: 90 dataset.</p></div>
+        <div class="card"><h3>Pembersihan &amp; standardisasi</h3><p class="muted small">Ekstraksi otomatis, kode wilayah baku, label kolom terverifikasi, koreksi kesalahan format sumber.</p></div>
+        <div class="card"><h3>Data warehouse</h3><p class="muted small">Skema bintang (dataset × wilayah × tahun × kategori), 13.788 nilai, 8 uji kualitas otomatis.</p></div>
+        <div class="card"><h3>Dashboard terbuka</h3><p class="muted small">Visualisasi interaktif, unduhan data, dan dokumentasi asal-usul setiap angka.</p></div>
+      </div>
+      <p style="margin-top:14px"><a href="riset/">Metode, temuan kualitas data, dan publikasi →</a></p>
+    </section>
+
+    <section>
+      <div class="note">Dalam proses membangun warehouse, kami menemukan sejumlah inkonsistensi di dalam publikasi sumber,
+        misalnya jumlah penyelenggara ISP tahun 2021 tercatat 611 di satu grafik dan 828 di tabel pada publikasi yang sama.
+        Semua koreksi didokumentasikan secara terbuka. <a href="riset/#kualitas">Lihat temuan kualitas data</a>.</div>
+    </section>
+  </div>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>
