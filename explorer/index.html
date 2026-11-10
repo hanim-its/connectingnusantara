@@ -12,8 +12,20 @@
   .controls { display: grid; gap: 12px; grid-template-columns: 1.2fr 2.4fr 1.6fr .8fr; align-items: end; }
   .controls select { width: 100%; }
   @media (max-width: 860px) { .controls { grid-template-columns: 1fr 1fr; } .controls .wide { grid-column: 1 / -1; } }
-  .ds-title { margin: 18px 0 2px; font-size: 1.25rem; }
-  .meta-line { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .85rem; color: var(--muted); margin-bottom: 14px; }
+  .ds-title { margin: 26px 0 4px; font-size: 1.25rem; }
+  .meta-line { font-size: .88rem; color: var(--muted); margin: 4px 0 20px; }
+  .meta-short { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+  .meta-more { margin-top: 6px; }
+  .meta-more summary { cursor: pointer; font-weight: 600; color: var(--accent); width: max-content; }
+  .meta-more dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; margin: 8px 0 0; padding: 12px 14px; background: var(--surface-2); border-radius: 8px; }
+  .meta-more dt { font-weight: 600; color: var(--text); }
+  .meta-more dd { margin: 0; overflow-wrap: anywhere; }
+  @media (max-width: 560px) { .meta-more dl { grid-template-columns: minmax(0, 1fr); } .meta-more dd { margin-bottom: 6px; } }
+  .legend-box { margin-top: 12px; }
+  .legend-head { font-size: .8rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .legend-items { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .legend-items .li { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-items .sw { width: 16px; height: 12px; border-radius: 3px; display: inline-block; }
   .layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; }
   @media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } }
   .layout > * { min-width: 0; }
@@ -39,12 +51,14 @@
   .rank-row.national .bar { background: var(--accent-2); }
   svg text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
   #view svg:not(.provmap) { max-height: 340px; display: block; margin: 0 auto; }
-  .chart-title { font-size: .95rem; font-weight: 650; margin: 0 0 8px; }
+  .chart-title { font-size: .95rem; font-weight: 700; margin: 0 0 12px; }
   .empty { padding: 30px; text-align: center; color: var(--muted); }
   .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
-  .kpis .card { padding: 12px 14px; }
-  .kpis .v { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
-  .kpis .l { font-size: .78rem; color: var(--muted); }
+  .kpis .card { padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+  .kpis .l { font-size: .8rem; font-weight: 600; color: var(--muted); }
+  .kpis .v { font-size: 1.7rem; font-weight: 800; line-height: 1.15; letter-spacing: -.02em; }
+  .kpis .v .u { font-size: .95rem; font-weight: 600; color: var(--muted); margin-left: 2px; }
+  .kpis .s { font-size: .85rem; color: var(--text); }
   @media (max-width: 560px) { .kpis { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -70,6 +84,6 @@
 </main>
 <div class="tooltip" id="tip"></div>
 <script src="../assets/site.js?v=332d81a2"></script>
-<script src="explorer.js?v=e842770a"></script>
+<script src="explorer.js?v=8fbf79aa"></script>
 </body>
 </html>

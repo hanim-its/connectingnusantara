@@ -49,7 +49,7 @@
   }
   function fillCatYear() {
     const m = current.meta;
-    $("category").innerHTML = m.categories.map((c, i) => `<option value="${i}" ${i === state.cat ? "selected" : ""}>${esc(c)}</option>`).join("");
+    $("category").innerHTML = m.categories.map((c, i) => `<option value="${i}" ${i === state.cat ? "selected" : ""}>${esc(c.split(" / ")[0])}</option>`).join("");
     $("category").disabled = m.categories.length < 2;
     const years = m.years.length ? m.years.map(String) : ["-"];
     if (!years.includes(state.year)) state.year = years[years.length - 1];
@@ -64,15 +64,22 @@
 
   async function loadDataset() {
     current = await fetch(`../data/datasets/${state.ds}.json`).then((r) => r.json());
+    current.meta.categories = current.meta.categories.map((c) => c.split(" / ")[0].trim());   // Indonesian part of bilingual labels
     if (state.cat >= current.meta.categories.length) state.cat = 0;
     fillCatYear();
     render();
   }
 
+  const NILS = new Set();   // provinces shown as 0 because BPS printed "–" (nihil)
   const cellsFor = (cat, year) => {
+    NILS.clear();
     const v = current.values[String(cat)] || {};
     const out = {};
-    for (const [code, ys] of Object.entries(v)) out[code] = ys[year] ?? ys["-"] ?? null;
+    const nil = (current.nil || {})[String(cat)] || {};
+    for (const [code, ys] of Object.entries(v)) {
+      out[code] = ys[year] ?? ys["-"] ?? null;
+      if (out[code] == null && (nil[code] || []).some((y) => y === String(year) || y === "-")) { out[code] = 0; NILS.add(code); }
+    }
     return out;
   };
   const isProvincial = () => current.meta.spatial_resolution === "Provinsi";
@@ -88,14 +95,27 @@
     writeHash();
     const m = current.meta;
     $("ds-title").textContent = m.title_id;
-    $("meta-line").innerHTML = [
-      `<span>${esc(m.title_en)}</span>`,
-      `<span>Satuan: <strong>${esc(m.measure_unit)}</strong></span>`,
-      `<span>Unit: ${esc(m.unit_of_observation)}</span>`,
-      `<span>Sumber: ${esc(m.source_survey)} · ${esc(m.source_publication)}</span>`,
-      `<span><a href="../${m.csv}" download>Unduh CSV</a> · <a href="../${m.json}">JSON</a> · <a href="../katalog/#${m.identifier}">Metadata</a></span>`
-    ].join("");
+    const pct = /^Persen/i.test(m.measure_unit || "");
+    const acr = (m.source_survey || "").match(/\(([A-Z]{3,})\)/);
+    $("meta-line").innerHTML = `
+      <div class="meta-short"><span>Satuan: <strong>${pct ? "persen (%)" : esc((m.measure_unit || "").split(" / ")[0].toLowerCase())}</strong></span>
+        <span>Sumber: BPS${acr ? ", " + esc(acr[1]) : ""}</span>
+        <span><a href="../${m.csv}" download>Unduh CSV</a></span></div>
+      <details class="meta-more"><summary>Info dataset</summary>
+        <dl><dt>Judul (EN)</dt><dd>${esc(m.title_en)}</dd>
+        <dt>Unit observasi</dt><dd>${esc(m.unit_of_observation)}</dd>
+        <dt>Sumber lengkap</dt><dd>${esc(m.source_survey)} · ${esc(m.source_publication)}</dd>
+        <dt>Unduhan</dt><dd><a href="../${m.csv}" download>CSV</a> · <a href="../${m.json}">JSON</a> · <a href="../katalog/#${m.identifier}">Metadata (DCAT)</a></dd></dl>
+      </details>`;
     isProvincial() ? renderProvincial() : renderNational();
+  }
+
+  // readable chart title, e.g. "Persentase Penduduk yang Mengakses Internet di Daerah Perkotaan, 2024"
+  function mapTitle(m, cat, year) {
+    let t = m.title_id.replace(/,\s*\d{4}(–\d{4})?$/, "").replace(/\s+Menurut Provinsi(\s+dan\s+.*)?$/, "");
+    const lab = (m.categories[cat] || "").split(" / ")[0];
+    if (lab && !/^Total/i.test(lab) && m.categories.length > 1) t += ": " + lab;
+    return t + (year && year !== "-" ? ", " + year : "");
   }
 
   // ---------- provincial view ----------
@@ -110,10 +130,11 @@
     const sorted = provs.filter((c) => cells[c] != null).sort((a, b) => cells[b] - cells[a]);
     const max = Math.max(...avail, nat ?? 0) || 1;
     const top = sorted[0], bot = sorted[sorted.length - 1];
+    const unit = /^Persen/i.test(m.measure_unit || "") ? '<span class="u">%</span>' : "";
     const kpis = `<div class="kpis">
-      <div class="card"><div class="v">${fmtN(nat)}</div><div class="l">Indonesia${year !== "-" ? " · " + year : ""}</div></div>
-      <div class="card"><div class="v">${fmtN(cells[top])}</div><div class="l">Tertinggi: ${esc(regionName[top] || "")}</div></div>
-      <div class="card"><div class="v">${fmtN(cells[bot])}</div><div class="l">Terendah: ${esc(regionName[bot] || "")}</div></div></div>`;
+      <div class="card"><div class="l">Indonesia</div><div class="v">${fmtN(nat)}${nat != null ? unit : ""}</div><div class="s">angka nasional${year !== "-" ? ", " + year : ""}</div></div>
+      <div class="card"><div class="l">Tertinggi</div><div class="v">${fmtN(cells[top])}${unit}</div><div class="s">${esc(regionName[top] || "")}</div></div>
+      <div class="card"><div class="l">Terendah</div><div class="v">${fmtN(cells[bot])}${unit}</div><div class="s">${esc(regionName[bot] || "")}</div></div></div>`;
     const tiles = provs.map((c) => {
       const [x, y, ab] = TILE[c], k = classOf(cells[c], br);
       return `<button class="tile${k >= 3 ? " dark-text" : ""}" data-code="${c}" aria-pressed="${c === selected}"
@@ -127,20 +148,24 @@
     }).join("") : "";
     const mapSvg = MAP ? `<svg class="provmap" viewBox="${MAP.viewBox}" role="group" aria-label="Peta provinsi">${shapes}
       ${selected && MAP.paths[selected] ? `<path class="prov-outline" d="${MAP.paths[selected]}"></path>` : ""}</svg>` : "";
-    const legend = br.length ? `<div class="legend">${[...Array(6).keys()].map((k) => `<span class="sw" style="background:var(--seq-${k})"></span>`).join("")}
-      <span>${fmtN(avail.length ? Math.min(...avail) : null)} → ${fmtN(avail.length ? Math.max(...avail) : null)}</span>
-      <span class="sw" style="background:var(--na);margin-left:10px"></span><span>tidak ada data</span></div>` : "";
+    const missing = provs.filter((c) => cells[c] == null).map((c) => regionName[c]);
+    const classes = [...Array(6).keys()].map((k) => {
+      const inK = avail.filter((v) => classOf(v, br) === k);
+      return inK.length ? { k, lo: Math.min(...inK), hi: Math.max(...inK), n: inK.length } : null;
+    }).filter(Boolean);
+    const legend = classes.length ? `<div class="legend-box"><div class="legend-head">Warna lebih gelap = nilai lebih tinggi</div>
+      <div class="legend-items">${classes.map((c) => `<span class="li"><span class="sw" style="background:var(--seq-${c.k})"></span>${fmtN(c.lo)}${c.hi !== c.lo ? "–" + fmtN(c.hi) : ""}</span>`).join("")}
+      ${missing.length ? '<span class="li"><span class="sw" style="background:var(--na)"></span>tidak ada data</span>' : ""}</div></div>` : "";
     const rankRows = [["00", nat], ...sorted.map((c) => [c, cells[c]])].filter(([c, v]) => v != null).map(([c, v], i) => `
       <div class="rank-row${c === "00" ? " national" : ""}${c === selected ? " sel" : ""}" data-code="${c}">
         <span class="muted small">${c === "00" ? "" : i}</span>
         <span>${esc(regionName[c])}<div class="bar" style="width:${Math.max(2, (100 * v) / max)}%"></div></span>
         <span class="num">${fmtN(v)}</span></div>`).join("");
-    const missing = provs.filter((c) => cells[c] == null).map((c) => regionName[c]);
     $("view").innerHTML = `${kpis}
       <div class="layout">
-        <div class="card"><p class="chart-title">${esc(m.categories[cat])}${year !== "-" ? " · " + year : ""}</p>
+        <div class="card"><p class="chart-title">${esc(mapTitle(m, cat, year))}</p>
           ${MAP ? mapSvg : `<div class="tilemap" role="group" aria-label="Peta petak provinsi">${tiles}</div>`}${legend}
-          ${MAP ? `<p class="small muted" style="margin:6px 0 0">Arahkan kursor atau klik provinsi untuk melihat nilainya; provinsi kecil (mis. DKI Jakarta, DI Yogyakarta) juga bisa dipilih dari daftar peringkat.</p>
+          ${MAP ? `<p class="small muted" style="margin:6px 0 0">Arahkan kursor atau klik provinsi untuk melihat nilainya.${NILS.size ? " Tanda “–” (nihil) pada tabel BPS ditampilkan sebagai 0." : ""}</p>
           <p class="small muted" style="margin:2px 0 0;font-size:.75rem">${esc(MAP.attribution)} <a href="https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces">Sumber</a> · <a href="https://creativecommons.org/licenses/by/4.0/">Lisensi</a></p>` : ""}
           ${missing.length ? `<p class="small muted" style="margin:8px 0 0">Tanpa data: ${esc(missing.join(", "))}${missing.some((n) => /Papua (Barat Daya|Selatan|Tengah|Pegunungan)/.test(n)) ? " (provinsi hasil pemekaran 2022)" : ""}.</p>` : ""}
           <div id="detail" style="margin-top:18px"></div></div>

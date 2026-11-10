@@ -301,7 +301,7 @@
     },
     {
      "@language": "en",
-     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province, 2021–2024 .....................................................................................................................................74 xv"
+     "@value": "Percentage of the Population Who Accessed the Internet in Urban Areas by Province, 2021–2024"
     }
    ],
    "dcat:theme": "Akses & penggunaan internet / Internet access & use",
@@ -691,7 +691,7 @@
     },
     {
      "@language": "en",
-     "@value": "Percentage of the Population Who Accessed the Internet in Rural Areas by Province and Location of Internet Access, 2024 ................................................................................................84 xvi"
+     "@value": "Percentage of the Population Who Accessed the Internet in Rural Areas by Province and Location of Internet Access, 2024"
     }
    ],
    "dcat:theme": "Akses & penggunaan internet / Internet access & use",
@@ -1081,7 +1081,7 @@
     },
     {
      "@language": "en",
-     "@value": "Percentage of The Population Who Accessed the Internet by Province and Level of Education, 2024..........................................................................................................................100 xvii"
+     "@value": "Percentage of The Population Who Accessed the Internet by Province and Level of Education, 2024"
     }
    ],
    "dcat:theme": "Akses & penggunaan internet / Internet access & use",
@@ -1471,7 +1471,7 @@
     },
     {
      "@language": "en",
-     "@value": "Percentage of Households That Owned or Had Full Access to the Mobile Cellular Telephone in Rural Area by Province, 2021–2024 .....................................................................110 xviii"
+     "@value": "Percentage of Households That Owned or Had Full Access to the Mobile Cellular Telephone in Rural Area by Province, 2021–2024"
     }
    ],
    "dcat:theme": "Kepemilikan & penggunaan perangkat / Device ownership & use",
@@ -1861,7 +1861,7 @@
     },
     {
      "@language": "en",
-     "@value": "Percentage of Households That Accessed the Internet by Province and Media of Access, 2024 ............................................................................................................................................120 xix"
+     "@value": "Percentage of Households That Accessed the Internet by Province and Media of Access, 2024"
     }
    ],
    "dcat:theme": "Akses & penggunaan internet / Internet access & use",
@@ -2251,7 +2251,7 @@
     },
     {
      "@language": "en",
-     "@value": "Percentage of Average of Household Telecommunications Consumptions Against Total Consumptions per Month in Urban Area by Province (rupiahs), 2021–2024 ..........................136 xx"
+     "@value": "Percentage of Average of Household Telecommunications Consumptions Against Total Consumptions per Month in Urban Area by Province (rupiahs), 2021–2024"
     }
    ],
    "dcat:theme": "Pengeluaran telekomunikasi / Telecom expenditure",
@@ -2641,7 +2641,7 @@
     },
     {
      "@language": "en",
-     "@value": "Number of Villages with Internet Facility in Village Office in Urban Area by Province and the Condition, 2024 ....................................................................................................................146 xxi"
+     "@value": "Number of Villages with Internet Facility in Village Office in Urban Area by Province and the Condition, 2024"
     }
    ],
    "dcat:theme": "Infrastruktur desa / Village infrastructure (PODES)",
@@ -2797,7 +2797,7 @@
     },
     {
      "@language": "en",
-     "@value": "Number of Network Providers in Indonesia, 2021–2024 ..........................................................150 xxii"
+     "@value": "Number of Network Providers in Indonesia, 2021–2024"
     }
    ],
    "dcat:theme": "Industri telekomunikasi / Telecom industry",
