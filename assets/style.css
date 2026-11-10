@@ -80,7 +80,7 @@ label.field { display: flex; flex-direction: column; gap: 4px; font-size: .8rem;
 
 /* footer */
 .site-footer { border-top: 1px solid var(--border); padding: 28px 0 40px; color: var(--muted); font-size: .88rem; }
-.site-footer .wrap { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 .site-footer a { color: var(--muted); }
 
 /* articles */

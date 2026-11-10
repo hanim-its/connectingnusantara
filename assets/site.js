@@ -26,13 +26,8 @@
   const footer = document.createElement("footer");
   footer.className = "site-footer";
   footer.innerHTML = `<div class="wrap">
-    <div><strong>Connecting Nusantara</strong><br>Inisiatif riset independen tentang kesenjangan dan kesetaraan digital di Indonesia:
-      data terbuka, kebijakan, dan analisis untuk publik.</div>
-    <div><strong>Jelajahi</strong><br><a href="${base}explorer/">Data</a> · <a href="${base}analysis/">Analisis</a> ·
-      <a href="${base}katalog/">Katalog &amp; unduhan</a> · <a href="${base}kebijakan/">Kebijakan</a> · <a href="${base}artikel/">Artikel</a> ·
-      <a href="${base}riset/">Riset</a> · <a href="${base}arsip-v1/">Arsip v1</a> · <a href="${base}feed.xml">RSS</a></div>
-    <div>Data utama: Badan Pusat Statistik (BPS), diolah ulang; wajib mencantumkan BPS sebagai sumber.
-      Proyek Nusantara Data 2.0 didukung <strong>Strategic Research Grant (SRG) ITS 2026</strong>.</div>
+    <div><strong>Connecting Nusantara</strong> · Data dan kebijakan untuk kesetaraan digital Indonesia.</div>
+    <div>© ${new Date().getFullYear()} Connecting Nusantara · <a href="${base}feed.xml">RSS</a></div>
   </div>`;
   document.body.append(footer);
 })();
