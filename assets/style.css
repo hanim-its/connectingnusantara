@@ -23,6 +23,7 @@
   --na: #2a3c47; --warn: #f0b45b; --shadow: none; --accent-ink: #0c1820;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 var(--font); }
 a { color: var(--accent); text-underline-offset: 2px; }
