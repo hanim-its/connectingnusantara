@@ -126,3 +126,31 @@ label.field { display: flex; flex-direction: column; gap: 4px; font-size: .8rem;
 .project .status { font-size: .75rem; }
 
 .post-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+/* home: plain-language facts */
+.facts .fact { display: flex; flex-direction: column; gap: 14px; }
+.fact-head { font-family: var(--serif); font-size: clamp(1.2rem, 2.2vw, 1.45rem); font-weight: 600; line-height: 1.3; margin: 0; }
+.fact-note { color: var(--muted); font-size: .92rem; margin: 0; }
+.people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; max-width: 360px; }
+.people .pp { aspect-ratio: 1 / 2; border-radius: 999px 999px 6px 6px; background: var(--na); position: relative; }
+.people .pp::before { content: ""; position: absolute; left: 22%; right: 22%; top: -38%; aspect-ratio: 1; border-radius: 50%; background: inherit; }
+.people { padding-top: 14px; }
+.people .pp.on { background: var(--accent); }
+.people .pp.part { background: linear-gradient(to right, var(--accent) 28%, var(--na) 28%); }
+.people .pp.part::before { background: var(--na); }
+.bars { display: grid; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: minmax(70px, 130px) 1fr 44px; align-items: center; gap: 10px; font-size: .92rem; }
+.bar-row .track { height: 14px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+.bar-row .fill { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.bar-row .fill.mid { background: var(--seq-2); }
+.bar-row .fill.alt { background: var(--accent-2); }
+.bar-row b { text-align: right; font-variant-numeric: tabular-nums; }
+.stack { display: flex; height: 22px; border-radius: 999px; overflow: hidden; gap: 2px; }
+.stack .s1, .legend .s1 { background: var(--seq-5); }
+.stack .s2, .legend .s2 { background: var(--seq-3); }
+.stack .s3, .legend .s3 { background: #e0a43a; }
+.stack .s4, .legend .s4 { background: var(--accent-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .82rem; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.grid.facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 720px) { .grid.facts { grid-template-columns: minmax(0, 1fr); } }
