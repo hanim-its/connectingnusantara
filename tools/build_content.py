@@ -171,33 +171,69 @@ document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () =
     # kebijakan
     kb = json.load(open(os.path.join(ROOT, "content/kebijakan.json"), encoding="utf-8"))
     by_slug = {a["slug"]: a for a in arts}
-    secs = []
-    for c in kb["categories"]:
-        items = sorted((it for it in kb["items"] if it["category"] == c["id"]), key=lambda it: -it["year"])
-        if not items: continue
-        rows = "".join(
-            f"""<tr><td class="num">{it['year']}</td><td><strong>{esc(it['number'])}</strong><br><span class="muted">{esc(it['title'])}</span></td>
-<td>{esc(it['type'])}</td><td>{esc(it['status'])}</td><td>{f'<a href="../artikel/{it["article"]}/">Baca ulasan</a>' if it.get('article') in by_slug else '<span class="muted">–</span>'}</td></tr>"""
-            for it in items)
-        secs.append(f"""<section id="{c['id']}"><h2>{esc(c['name'])}</h2><p class="muted small">{esc(c['desc'])}</p>
-<div class="table-wrap"><table><thead><tr><th class="num">Tahun</th><th>Regulasi</th><th>Jenis</th><th>Status</th><th>Ulasan</th></tr></thead><tbody>{rows}</tbody></table></div></section>""")
-    reg_posts = [a for a in arts if a["category"] == "Regulasi"][:3]
-    reg_html = "".join(article_card(a, "../") for a in reg_posts) or '<p class="muted">Belum ada ulasan.</p>'
-    toc = " · ".join(f'<a href="#{c["id"]}">{esc(c["name"])}</a>' for c in kb["categories"])
+    cat_name = {c["id"]: c["name"] for c in kb["categories"]}
+    items = sorted(kb["items"], key=lambda it: -it["year"])
+
+    def review_link(it, label="Baca ulasan"):
+        return f'<a class="pol-link" href="../artikel/{it["article"]}/">{label}</a>' if it.get("article") in by_slug else ""
+
+    feat = next((it for it in items if it.get("featured")), None)
+    feat_html = ""
+    if feat:
+        art = by_slug.get(feat.get("article"))
+        img = f'<img src="../{esc(art["hero"])}" alt="" loading="lazy">' if art and art.get("hero") else ""
+        feat_html = f"""<section class="pol-feature" aria-label="Sorotan">
+  <div class="pol-feature-img">{img}</div>
+  <div class="pol-feature-body"><p class="pol-kicker">Sorotan · aturan terbaru</p>
+    <h2>{esc(feat['short'])}</h2>
+    <p class="pol-num">{esc(feat['number'])} · <span class="pol-status">{esc(feat['status'])}</span></p>
+    <p><strong>Apa artinya:</strong> {esc(feat['meaning'])}</p>
+    {review_link(feat, "Baca ulasan lengkap")}</div></section>"""
+
+    cards = "".join(f"""<article class="pol-card" data-cat="{esc(it['category'])}">
+  <div class="pol-top"><span class="pol-cat">{esc(cat_name.get(it['category'], ''))}</span><span class="pol-year">{it['year']}</span></div>
+  <h3>{esc(it['short'])}</h3>
+  <p class="pol-num">{esc(it['number'])} · <span class="pol-status">{esc(it['status'])}</span></p>
+  <p class="pol-meaning"><strong>Apa artinya:</strong> {esc(it['meaning'])}</p>
+  {review_link(it)}
+</article>""" for it in items)
+
+    chips = '<button class="chip active" data-f="">Semua</button>' + "".join(
+        f'<button class="chip" data-f="{esc(c["id"])}">{esc(c["name"])}</button>' for c in kb["categories"])
+
+    years = sorted({it["year"] for it in items})
+    y0, y1 = years[0], years[-1]
+    dots = "".join(
+        f'<span class="tl-dot" style="left:{(y - y0) / max(1, y1 - y0) * 100:.1f}%" title="{esc(", ".join(i["short"] for i in items if i["year"] == y))}">'
+        f'<span class="tl-n">{sum(1 for i in items if i["year"] == y)}</span><span class="tl-y">{y}</span></span>' for y in years)
+
     body = f"""<div class="wrap">
-  <p class="eyebrow">Kebijakan</p>
   <h1>Kebijakan digital Indonesia</h1>
-  <p class="muted" style="max-width:780px">Regulasi yang membentuk akses, penggunaan, dan manfaat teknologi digital di Indonesia, beserta ulasan kami tentang
-    dampaknya bagi kesetaraan digital. Daftar ini terus diperbarui.</p>
-  <p class="small">{toc}</p>
-  <section><h2>Ulasan kebijakan terbaru</h2><div class="grid post-grid">{reg_html}</div></section>
-  {''.join(secs)}
+  <p class="lead muted" style="max-width:720px;font-size:1.08rem">Aturan yang menentukan siapa bisa terhubung, berapa biayanya,
+    dan bagaimana data kita dilindungi, dijelaskan dalam bahasa sehari-hari.</p>
+  {feat_html}
+  <section>
+    <div class="section-head" style="align-items:center"><h2 style="margin:0">Daftar regulasi</h2>
+      <div class="chips" role="group" aria-label="Filter topik" style="margin:0">{chips}</div></div>
+    <div class="pol-grid">{cards}</div>
+  </section>
+  <section>
+    <h2>Linimasa</h2>
+    <p class="muted small" style="margin-top:-4px">Regulasi dalam daftar ini menurut tahun terbit.</p>
+    <div class="timeline" role="img" aria-label="Linimasa regulasi {y0}–{y1}">{dots}</div>
+  </section>
   <p class="small muted">Teks resmi setiap regulasi tersedia di <a href="https://peraturan.go.id">peraturan.go.id</a> dan JDIH kementerian terkait.
-    Ringkasan di halaman ini bukan nasihat hukum.</p>
-</div>"""
+    Ringkasan di halaman ini adalah penjelasan umum, bukan nasihat hukum.</p>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {{
+  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x === b));
+  document.querySelectorAll('.pol-card').forEach(c => c.hidden = !!b.dataset.f && c.dataset.cat !== b.dataset.f);
+}}));
+</script>"""
     os.makedirs(os.path.join(ROOT, "kebijakan"), exist_ok=True)
     open(os.path.join(ROOT, "kebijakan/index.html"), "w", encoding="utf-8").write(
-        page("Kebijakan · Connecting Nusantara", "Daftar dan ulasan regulasi digital Indonesia: telekomunikasi, internet, data, dan pemerintahan digital.", "../", "kebijakan/", body))
+        page("Kebijakan · Connecting Nusantara", "Regulasi digital Indonesia dijelaskan dalam bahasa sehari-hari: telekomunikasi, internet, data pribadi, dan pemerintahan digital.", "../", "kebijakan/", body))
 
     # data for the home page + feed
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
