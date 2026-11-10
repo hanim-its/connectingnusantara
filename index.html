@@ -91,7 +91,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const M = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
   const d = iso => { const [y, m, dd] = iso.split("-").map(Number); return `${dd} ${M[m - 1]} ${y}`; };
-  fetch("data/artikel.json").then(r => r.json()).then(list => {
+  fetch("data/artikel.json?v=cd9b7b50").then(r => r.json()).then(list => {
     document.getElementById("latest-posts").innerHTML = list.slice(0, 3).map(a => `
       <a class="card post-card" href="artikel/${a.slug}/">
         <div class="thumb">${a.hero ? `<img src="${esc(a.hero)}" alt="" loading="lazy">` : `<div class="ph" aria-hidden="true">${esc(a.category)}</div>`}</div>

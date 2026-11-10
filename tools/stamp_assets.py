@@ -22,6 +22,9 @@ def stamp():
     for name in ("style.css", "site.js"):
         data = open(os.path.join(ROOT, "assets", name), "rb").read()
         tags[name] = hashlib.sha1(data).hexdigest()[:8]
+    art = os.path.join(ROOT, "data", "artikel.json")
+    if os.path.exists(art):
+        tags["artikel.json"] = hashlib.sha1(open(art, "rb").read()).hexdigest()[:8]
     n = 0
     for root, dirs, files in os.walk(ROOT):
         dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("content", "tools", "data")]
@@ -30,7 +33,8 @@ def stamp():
             p = os.path.join(root, f); s = open(p, encoding="utf-8").read()
             new = s
             for name, tag in tags.items():
-                new = re.sub(r'(assets/%s)(\?v=[0-9a-f]+)?"' % re.escape(name), r'\1?v=%s"' % tag, new)
+                folder = "data" if name.endswith(".json") else "assets"
+                new = re.sub(r'(%s/%s)(\?v=[0-9a-f]+)?"' % (folder, re.escape(name)), r'\1?v=%s"' % tag, new)
             if new != s: open(p, "w", encoding="utf-8").write(new); n += 1
     print(f"stamped {n} pages: {tags}")
 
