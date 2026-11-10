@@ -6,7 +6,7 @@ No build step: every page is plain HTML/CSS/JS, hosted on Vercel.
 ## Pages
 - `/` home · `/explorer/` Data Explorer v2 (all 90 datasets) · `/analysis/` inequality indices + province profiles
 - `/katalog/` DCAT catalogue, CSV/JSON downloads, glossary · `/riset/` method, data-quality findings, publications
-- `/tentang/` team, funding · `/arsip-v1/` Nusantara Data 1.0 (2025, built by students)
+- `/tentang/` about · `/riset/` research projects (one page each, from `content/riset/*.md`)
 
 ## Updating the data
 Data comes from the research pipeline in `Tmp-Work/Research/SRG-HANIM/icttracker/`:
@@ -45,3 +45,8 @@ style.css / site.js links so visitors' browsers never show a new page with an ol
 `data/peta-provinsi.json` is built by `python3 tools/build_map.py` from `content/geo/indonesia-38-provinces.geojson`
 ("Indonesia GeoJSON & TopoJSON Maps (38 Provinces)", denyherianto, CC BY 4.0 — credited under the map).
 The four new Papua provinces carry old codes in that file, so provinces are matched to BPS codes by name.
+
+### Adding a research project (each year)
+Add `content/riset/<slug>.md` with front matter: `title`, `subtitle`, `year`, `status` (Berjalan | Selesai), `funder` (optional),
+`summary`, `hero` (optional image), `format` (`html` or Markdown), `order` (tie-break within a year). Then run `python3 tools/build_content.py`.
+The overview /riset/ lists projects newest first; a status filter appears automatically once projects have different statuses.

@@ -4,88 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Riset · Connecting Nusantara</title>
-<meta name="description" content="Riset Connecting Nusantara: proyek Nusantara Data 2.0, metode, arsitektur sistem, dan temuan kualitas data.">
+<meta name="description" content="Proyek riset Connecting Nusantara tentang kesenjangan dan kesetaraan digital di Indonesia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=e66174f9">
-<style>
-  .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; align-items: stretch; margin: 12px 0; }
-  .flow div { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; font-size: .88rem; position: relative; }
-  .flow div strong { display: block; font-size: .92rem; margin-bottom: 2px; }
-  .pub { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 0 0 16px; }
-  .pub .t { font-weight: 650; }
-  ol.findings li { margin-bottom: 8px; }
-</style>
+<link rel="stylesheet" href="../assets/style.css?v=e5b85c52">
+<link rel="alternate" type="application/rss+xml" title="Connecting Nusantara" href="../feed.xml">
 </head>
 <body>
 <main>
 <div class="wrap">
-  <p class="eyebrow">Riset</p>
-  <h1>Riset dan proyek</h1>
-  <p class="muted" style="max-width:780px">Riset Connecting Nusantara berfokus pada kesenjangan digital di tiga tingkat: akses, penggunaan, dan manfaat,
-    serta pada kualitas data dan kebijakan yang dibutuhkan untuk memantaunya. Halaman ini memuat proyek yang sedang dan telah berjalan.</p>
-  <p class="small"><a href="#nusantara-data-2">Nusantara Data 2.0</a> · <a href="../arsip-v1/">Nusantara Data 1.0</a></p>
-
-  <section id="nusantara-data-2" style="margin-top:36px">
-  <p class="eyebrow">Proyek · 2026 · Strategic Research Grant (SRG) Tipe D, DRPM ITS</p>
-  <h2 style="font-size:clamp(1.4rem,2.4vw,1.75rem)">Nusantara Data 2.0</h2>
-  <p class="muted" style="max-width:780px"><strong>Data Warehouse dan Dashboard untuk Pemantauan Kesenjangan Digital di Indonesia.</strong>
-    Data akses digital di Indonesia tersebar, tidak terstandar, dan kadang saling bertentangan. Proyek ini membangun portal data
-    terbuka dan terintegrasi untuk mendukung studi, pemantauan, dan perumusan kebijakan kesetaraan digital (SDG 10).</p>
-  </section>
-
-  <section>
-    <h2>Pertanyaan penelitian</h2>
-    <ol>
-      <li>Bagaimana menyusun metadata data akses digital BPS berdasarkan kaidah Data Catalog Vocabulary (DCAT)?</li>
-      <li>Apa kebutuhan dan fitur portal data terbuka yang ramah pengguna untuk analisis kesenjangan digital?</li>
-      <li>Bagaimana dashboard dirancang agar mendukung visualisasi, unduhan, dan interaksi dengan data, sambil menjaga asal-usul (provenance) dan keandalan data?</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Arsitektur sistem</h2>
-    <div class="flow">
-      <div><strong>1. Sumber</strong>PDF BPS <em>Statistik Telekomunikasi Indonesia 2024</em>: 72 lampiran, 6 tabel, 21 gambar</div>
-      <div><strong>2. Ekstraksi</strong>pdfplumber, penyaringan watermark, rekonstruksi tabel dari posisi kata</div>
-      <div><strong>3. Standardisasi</strong>kode wilayah BPS, label kolom terverifikasi, koreksi format, glosarium</div>
-      <div><strong>4. Metadata</strong>inventaris DCAT 90 dataset (CSV + JSON-LD)</div>
-      <div><strong>5. Warehouse</strong>skema bintang SQLite, ETL + 8 uji kualitas, 13.788 fakta</div>
-      <div><strong>6. Penyajian</strong>Data Explorer, Analisis, Katalog, unduhan terbuka</div>
-    </div>
-    <p class="small muted">Seluruh skrip dapat dijalankan ulang untuk edisi publikasi berikutnya; setiap angka dapat ditelusuri ke halaman sumbernya.</p>
-  </section>
-
-  <section id="kualitas">
-    <h2>Temuan kualitas data</h2>
-    <p class="muted" style="max-width:780px">Membangun warehouse sekaligus menjadi audit terhadap data sumber. Temuan ini memperkuat argumen penelitian:
-      data publik perlu metadata dan pemeriksaan konsistensi sebelum dipakai untuk kebijakan.</p>
-    <ol class="findings">
-      <li><strong>Inkonsistensi di dalam satu publikasi.</strong> Jumlah ISP tahun 2021 tercatat 611 (Gambar 18) dan 828 (Tabel 6).
-        Kepemilikan telepon seluler perdesaan 2021 tercatat 57,42% (Gambar 5) dan 57,24% (Lampiran 6). Dari 35 pasangan angka yang dicek silang, 33 cocok.</li>
-      <li><strong>Format angka tidak seragam.</strong> Sebagian sel di Lampiran 18 dan 36 memakai titik desimal, bukan koma; tanpa penanganan khusus,
-        96,94 terbaca sebagai 9.694. 262 nilai dikoreksi.</li>
-      <li><strong>Struktur tabel bermasalah.</strong> Indeks kolom tercetak ganda (Lampiran 43–45), label baris keliru (Lampiran 71), judul tidak sesuai isi
-        (Lampiran 72 berisi jumlah pelanggan, bukan penyelenggara), dan nama provinsi tertukar (kode 53 tercetak “Nusa Tenggara Barat”).</li>
-      <li><strong>Watermark sebagai teks.</strong> Tanda air PDF ikut terbaca sebagai karakter dan merusak angka bila diekstrak biasa.</li>
-      <li><strong>Pemekaran wilayah.</strong> Empat provinsi baru di Papua (2022) hanya memiliki data 2023–2024, sehingga deret waktu perlu harmonisasi.</li>
-    </ol>
-  </section>
-
-  <!-- Publikasi: hidden for now (Hanim, 2026-11-10). Restore from git commit 125ef88, riset/index.html -->
-
-  <section id="versi">
-    <h2>Versi platform</h2>
-    <div class="grid cols-2">
-      <div class="card"><span class="tag">Saat ini</span><h3 style="margin-top:8px">Nusantara Data 2.0 (2026)</h3>
-        <p class="small muted">Seluruh 90 dataset publikasi BPS, data warehouse, metadata DCAT, Data Explorer, dan unduhan terbuka. Didanai SRG Tipe D 2026.</p>
-        <a href="../explorer/">Buka Data Explorer</a></div>
-      <div class="card"><span class="tag warn">Arsip</span><h3 style="margin-top:8px">Nusantara Data 1.0 (2025)</h3>
-        <p class="small muted">Prototipe pertama dashboard akses internet tingkat provinsi (48 dataset), dikembangkan oleh mahasiswa Departemen Sistem Informasi ITS.</p>
-        <a href="../arsip-v1/">Lihat arsip versi 1.0</a></div>
-    </div>
-  </section>
+  <h1>Riset</h1>
+  <p class="lead muted" style="max-width:740px;font-size:1.08rem">Riset Connecting Nusantara tentang akses, penggunaan, dan manfaat teknologi digital di Indonesia,
+    serta kualitas data dan kebijakan yang dibutuhkan untuk memantaunya.</p>
+  
+  <div class="grid post-grid" style="margin-top:20px"><a class="card post-card" href="nusantara-data-2/" data-cat="Selesai">
+  <div class="thumb"><img src="../assets/nusantara-map.jpg" alt="" loading="lazy"></div>
+  <div class="post-body"><div class="small muted"><span class="cat">2026</span> · Selesai</div>
+  <h3>Nusantara Data 2.0</h3><p class="small muted">Data warehouse, katalog metadata DCAT, dan dashboard terbuka untuk seluruh 90 dataset telekomunikasi BPS di 38 provinsi.</p><span class="proj-more">Lihat proyek</span></div></a><a class="card post-card" href="nusantara-data-1/" data-cat="Selesai">
+  <div class="thumb"><div class="ph" aria-hidden="true">Nusantara Data 1.0</div></div>
+  <div class="post-body"><div class="small muted"><span class="cat">2025</span> · Selesai</div>
+  <h3>Nusantara Data 1.0</h3><p class="small muted">Prototipe pertama dashboard akses internet tingkat provinsi dari data BPS, dikembangkan bersama mahasiswa.</p><span class="proj-more">Lihat proyek</span></div></a></div>
 </div>
+<script>
+// old anchors (#nusantara-data-2, #kualitas, #versi) now live on project pages
+(function () { const m = { "#nusantara-data-2": "nusantara-data-2/", "#kualitas": "nusantara-data-2/#kualitas", "#versi": "./" };
+  if (m[location.hash] && m[location.hash] !== "./") location.replace(m[location.hash]); })();
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x === b));
+  document.querySelectorAll('.post-card').forEach(c => c.hidden = !!b.dataset.f && c.dataset.cat !== b.dataset.f);
+}));
+</script>
 </main>
 <script src="../assets/site.js?v=332d81a2"></script>
 </body>

@@ -44,7 +44,7 @@
     },
     {
       "source": "/general-6",
-      "destination": "/arsip-v1/",
+      "destination": "/riset/nusantara-data-1/",
       "permanent": true
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "source": "/general-6/",
-      "destination": "/arsip-v1/",
+      "destination": "/riset/nusantara-data-1/",
       "permanent": true
     },
     {
@@ -95,6 +95,16 @@
     {
       "source": "/id/",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/arsip-v1",
+      "destination": "/riset/nusantara-data-1/",
+      "permanent": true
+    },
+    {
+      "source": "/arsip-v1/",
+      "destination": "/riset/nusantara-data-1/",
       "permanent": true
     }
   ]

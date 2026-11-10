@@ -20,6 +20,6 @@ Versi pertama memvisualisasikan 48 jenis dataset BPS. Versi 2.0 mencakup seluruh
 
 ## Mengapa ini penting
 
-Data akses digital di Indonesia tersebar dan tidak selalu konsisten. Saat membangun platform ini, kami menemukan beberapa angka yang saling bertentangan di dalam satu publikasi yang sama. Semua koreksi kami dokumentasikan secara terbuka di halaman [Riset](../../riset/#kualitas).
+Data akses digital di Indonesia tersebar dan tidak selalu konsisten. Saat membangun platform ini, kami menemukan beberapa angka yang saling bertentangan di dalam satu publikasi yang sama. Semua koreksi kami dokumentasikan secara terbuka di halaman [Riset](../../riset/nusantara-data-2/#kualitas).
 
-Nusantara Data 2.0 dikembangkan dengan dukungan Strategic Research Grant (SRG) ITS 2026. Dashboard versi pertama tetap dapat diakses di halaman [Arsip v1](../../arsip-v1/).
+Nusantara Data 2.0 dikembangkan dengan dukungan Strategic Research Grant (SRG) ITS 2026. Dashboard versi pertama tetap dapat diakses di halaman [Nusantara Data 1.0](../../riset/nusantara-data-1/).

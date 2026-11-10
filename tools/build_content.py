@@ -227,6 +227,78 @@ document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () =
     open(os.path.join(ROOT, "kebijakan/index.html"), "w", encoding="utf-8").write(
         page("Kebijakan · Connecting Nusantara", "Regulasi digital Indonesia dijelaskan dalam bahasa sehari-hari: telekomunikasi, internet, data pribadi, dan pemerintahan digital.", "../", "kebijakan/", body))
 
+    # riset: overview + one page per project (content/riset/<slug>.md)
+    rdir = os.path.join(ROOT, "content/riset")
+    projects = []
+    for f in sorted(os.listdir(rdir)):
+        if not f.endswith(".md"): continue
+        raw = open(os.path.join(rdir, f), encoding="utf-8").read()
+        _, fm, body = raw.split("---", 2)
+        meta = {}
+        for line in fm.strip().split("\n"):
+            if ":" in line:
+                k, v = line.split(":", 1); meta[k.strip()] = v.strip()
+        meta["slug"] = f[:-3]; meta["body"] = body.strip()
+        projects.append(meta)
+    projects.sort(key=lambda p: (-int(p["year"]), -int(p.get("order") or 0)))
+    out_root = os.path.join(ROOT, "riset")
+    os.makedirs(out_root, exist_ok=True)
+    for d in os.listdir(out_root):
+        if os.path.isdir(os.path.join(out_root, d)): shutil.rmtree(os.path.join(out_root, d))
+
+    def proj_thumb(p, base):
+        return (f'<img src="{base}{esc(p["hero"])}" alt="" loading="lazy">' if p.get("hero")
+                else f'<div class="ph" aria-hidden="true">{esc(p["title"])}</div>')
+
+    for p in projects:
+        base = "../../"
+        body_html = p["body"] if p.get("format") == "html" else markdown(p["body"])
+        others = [q for q in projects if q is not p]
+        more = ("<section><h2>Proyek lain</h2><div class=\"grid post-grid\">" + "".join(
+            f'<a class="card post-card" href="../{q["slug"]}/"><div class="thumb">{proj_thumb(q, base)}</div><div class="post-body">'
+            f'<div class="small muted"><span class="cat">{esc(q["status"])}</span> · {esc(q["year"])}</div><h3>{esc(q["title"])}</h3>'
+            f'<p class="small muted">{esc(q["summary"])}</p></div></a>' for q in others) + "</div></section>") if others else ""
+        funder = f' · {esc(p["funder"])}' if p.get("funder") else ""
+        page_body = f"""<div class="wrap proj">
+  <p class="eyebrow"><a href="../">Riset</a> · {esc(p['year'])} · {esc(p['status'])}{funder}</p>
+  <h1>{esc(p['title'])}</h1>
+  {f'<p class="proj-sub">{esc(p["subtitle"])}</p>' if p.get("subtitle") else ""}
+{body_html}
+  {more}
+</div>"""
+        os.makedirs(os.path.join(out_root, p["slug"]), exist_ok=True)
+        open(os.path.join(out_root, p["slug"], "index.html"), "w", encoding="utf-8").write(
+            page(f"{p['title']} · Riset · Connecting Nusantara", p.get("summary", ""), base, "riset/", page_body))
+
+    statuses = sorted({p["status"] for p in projects})
+    chips = ""
+    if len(statuses) > 1:
+        chips = '<div class="chips" role="group" aria-label="Filter status"><button class="chip active" data-f="">Semua</button>' + "".join(
+            f'<button class="chip" data-f="{esc(st)}">{esc(st)}</button>' for st in statuses) + "</div>"
+    cards = "".join(f"""<a class="card post-card" href="{p['slug']}/" data-cat="{esc(p['status'])}">
+  <div class="thumb">{proj_thumb(p, '../')}</div>
+  <div class="post-body"><div class="small muted"><span class="cat">{esc(p['year'])}</span> · {esc(p['status'])}</div>
+  <h3>{esc(p['title'])}</h3><p class="small muted">{esc(p['summary'])}</p><span class="proj-more">Lihat proyek</span></div></a>""" for p in projects)
+    body = f"""<div class="wrap">
+  <h1>Riset</h1>
+  <p class="lead muted" style="max-width:740px;font-size:1.08rem">Riset Connecting Nusantara tentang akses, penggunaan, dan manfaat teknologi digital di Indonesia,
+    serta kualitas data dan kebijakan yang dibutuhkan untuk memantaunya.</p>
+  {chips}
+  <div class="grid post-grid" style="margin-top:20px">{cards}</div>
+</div>
+<script>
+// old anchors (#nusantara-data-2, #kualitas, #versi) now live on project pages
+(function () {{ const m = {{ "#nusantara-data-2": "nusantara-data-2/", "#kualitas": "nusantara-data-2/#kualitas", "#versi": "./" }};
+  if (m[location.hash] && m[location.hash] !== "./") location.replace(m[location.hash]); }})();
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {{
+  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x === b));
+  document.querySelectorAll('.post-card').forEach(c => c.hidden = !!b.dataset.f && c.dataset.cat !== b.dataset.f);
+}}));
+</script>"""
+    open(os.path.join(out_root, "index.html"), "w", encoding="utf-8").write(
+        page("Riset · Connecting Nusantara", "Proyek riset Connecting Nusantara tentang kesenjangan dan kesetaraan digital di Indonesia.", "../", "riset/", body))
+    print(f"built {len(projects)} research projects")
+
     # data for the home page + feed
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
     json.dump([{k: a.get(k) for k in ("slug", "title", "date", "category", "lang", "summary", "hero")} for a in arts],
