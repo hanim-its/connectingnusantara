@@ -31,7 +31,7 @@ Menu: Beranda · Data (`/explorer/`, `/katalog/`) · Analisis · Kebijakan · Ar
 3. Run `python3 tools/build_content.py` → regenerates `artikel/`, `kebijakan/`, `data/artikel.json`, `feed.xml`.
 
 ### Adding a regulation
-Add an item to `content/kebijakan.json` (category, type, number, title, year, status, optional `article` slug), then run the build.
+Add an item to `content/kebijakan.json` (category, type, number, title, short, meaning, year, status, `articles`: list of review slugs), then run the build. A new policy review = an article with `category: Regulasi`, plus its slug in that regulation's `articles` list.
 
 Old Wix URLs (/post/…, /blog, /about, /general-6, /s-projects-basic) redirect via `vercel.json`.
 The 5 old blog posts were migrated from Wix on 2026-11-10 (originals: `migrated_from` in each file);
