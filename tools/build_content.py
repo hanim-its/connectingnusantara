@@ -218,3 +218,4 @@ document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () =
 
 if __name__ == "__main__":
     build()
+    import stamp_assets; stamp_assets.stamp()

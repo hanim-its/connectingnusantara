@@ -36,3 +36,7 @@ Add an item to `content/kebijakan.json` (category, type, number, title, year, st
 Old Wix URLs (/post/…, /blog, /about, /general-6, /s-projects-basic) redirect via `vercel.json`.
 The 5 old blog posts were migrated from Wix on 2026-11-10 (originals: `migrated_from` in each file);
 "Urban households owned more cell phones in 2022" was image-only and was not migrated.
+
+### Before every deploy
+Run `python3 tools/build_content.py` (it also runs `tools/stamp_assets.py`). The stamp adds `?v=<hash>` to the
+style.css / site.js links so visitors' browsers never show a new page with an old stylesheet.
