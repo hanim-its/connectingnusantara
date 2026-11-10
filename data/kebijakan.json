@@ -1,0 +1,100 @@
+{
+ "_note": "Daftar regulasi untuk halaman /kebijakan/. Tambah entri baru di sini lalu jalankan: python3 tools/build_content.py. 'article' = slug artikel terkait (opsional).",
+ "categories": [
+  {
+   "id": "telekomunikasi",
+   "name": "Telekomunikasi & infrastruktur",
+   "desc": "Penyelenggaraan jaringan dan jasa telekomunikasi, spektrum, dan pembangunan infrastruktur."
+  },
+  {
+   "id": "ruang-digital",
+   "name": "Internet & sistem elektronik",
+   "desc": "Informasi dan transaksi elektronik, penyelenggara sistem elektronik, dan perdagangan daring."
+  },
+  {
+   "id": "data",
+   "name": "Data & pelindungan data",
+   "desc": "Pelindungan data pribadi, tata kelola data pemerintah, dan identitas pelanggan."
+  },
+  {
+   "id": "pemerintahan-digital",
+   "name": "Pemerintahan digital",
+   "desc": "Sistem pemerintahan berbasis elektronik dan layanan publik digital."
+  }
+ ],
+ "items": [
+  {
+   "category": "data",
+   "type": "Peraturan Menteri",
+   "number": "Permen Komdigi No. 7 Tahun 2026",
+   "title": "Registrasi pelanggan jasa telekomunikasi (kartu SIM) dengan verifikasi biometrik wajah",
+   "year": 2026,
+   "status": "Berlaku",
+   "article": "permenkomdigi-scan-wajah"
+  },
+  {
+   "category": "data",
+   "type": "Undang-Undang",
+   "number": "UU No. 27 Tahun 2022",
+   "title": "Pelindungan Data Pribadi",
+   "year": 2022,
+   "status": "Berlaku"
+  },
+  {
+   "category": "ruang-digital",
+   "type": "Undang-Undang",
+   "number": "UU No. 11 Tahun 2008",
+   "title": "Informasi dan Transaksi Elektronik (diubah dengan UU No. 19 Tahun 2016 dan UU No. 1 Tahun 2024)",
+   "year": 2008,
+   "status": "Berlaku"
+  },
+  {
+   "category": "ruang-digital",
+   "type": "Peraturan Pemerintah",
+   "number": "PP No. 71 Tahun 2019",
+   "title": "Penyelenggaraan Sistem dan Transaksi Elektronik",
+   "year": 2019,
+   "status": "Berlaku"
+  },
+  {
+   "category": "ruang-digital",
+   "type": "Peraturan Pemerintah",
+   "number": "PP No. 80 Tahun 2019",
+   "title": "Perdagangan Melalui Sistem Elektronik",
+   "year": 2019,
+   "status": "Berlaku"
+  },
+  {
+   "category": "telekomunikasi",
+   "type": "Undang-Undang",
+   "number": "UU No. 36 Tahun 1999",
+   "title": "Telekomunikasi",
+   "year": 1999,
+   "status": "Berlaku (sebagian diubah)"
+  },
+  {
+   "category": "telekomunikasi",
+   "type": "Peraturan Pemerintah",
+   "number": "PP No. 46 Tahun 2021",
+   "title": "Pos, Telekomunikasi, dan Penyiaran",
+   "year": 2021,
+   "status": "Berlaku"
+  },
+  {
+   "category": "pemerintahan-digital",
+   "type": "Peraturan Presiden",
+   "number": "Perpres No. 95 Tahun 2018",
+   "title": "Sistem Pemerintahan Berbasis Elektronik (SPBE)",
+   "year": 2018,
+   "status": "Berlaku"
+  },
+  {
+   "category": "data",
+   "type": "Peraturan Presiden",
+   "number": "Perpres No. 39 Tahun 2019",
+   "title": "Satu Data Indonesia",
+   "year": 2019,
+   "status": "Berlaku"
+  }
+ ]
+}

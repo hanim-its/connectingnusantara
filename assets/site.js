@@ -4,15 +4,15 @@
   const page = document.documentElement.dataset.page || "";
   try { const t = localStorage.getItem("cn-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   const links = [
-    ["", "Beranda"], ["explorer/", "Data Explorer"], ["analysis/", "Analisis"], ["katalog/", "Katalog Data"],
-    ["riset/", "Riset & Publikasi"], ["tentang/", "Tentang"]
+    ["", "Beranda"], ["explorer/", "Data"], ["analysis/", "Analisis"], ["kebijakan/", "Kebijakan"],
+    ["artikel/", "Artikel"], ["riset/", "Riset"], ["tentang/", "Tentang"]
   ];
   const header = document.createElement("header");
   header.className = "site-header";
   header.innerHTML = `<div class="wrap">
     <a class="brand" href="${base}"><span class="brand-mark">N</span><span>Connecting Nusantara<small>Digital Equity · Indonesia</small></span></a>
     <nav class="nav" aria-label="Menu utama">${links.map(([href, label]) =>
-      `<a href="${base}${href}"${page === href ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
+      `<a href="${base}${href}"${page === href || (href === "explorer/" && page === "katalog/") ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
     <button class="theme-btn" type="button" aria-label="Ganti tema terang/gelap">◐</button></div>`;
   document.body.prepend(header);
   header.querySelector(".theme-btn").addEventListener("click", () => {
@@ -26,12 +26,13 @@
   const footer = document.createElement("footer");
   footer.className = "site-footer";
   footer.innerHTML = `<div class="wrap">
-    <div><strong>Connecting Nusantara</strong><br>Inisiatif riset kesenjangan dan kesetaraan digital di Indonesia,
-      Departemen Sistem Informasi, Institut Teknologi Sepuluh Nopember (ITS).</div>
-    <div>Nusantara Data 2.0 didanai oleh <strong>Strategic Research Grant (SRG) Tipe D 2026</strong>,
-      Direktorat Riset dan Pengabdian kepada Masyarakat ITS.</div>
-    <div>Sumber data: Badan Pusat Statistik (BPS), <em>Statistik Telekomunikasi Indonesia 2024</em>.
-      Data diolah ulang; wajib mencantumkan BPS sebagai sumber.<br><a href="${base}katalog/">Unduh data &amp; metadata</a></div>
+    <div><strong>Connecting Nusantara</strong><br>Inisiatif riset independen tentang kesenjangan dan kesetaraan digital di Indonesia:
+      data terbuka, kebijakan, dan analisis untuk publik.</div>
+    <div><strong>Jelajahi</strong><br><a href="${base}explorer/">Data</a> · <a href="${base}analysis/">Analisis</a> ·
+      <a href="${base}katalog/">Katalog &amp; unduhan</a> · <a href="${base}kebijakan/">Kebijakan</a> · <a href="${base}artikel/">Artikel</a> ·
+      <a href="${base}riset/">Riset</a> · <a href="${base}arsip-v1/">Arsip v1</a> · <a href="${base}feed.xml">RSS</a></div>
+    <div>Data utama: Badan Pusat Statistik (BPS), diolah ulang; wajib mencantumkan BPS sebagai sumber.
+      Proyek Nusantara Data 2.0 didukung <strong>Strategic Research Grant (SRG) ITS 2026</strong>.</div>
   </div>`;
   document.body.append(footer);
 })();

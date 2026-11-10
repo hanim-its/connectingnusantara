@@ -3,67 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Connecting Nusantara</title>
-<meta name="description" content="Nusantara Data 2.0: data warehouse dan dashboard terbuka untuk memantau kesenjangan digital di Indonesia.">
+<title>Connecting Nusantara · Kesenjangan dan kesetaraan digital Indonesia</title>
+<meta name="description" content="Inisiatif riset independen tentang akses, penggunaan, dan manfaat teknologi digital di Indonesia: data terbuka, kebijakan, dan analisis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="Connecting Nusantara" href="feed.xml">
 </head>
 <body>
 <main>
   <div class="wrap">
     <section class="hero">
-      <p class="eyebrow">Nusantara Data 2.0 · Kesenjangan digital Indonesia</p>
-      <h1>Data akses digital Indonesia, terkumpul di satu tempat.</h1>
-      <p class="lead">Kami menghimpun seluruh data telekomunikasi BPS ke dalam satu data warehouse yang terdokumentasi,
-        lalu menyajikannya sebagai dashboard terbuka untuk peneliti, pembuat kebijakan, dan publik.</p>
+      <p class="eyebrow">Inisiatif riset independen</p>
+      <h1>Memahami kesenjangan digital Indonesia melalui <em>data</em> dan <em>kebijakan</em>.</h1>
+      <p class="lead">Connecting Nusantara adalah platform publik tentang akses internet, infrastruktur digital, dan inklusi digital di Indonesia.
+        Kami menghimpun data terbuka, mengulas kebijakan, dan menerjemahkannya menjadi wawasan bagi peneliti, mahasiswa, pembuat kebijakan, dan masyarakat.</p>
       <div class="btn-row">
-        <a class="btn" href="explorer/">Buka Data Explorer</a>
-        <a class="btn secondary" href="katalog/">Unduh data &amp; metadata</a>
+        <a class="btn" href="explorer/">Jelajahi data</a>
+        <a class="btn secondary" href="artikel/">Baca artikel</a>
       </div>
     </section>
 
     <section aria-labelledby="angka">
-      <h2 id="angka" class="sr-only" style="position:absolute;left:-9999px">Angka utama</h2>
+      <div class="section-head"><h2 id="angka">Angka kunci kesetaraan digital</h2><a href="analysis/">Lihat analisis lengkap →</a></div>
       <div class="grid cols-4">
         <div class="card stat"><div class="value">72,8%</div><div class="label">penduduk mengakses internet (2024)</div><div class="delta">naik dari 62,1% (2021)</div></div>
         <div class="card stat"><div class="value">15,4 pp</div><div class="label">selisih akses internet kota (79,1%) dan desa (63,7%), 2024</div><div class="delta">menyempit dari 22,5 pp (2021)</div></div>
         <div class="card stat"><div class="value">3.117</div><div class="label">desa/kelurahan tanpa sinyal seluler (Podes 2024)</div><div class="delta">3.090 di antaranya di perdesaan</div></div>
         <div class="card stat"><div class="value">6,8%</div><div class="label">akses internet di Papua Pegunungan, terendah (2024)</div><div class="delta">tertinggi: Kepulauan Riau 89,3%</div></div>
       </div>
-      <p class="small muted" style="margin-top:10px">Sumber: BPS, <em>Statistik Telekomunikasi Indonesia 2024</em> (Susenas, Podes 2024), diolah tim Nusantara Data.</p>
+      <p class="small muted" style="margin-top:10px">Sumber: BPS, <em>Statistik Telekomunikasi Indonesia 2024</em> (Susenas, Podes 2024), diolah Connecting Nusantara.</p>
     </section>
 
     <section>
-      <h2>Apa yang ada di platform ini</h2>
+      <h2>Apa yang kami lakukan</h2>
       <div class="grid cols-3">
-        <a class="card" href="explorer/" style="text-decoration:none;color:inherit">
-          <h3>Data Explorer</h3><p class="muted">Pilih indikator, tahun, dan wilayah. Peta provinsi, peringkat, tren, perbandingan kota-desa, untuk 90 dataset.</p></a>
-        <a class="card" href="analysis/" style="text-decoration:none;color:inherit">
-          <h3>Analisis kesenjangan</h3><p class="muted">Indeks Ketimpangan Digital dan Indeks Penggunaan Produktif, profil 38 provinsi, dalam Bahasa Indonesia dan Inggris.</p></a>
-        <a class="card" href="katalog/" style="text-decoration:none;color:inherit">
-          <h3>Katalog data terbuka</h3><p class="muted">Metadata berstandar W3C DCAT, unduhan CSV per dataset, glosarium resmi BPS, dan data warehouse SQLite.</p></a>
+        <a class="card pillar" href="explorer/">
+          <span class="eyebrow">Data</span>
+          <h3>Data terbuka yang terdokumentasi</h3>
+          <p class="muted small">Data telekomunikasi dan TIK dari BPS, dibersihkan, diberi metadata, dan bisa dijelajahi per provinsi, tahun, serta wilayah kota dan desa.</p>
+          <span class="links">Data Explorer · Analisis · Katalog →</span>
+        </a>
+        <a class="card pillar" href="kebijakan/">
+          <span class="eyebrow">Kebijakan</span>
+          <h3>Regulasi digital, dipantau dan diulas</h3>
+          <p class="muted small">Daftar regulasi telekomunikasi, internet, data, dan pemerintahan digital, beserta ulasan dampaknya bagi kesetaraan digital.</p>
+          <span class="links">Lihat daftar kebijakan →</span>
+        </a>
+        <a class="card pillar" href="artikel/">
+          <span class="eyebrow">Artikel</span>
+          <h3>Analisis dan kabar terbaru</h3>
+          <p class="muted small">Tulisan tentang konsep kesenjangan digital, temuan data, regulasi baru, dan perkembangan riset kami.</p>
+          <span class="links">Baca artikel →</span>
+        </a>
       </div>
     </section>
 
     <section>
-      <h2>Bagaimana data ini dibangun</h2>
-      <div class="steps">
-        <div class="card"><h3>Inventarisasi</h3><p class="muted small">Seluruh tabel dan grafik dalam publikasi BPS didata dan diberi metadata DCAT: 90 dataset.</p></div>
-        <div class="card"><h3>Pembersihan &amp; standardisasi</h3><p class="muted small">Ekstraksi otomatis, kode wilayah baku, label kolom terverifikasi, koreksi kesalahan format sumber.</p></div>
-        <div class="card"><h3>Data warehouse</h3><p class="muted small">Skema bintang (dataset × wilayah × tahun × kategori), 13.788 nilai, 8 uji kualitas otomatis.</p></div>
-        <div class="card"><h3>Dashboard terbuka</h3><p class="muted small">Visualisasi interaktif, unduhan data, dan dokumentasi asal-usul setiap angka.</p></div>
-      </div>
-      <p style="margin-top:14px"><a href="riset/">Metode, temuan kualitas data, dan publikasi →</a></p>
+      <div class="section-head"><h2>Artikel terbaru</h2><a href="artikel/">Semua artikel →</a></div>
+      <div class="grid post-grid" id="latest-posts"><p class="muted">Memuat artikel… <a href="artikel/">buka daftar artikel</a></p></div>
     </section>
 
     <section>
-      <div class="note">Dalam proses membangun warehouse, kami menemukan sejumlah inkonsistensi di dalam publikasi sumber,
-        misalnya jumlah penyelenggara ISP tahun 2021 tercatat 611 di satu grafik dan 828 di tabel pada publikasi yang sama.
-        Semua koreksi didokumentasikan secara terbuka. <a href="riset/#kualitas">Lihat temuan kualitas data</a>.</div>
+      <div class="grid cols-2">
+        <div>
+          <div class="section-head"><h2>Kebijakan terbaru</h2><a href="kebijakan/">Semua kebijakan →</a></div>
+          <ul class="list-plain" id="latest-policies"></ul>
+        </div>
+        <div>
+          <div class="section-head"><h2>Proyek</h2><a href="riset/">Riset &amp; publikasi →</a></div>
+          <ul class="list-plain">
+            <li class="project"><a href="riset/#nusantara-data-2"><strong>Nusantara Data 2.0</strong></a> <span class="tag status">2026</span><br>
+              <span class="small muted">Data warehouse dan dashboard untuk pemantauan kesenjangan digital: 90 dataset BPS, 38 provinsi, katalog metadata DCAT.</span></li>
+            <li class="project"><a href="arsip-v1/"><strong>Nusantara Data 1.0</strong></a> <span class="tag status">2025 · arsip</span><br>
+              <span class="small muted">Dashboard pertama akses internet tingkat provinsi, dikembangkan bersama mahasiswa.</span></li>
+            <li class="project"><a href="artikel/"><strong>Tulisan dan kajian kebijakan</strong></a> <span class="tag status">sejak 2023</span><br>
+              <span class="small muted">Artikel tentang kesenjangan digital, infrastruktur, dan regulasi di Indonesia.</span></li>
+          </ul>
+        </div>
+      </div>
     </section>
   </div>
 </main>
 <script src="assets/site.js"></script>
+<script>
+(function () {
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const M = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+  const d = iso => { const [y, m, dd] = iso.split("-").map(Number); return `${dd} ${M[m - 1]} ${y}`; };
+  fetch("data/artikel.json").then(r => r.json()).then(list => {
+    document.getElementById("latest-posts").innerHTML = list.slice(0, 3).map(a => `
+      <a class="card post-card" href="artikel/${a.slug}/">
+        <div class="thumb">${a.hero ? `<img src="${esc(a.hero)}" alt="" loading="lazy">` : '<div class="ph" aria-hidden="true">N</div>'}</div>
+        <div class="post-body"><div class="small muted"><span class="cat">${esc(a.category)}</span> · ${d(a.date)}${a.lang === "en" ? ' <span class="tag">EN</span>' : ""}</div>
+        <h3>${esc(a.title)}</h3><p class="small muted">${esc(a.summary)}</p></div></a>`).join("");
+  }).catch(() => {});
+  fetch("data/kebijakan.json").then(r => r.json()).then(kb => {
+    const items = [...kb.items].sort((a, b) => b.year - a.year).slice(0, 4);
+    document.getElementById("latest-policies").innerHTML = items.map(it => `
+      <li><strong>${esc(it.number)}</strong> <span class="tag">${esc(it.type)}</span><br>
+      <span class="small muted">${esc(it.title)}</span>${it.article ? ` · <a class="small" href="artikel/${esc(it.article)}/">ulasan</a>` : ""}</li>`).join("");
+  }).catch(() => {});
+})();
+</script>
 </body>
 </html>

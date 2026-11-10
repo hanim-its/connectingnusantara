@@ -2,6 +2,65 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "headers": [
-    { "source": "/data/(.*)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }, { "key": "Cache-Control", "value": "public, max-age=3600" }] }
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/post/:slug",
+      "destination": "/artikel/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/artikel/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/artikel/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/tentang/",
+      "permanent": true
+    },
+    {
+      "source": "/about-4",
+      "destination": "/tentang/",
+      "permanent": true
+    },
+    {
+      "source": "/general-6",
+      "destination": "/arsip-v1/",
+      "permanent": true
+    },
+    {
+      "source": "/s-projects-basic",
+      "destination": "/kebijakan/",
+      "permanent": true
+    },
+    {
+      "source": "/id",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog-feed.xml",
+      "destination": "/feed.xml",
+      "permanent": true
+    }
   ]
 }

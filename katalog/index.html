@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="../assets/style.css">
 <style>
   .filters { display: grid; gap: 10px; grid-template-columns: 2fr 1fr 1fr; margin: 16px 0; }
-  @media (max-width: 720px) { .filters { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) { .filters { grid-template-columns: minmax(0,1fr); } }
+  .filters > * { min-width: 0; width: 100%; }
+  .ds, dl.gloss { overflow-wrap: anywhere; min-width: 0; }
   .ds { border-bottom: 1px solid var(--border); padding: 14px 0; }
   .ds:target { background: var(--accent-soft); border-radius: 8px; padding: 14px; }
   .ds h3 { margin: 0 0 4px; font-size: 1rem; }

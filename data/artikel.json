@@ -1,0 +1,56 @@
+[
+ {
+  "slug": "nusantara-data-2-diluncurkan",
+  "title": "Nusantara Data 2.0 diluncurkan: 90 dataset BPS dalam satu platform terbuka",
+  "date": "2026-11-10",
+  "category": "Kabar",
+  "lang": "id",
+  "summary": "Connecting Nusantara kini menyajikan seluruh data Statistik Telekomunikasi Indonesia 2024 dalam Data Explorer, halaman analisis, dan katalog data yang dapat diunduh.",
+  "hero": ""
+ },
+ {
+  "slug": "permenkomdigi-scan-wajah",
+  "title": "Aturan Baru Registrasi SIM Card 2026: Wajib Scan Wajah",
+  "date": "2026-02-10",
+  "category": "Regulasi",
+  "lang": "id",
+  "summary": "Pemerintah Indonesia melalui Kementerian Komunikasi dan Digital (Komdigi) baru saja mengeluarkan aturan registrasi SIM card dengan alasan utama yakni untuk mereduksi SMS penipuan.",
+  "hero": "assets/artikel/permenkomdigi-scan-wajah.jpg"
+ },
+ {
+  "slug": "user-mobile-phones-at-2024",
+  "title": "User Mobile Phones at 2024",
+  "date": "2025-12-01",
+  "category": "Data & Statistik",
+  "lang": "en",
+  "summary": "Mobile phones have become an essential part of daily life in Indonesia. In 2024, the way people use their phones continues to evolve rapidly. This article explores the current trends, popular features, and user…",
+  "hero": ""
+ },
+ {
+  "slug": "which-provinces-have-the-highest-bts-number-population-number-matters",
+  "title": "Which provinces have the highest BTS number? Population number matters.",
+  "date": "2023-09-10",
+  "category": "Data & Statistik",
+  "lang": "en",
+  "summary": "Indonesia, as an archipelagic nation of thousands of islands spanning a vast area, faces significant geographical challenges when providing broadband access to its population. These challenges contribute to the…",
+  "hero": "assets/artikel/which-provinces-have-the-highest-bts-number-population-number-matters.jpg"
+ },
+ {
+  "slug": "how-to-address-the-access-divide",
+  "title": "How to address the access divide?",
+  "date": "2023-09-08",
+  "category": "Konsep",
+  "lang": "en",
+  "summary": "Addressing the access divide is crucial for ensuring equal opportunities in the digital world. Addressing the access divide means to provide equal opportunities for everyone to have access to the Internet and other…",
+  "hero": "assets/artikel/how-to-address-the-access-divide.jpg"
+ },
+ {
+  "slug": "what-is-a-digital-divide",
+  "title": "What is a Digital Divide?",
+  "date": "2023-09-07",
+  "category": "Konsep",
+  "lang": "en",
+  "summary": "In an age where digital technologies are transforming every facet of our lives, the digital divide is a stark reminder of the inequalities that persist in our society.",
+  "hero": "assets/artikel/what-is-a-digital-divide.jpg"
+ }
+]
