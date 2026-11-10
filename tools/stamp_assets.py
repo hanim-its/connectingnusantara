@@ -7,7 +7,17 @@ import hashlib, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def check_css():
+    css = re.sub(r"/\*.*?\*/", "", open(os.path.join(ROOT, "assets/style.css"), encoding="utf-8").read(), flags=re.S)
+    depth = 0
+    for line_no, line in enumerate(css.split("\n"), 1):
+        depth += line.count("{") - line.count("}")
+        if depth < 0: raise SystemExit(f"style.css: extra '}}' around line {line_no}")
+    if depth != 0: raise SystemExit(f"style.css: {depth} unclosed '{{' — fix before deploying")
+
+
 def stamp():
+    check_css()
     tags = {}
     for name in ("style.css", "site.js"):
         data = open(os.path.join(ROOT, "assets", name), "rb").read()
