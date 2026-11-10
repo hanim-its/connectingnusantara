@@ -131,7 +131,7 @@ label.field { display: flex; flex-direction: column; gap: 4px; font-size: .8rem;
 .facts .fact { display: flex; flex-direction: column; gap: 14px; }
 .fact-head { font-family: var(--serif); font-size: clamp(1.05rem, 1.6vw, 1.18rem); font-weight: 600; line-height: 1.3; margin: 0; }
 .fact-note { color: var(--muted); font-size: .92rem; margin: 0; }
-.people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; max-width: 360px; }
+.people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 250px; }
 .people .pp { aspect-ratio: 1 / 2; border-radius: 999px 999px 6px 6px; background: var(--na); position: relative; }
 .people .pp::before { content: ""; position: absolute; left: 22%; right: 22%; top: -38%; aspect-ratio: 1; border-radius: 50%; background: inherit; }
 .people { padding-top: 14px; }
