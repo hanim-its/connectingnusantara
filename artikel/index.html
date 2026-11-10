@@ -7,7 +7,7 @@
 <meta name="description" content="Artikel, analisis kebijakan, dan kabar terbaru tentang kesenjangan digital di Indonesia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=1610f9e9">
+<link rel="stylesheet" href="../assets/style.css?v=e66174f9">
 <link rel="alternate" type="application/rss+xml" title="Connecting Nusantara" href="../feed.xml">
 </head>
 <body>
@@ -41,10 +41,12 @@
   </div>
 </div>
 <script>
-document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x === b));
-  document.querySelectorAll('.post-card').forEach(c => c.hidden = !!b.dataset.f && c.dataset.cat !== b.dataset.f);
-}));
+function applyCat(f) {
+  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x.dataset.f === f));
+  document.querySelectorAll('.post-card').forEach(c => c.hidden = !!f && c.dataset.cat !== f);
+}
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { applyCat(b.dataset.f); history.replaceState(null, '', b.dataset.f ? '#' + encodeURIComponent(b.dataset.f) : location.pathname); }));
+const h = decodeURIComponent(location.hash.slice(1)); if (h && document.querySelector(`.chip[data-f="${CSS.escape(h)}"]`)) applyCat(h);
 </script>
 </main>
 <script src="../assets/site.js?v=332d81a2"></script>

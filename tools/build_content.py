@@ -160,10 +160,12 @@ def build():
   </div>
 </div>
 <script>
-document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {{
-  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x === b));
-  document.querySelectorAll('.post-card').forEach(c => c.hidden = !!b.dataset.f && c.dataset.cat !== b.dataset.f);
-}}));
+function applyCat(f) {{
+  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x.dataset.f === f));
+  document.querySelectorAll('.post-card').forEach(c => c.hidden = !!f && c.dataset.cat !== f);
+}}
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {{ applyCat(b.dataset.f); history.replaceState(null, '', b.dataset.f ? '#' + encodeURIComponent(b.dataset.f) : location.pathname); }}));
+const h = decodeURIComponent(location.hash.slice(1)); if (h && document.querySelector(`.chip[data-f="${{CSS.escape(h)}}"]`)) applyCat(h);
 </script>"""
     open(os.path.join(adir, "index.html"), "w", encoding="utf-8").write(
         page("Artikel · Connecting Nusantara", "Artikel, analisis kebijakan, dan kabar terbaru tentang kesenjangan digital di Indonesia.", "../", "artikel/", body))
@@ -174,28 +176,18 @@ document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () =
     cat_name = {c["id"]: c["name"] for c in kb["categories"]}
     items = sorted(kb["items"], key=lambda it: -it["year"])
 
-    def review_link(it, label="Baca ulasan"):
-        return f'<a class="pol-link" href="../artikel/{it["article"]}/">{label}</a>' if it.get("article") in by_slug else ""
-
-    feat = next((it for it in items if it.get("featured")), None)
-    feat_html = ""
-    if feat:
-        art = by_slug.get(feat.get("article"))
-        img = f'<img src="../{esc(art["hero"])}" alt="" loading="lazy">' if art and art.get("hero") else ""
-        feat_html = f"""<section class="pol-feature" aria-label="Sorotan">
-  <div class="pol-feature-img">{img}</div>
-  <div class="pol-feature-body"><p class="pol-kicker">Sorotan · aturan terbaru</p>
-    <h2>{esc(feat['short'])}</h2>
-    <p class="pol-num">{esc(feat['number'])} · <span class="pol-status">{esc(feat['status'])}</span></p>
-    <p><strong>Apa artinya:</strong> {esc(feat['meaning'])}</p>
-    {review_link(feat, "Baca ulasan lengkap")}</div></section>"""
+    def review_links(it):
+        revs = [by_slug[x] for x in it.get("articles", []) if x in by_slug]
+        if not revs: return ""
+        links = "".join(f'<li><a href="../artikel/{r["slug"]}/">{esc(r["title"])}</a></li>' for r in revs)
+        return f'<div class="pol-reviews"><span>Ulasan kami</span><ul>{links}</ul></div>'
 
     cards = "".join(f"""<article class="pol-card" data-cat="{esc(it['category'])}">
   <div class="pol-top"><span class="pol-cat">{esc(cat_name.get(it['category'], ''))}</span><span class="pol-year">{it['year']}</span></div>
   <h3>{esc(it['short'])}</h3>
   <p class="pol-num">{esc(it['number'])} · <span class="pol-status">{esc(it['status'])}</span></p>
   <p class="pol-meaning"><strong>Apa artinya:</strong> {esc(it['meaning'])}</p>
-  {review_link(it)}
+  {review_links(it)}
 </article>""" for it in items)
 
     chips = '<button class="chip active" data-f="">Semua</button>' + "".join(
@@ -211,7 +203,7 @@ document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () =
   <h1>Kebijakan digital Indonesia</h1>
   <p class="lead muted" style="max-width:720px;font-size:1.08rem">Aturan yang menentukan siapa bisa terhubung, berapa biayanya,
     dan bagaimana data kita dilindungi, dijelaskan dalam bahasa sehari-hari.</p>
-  {feat_html}
+  <p class="small" style="margin:-6px 0 36px"><a href="../artikel/#Regulasi">Semua ulasan kebijakan di Artikel ›</a></p>
   <section>
     <div class="section-head" style="align-items:center"><h2 style="margin:0">Daftar regulasi</h2>
       <div class="chips" role="group" aria-label="Filter topik" style="margin:0">{chips}</div></div>
