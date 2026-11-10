@@ -7,7 +7,7 @@
 <meta name="description" content="Jelajahi 90 dataset kesenjangan digital Indonesia: peta provinsi, peringkat, tren, dan unduhan data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=3b865361">
+<link rel="stylesheet" href="../assets/style.css?v=00d89c84">
 <style>
   .controls { display: grid; gap: 12px; grid-template-columns: 1.2fr 2.4fr 1.6fr .8fr; align-items: end; }
   .controls select { width: 100%; }
@@ -23,6 +23,10 @@
   .tile.dark-text { color: #fff; }
   .tile[aria-pressed="true"] { outline: 2.5px solid var(--accent-2); outline-offset: 1px; z-index: 2; }
   .tile:focus-visible { outline: 2.5px solid var(--text); }
+  .provmap { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 .6px rgba(7,63,82,.55)); }
+  .provmap .prov { stroke: var(--surface); stroke-width: .5; paint-order: stroke; cursor: pointer; transition: opacity .15s; }
+  .provmap .prov:hover, .provmap .prov:focus-visible { opacity: .75; outline: none; }
+  .provmap .prov-outline { fill: none; stroke: var(--accent-2); stroke-width: 2.2; pointer-events: none; }
   .legend { display: flex; align-items: center; gap: 4px; font-size: .78rem; color: var(--muted); margin-top: 10px; flex-wrap: wrap; }
   .legend span.sw { width: 26px; height: 10px; border-radius: 2px; display: inline-block; }
   .tooltip { position: fixed; pointer-events: none; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: .8rem; z-index: 100; display: none; max-width: 240px; }
@@ -34,7 +38,7 @@
   .rank-row.national { font-weight: 700; }
   .rank-row.national .bar { background: var(--accent-2); }
   svg text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
-  #view svg { max-height: 340px; display: block; margin: 0 auto; }
+  #view svg:not(.provmap) { max-height: 340px; display: block; margin: 0 auto; }
   .chart-title { font-size: .95rem; font-weight: 650; margin: 0 0 8px; }
   .empty { padding: 30px; text-align: center; color: var(--muted); }
   .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
@@ -66,6 +70,6 @@
 </main>
 <div class="tooltip" id="tip"></div>
 <script src="../assets/site.js?v=332d81a2"></script>
-<script src="explorer.js"></script>
+<script src="explorer.js?v=e842770a"></script>
 </body>
 </html>

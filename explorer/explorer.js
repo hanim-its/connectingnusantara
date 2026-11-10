@@ -15,10 +15,11 @@
     "97": [17, 3, "PPG"], "95": [17, 4, "PSL"]
   };
 
-  let catalog, regions, regionName = {}, current = null, selected = null;
+  let catalog, regions, regionName = {}, current = null, selected = null, MAP = null;
   const state = { theme: "", ds: "", cat: 0, year: "" };
   try {
-    [catalog, regions] = await Promise.all([fetch("../data/catalog.json").then((r) => r.json()), fetch("../data/regions.json").then((r) => r.json())]);
+    [catalog, regions, MAP] = await Promise.all([fetch("../data/catalog.json").then((r) => r.json()), fetch("../data/regions.json").then((r) => r.json()),
+      fetch("../data/peta-provinsi.json").then((r) => r.json()).catch(() => null)]);
   } catch (e) {
     $("view").innerHTML = `<div class="card empty">Data tidak dapat dimuat. Buka halaman ini melalui server web (bukan file lokal).</div>`;
     return;
@@ -119,6 +120,13 @@
         style="grid-column:${x + 1};grid-row:${y + 1};${k >= 0 ? `background:var(--seq-${k})` : ""}"
         aria-label="${esc(regionName[c])}: ${fmtN(cells[c])}">${ab}</button>`;
     }).join("");
+    const shapes = MAP ? provs.filter((c) => MAP.paths[c]).map((c) => {
+      const k = classOf(cells[c], br);
+      return `<path class="prov${c === selected ? " sel" : ""}" data-code="${c}" d="${MAP.paths[c]}" tabindex="0" role="button"
+        style="fill:${k >= 0 ? `var(--seq-${k})` : "var(--na)"}" aria-label="${esc(regionName[c])}: ${fmtN(cells[c])}"></path>`;
+    }).join("") : "";
+    const mapSvg = MAP ? `<svg class="provmap" viewBox="${MAP.viewBox}" role="group" aria-label="Peta provinsi">${shapes}
+      ${selected && MAP.paths[selected] ? `<path class="prov-outline" d="${MAP.paths[selected]}"></path>` : ""}</svg>` : "";
     const legend = br.length ? `<div class="legend">${[...Array(6).keys()].map((k) => `<span class="sw" style="background:var(--seq-${k})"></span>`).join("")}
       <span>${fmtN(avail.length ? Math.min(...avail) : null)} → ${fmtN(avail.length ? Math.max(...avail) : null)}</span>
       <span class="sw" style="background:var(--na);margin-left:10px"></span><span>tidak ada data</span></div>` : "";
@@ -131,17 +139,20 @@
     $("view").innerHTML = `${kpis}
       <div class="layout">
         <div class="card"><p class="chart-title">${esc(m.categories[cat])}${year !== "-" ? " · " + year : ""}</p>
-          <div class="tilemap" role="group" aria-label="Peta petak provinsi">${tiles}</div>${legend}
+          ${MAP ? mapSvg : `<div class="tilemap" role="group" aria-label="Peta petak provinsi">${tiles}</div>`}${legend}
+          ${MAP ? `<p class="small muted" style="margin:6px 0 0">Arahkan kursor atau klik provinsi untuk melihat nilainya; provinsi kecil (mis. DKI Jakarta, DI Yogyakarta) juga bisa dipilih dari daftar peringkat.</p>
+          <p class="small muted" style="margin:2px 0 0;font-size:.75rem">${esc(MAP.attribution)} <a href="https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces">Sumber</a> · <a href="https://creativecommons.org/licenses/by/4.0/">Lisensi</a></p>` : ""}
           ${missing.length ? `<p class="small muted" style="margin:8px 0 0">Tanpa data: ${esc(missing.join(", "))}${missing.some((n) => /Papua (Barat Daya|Selatan|Tengah|Pegunungan)/.test(n)) ? " (provinsi hasil pemekaran 2022)" : ""}.</p>` : ""}
           <div id="detail" style="margin-top:18px"></div></div>
         <div class="card"><p class="chart-title">Peringkat provinsi</p><div class="rank">${rankRows}</div></div>
       </div>`;
     const tip = $("tip");
-    document.querySelectorAll(".tile").forEach((t) => {
+    document.querySelectorAll(".tile, .provmap .prov").forEach((t) => {
       t.addEventListener("mousemove", (e) => { tip.style.display = "block"; tip.style.left = e.clientX + 12 + "px"; tip.style.top = e.clientY + 12 + "px";
         tip.textContent = `${regionName[t.dataset.code]}: ${fmtN(cells[t.dataset.code])}`; });
       t.addEventListener("mouseleave", () => (tip.style.display = "none"));
       t.addEventListener("click", () => selectProv(t.dataset.code));
+      t.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectProv(t.dataset.code); } });
     });
     document.querySelectorAll(".rank-row").forEach((r) => r.addEventListener("click", () => selectProv(r.dataset.code)));
     renderDetail();

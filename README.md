@@ -40,3 +40,8 @@ The 5 old blog posts were migrated from Wix on 2026-11-10 (originals: `migrated_
 ### Before every deploy
 Run `python3 tools/build_content.py` (it also runs `tools/stamp_assets.py`). The stamp adds `?v=<hash>` to the
 style.css / site.js links so visitors' browsers never show a new page with an old stylesheet.
+
+### Province map (Data page)
+`data/peta-provinsi.json` is built by `python3 tools/build_map.py` from `content/geo/indonesia-38-provinces.geojson`
+("Indonesia GeoJSON & TopoJSON Maps (38 Provinces)", denyherianto, CC BY 4.0 — credited under the map).
+The four new Papua provinces carry old codes in that file, so provinces are matched to BPS codes by name.
