@@ -6,7 +6,7 @@
 <title>Data Explorer · Connecting Nusantara</title>
 <meta name="description" content="Jelajahi 90 dataset kesenjangan digital Indonesia: peta provinsi, peringkat, tren, dan unduhan data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
   .controls { display: grid; gap: 12px; grid-template-columns: 1.2fr 2.4fr 1.6fr .8fr; align-items: end; }
@@ -15,7 +15,8 @@
   .ds-title { margin: 18px 0 2px; font-size: 1.25rem; }
   .meta-line { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .85rem; color: var(--muted); margin-bottom: 14px; }
   .layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; }
-  @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+  @media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+  .layout > * { min-width: 0; }
   .tilemap { display: grid; grid-template-columns: repeat(18, 1fr); gap: 3px; }
   .tile { aspect-ratio: 1; border-radius: 5px; display: grid; place-items: center; font-size: clamp(7px, 1.05vw, 11px); font-weight: 650;
           cursor: pointer; border: 0; padding: 0; color: #08332b; background: var(--na); font-family: inherit; position: relative; }

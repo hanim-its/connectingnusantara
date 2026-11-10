@@ -36,7 +36,7 @@ def page(title, desc, base, page_id, body, extra_head=""):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/style.css">
 <link rel="alternate" type="application/rss+xml" title="Connecting Nusantara" href="{base}feed.xml">
 {extra_head}</head>
@@ -101,7 +101,7 @@ def read_article(path):
 
 
 def article_card(a, base):
-    hero = f'<img src="{base}{esc(a["hero"])}" alt="" loading="lazy">' if a.get("hero") else '<div class="ph" aria-hidden="true">N</div>'
+    hero = f'<img src="{base}{esc(a["hero"])}" alt="" loading="lazy">' if a.get("hero") else f'<div class="ph" aria-hidden="true">{esc(a["category"])}</div>'
     lang = ' <span class="tag">EN</span>' if a.get("lang") == "en" else ""
     return f"""<a class="card post-card" href="{base}artikel/{a['slug']}/" data-cat="{esc(a['category'])}">
   <div class="thumb">{hero}</div>

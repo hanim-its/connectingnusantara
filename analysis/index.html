@@ -6,7 +6,7 @@
 <title>Analisis · Connecting Nusantara</title>
 <meta name="description" content="Analisis kesenjangan digital Indonesia 2024: akses, infrastruktur, dan penggunaan internet di 38 provinsi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
   /* Analysis tokens mapped onto the site palette (assets/style.css), so light/dark and colours match every other page */
@@ -14,7 +14,7 @@
     --surface-0: var(--bg); --surface-1: var(--surface);
     --ink-1: var(--text); --ink-2: var(--muted); --ink-3: color-mix(in srgb, var(--muted) 75%, var(--bg));
     --grid: color-mix(in srgb, var(--border) 70%, var(--bg)); --baseline: var(--border);
-    --deficit: var(--accent-2); --accent-ink: #ffffff;
+    --deficit: var(--accent-2);
     --good: #2e8b57; --warning: #b7791f; --serious: #dd6b20; --critical: #c53030;
     --seq-100: var(--seq-1); --seq-250: var(--seq-2); --seq-450: var(--seq-3); --seq-650: var(--seq-5);
   }
@@ -165,7 +165,8 @@
     display: grid; grid-template-columns: 22px 150px 1fr 64px; align-items: center; gap: 10px;
     padding: 5px 6px; border-radius: 5px; cursor: pointer;
   }
-  @media (max-width: 480px) { .ranked-row { grid-template-columns: 18px minmax(0,110px) minmax(0,1fr) 52px; gap: 6px; } }
+  .ranked-row.wide-label { grid-template-columns: 22px minmax(0,240px) minmax(0,1fr) 64px; }
+  @media (max-width: 480px) { .ranked-row, .ranked-row.wide-label { grid-template-columns: 18px minmax(0,110px) minmax(0,1fr) 52px; gap: 6px; } }
   .ranked-row:hover { background: var(--surface-2); }
   .ranked-row.selected { background: var(--surface-2); box-shadow: inset 2px 0 0 var(--ink-1); }
   .ranked-row .rk { font-size: 11px; color: var(--ink-3); text-align: right; font-variant-numeric: tabular-nums; }
@@ -902,7 +903,7 @@ function renderPurposeRankedList(elId, purposeObj){
     .sort((a,b)=> b.v - a.v);
   const max = Math.max(...items.map(i=>i.v)) || 1;
   el.innerHTML = items.map((it,i)=>`
-    <div class="ranked-row" style="grid-template-columns: 22px 240px 1fr 64px;">
+    <div class="ranked-row wide-label">
       <span class="rk">${i+1}</span>
       <span class="nm">${it.label}</span>
       <span class="bar-track"><span class="bar-fill" style="width:${(it.v/max*100).toFixed(1)}%;background:var(--accent)"></span></span>

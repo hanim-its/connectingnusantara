@@ -5,7 +5,7 @@ category: Kabar
 lang: id
 tags: Nusantara Data 2.0, data terbuka, BPS
 summary: Connecting Nusantara kini menyajikan seluruh data Statistik Telekomunikasi Indonesia 2024 dalam Data Explorer, halaman analisis, dan katalog data yang dapat diunduh.
-hero:
+hero: assets/nusantara-map.jpg
 ---
 
 Connecting Nusantara kini menyajikan **Nusantara Data 2.0**, versi baru dari dashboard data kesenjangan digital yang pertama kali kami bangun pada 2025.
