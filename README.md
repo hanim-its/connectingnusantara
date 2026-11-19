@@ -14,7 +14,16 @@ Data comes from the research pipeline in `Tmp-Work/Research/SRG-HANIM/icttracker
 python3 scripts/build_metadata_catalog.py && python3 scripts/build_warehouse.py
 python3 scripts/export_site_data.py      # writes data/ in this folder
 ```
-Then commit and push; Vercel redeploys in about a minute.
+Then commit, push, and deploy (see **Deploying** below).
+
+## Deploying
+Pushing to GitHub does **not** deploy: the GitHub repo is not connected to Vercel.
+The folder is linked with the Vercel CLI (team `hanim-astutis-projects`, project `connectingnusantara`). To publish:
+```
+vercel --prod      # run in this folder, logged in as the owner of that team
+```
+It uploads the folder as it is (`.env*` excluded by `.vercelignore`) and aliases www.connectingnusantara.com.
+If it says "Not authorized": `vercel link --yes --project connectingnusantara`, then deploy again.
 
 ## Editing text
 Pages are HTML in each folder's `index.html`. Shared header/footer: `assets/site.js`. Styles: `assets/style.css`.
