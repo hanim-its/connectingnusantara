@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 474" font-family="Inter,Segoe UI,Arial,sans-serif" role="img" aria-label="Kondisi fasilitas internet di kantor desa, 2024">
+<rect width="760" height="474" fill="#ffffff"/>
+<text x="24" y="36" font-size="20" font-weight="700" fill="#1b2430">Dari 100 desa/kelurahan, berapa yang kantornya punya internet berfungsi?</text>
+<text x="24" y="60" font-size="13" fill="#5b6573">Persentase desa/kelurahan menurut kondisi fasilitas internet di kantor desa, 2024</text>
+<text x="198" y="112" font-size="14" text-anchor="end" fill="#1b2430" font-weight="400">Perkotaan</text>
+<text x="198" y="128" font-size="11" text-anchor="end" fill="#5b6573">29.736 desa</text>
+<rect x="210.0" y="96" width="449.7" height="34" fill="#1f7a5a"/>
+<text x="434.9" y="118" font-size="13" text-anchor="middle" fill="#fff" font-weight="600">90</text>
+<rect x="659.7" y="96" width="8.5" height="34" fill="#e0a030"/>
+<rect x="668.3" y="96" width="41.7" height="34" fill="#c9ced6"/>
+<text x="689.1" y="118" font-size="13" text-anchor="middle" fill="#1b2430" font-weight="600">8</text>
+<text x="198" y="166" font-size="14" text-anchor="end" fill="#1b2430" font-weight="700">Indonesia</text>
+<text x="198" y="182" font-size="11" text-anchor="end" fill="#5b6573">84.276 desa</text>
+<rect x="210.0" y="150" width="329.4" height="34" fill="#1f7a5a"/>
+<text x="374.7" y="172" font-size="13" text-anchor="middle" fill="#fff" font-weight="600">66</text>
+<rect x="539.4" y="150" width="25.0" height="34" fill="#e0a030"/>
+<rect x="564.5" y="150" width="145.5" height="34" fill="#c9ced6"/>
+<text x="637.2" y="172" font-size="13" text-anchor="middle" fill="#1b2430" font-weight="600">29</text>
+<text x="198" y="220" font-size="14" text-anchor="end" fill="#1b2430" font-weight="400">Perdesaan</text>
+<text x="198" y="236" font-size="11" text-anchor="end" fill="#5b6573">54.540 desa</text>
+<rect x="210.0" y="204" width="263.8" height="34" fill="#1f7a5a"/>
+<text x="341.9" y="226" font-size="13" text-anchor="middle" fill="#fff" font-weight="600">53</text>
+<rect x="473.8" y="204" width="34.0" height="34" fill="#e0a030"/>
+<text x="490.9" y="226" font-size="13" text-anchor="middle" fill="#fff" font-weight="600">7</text>
+<rect x="507.9" y="204" width="202.1" height="34" fill="#c9ced6"/>
+<text x="608.9" y="226" font-size="13" text-anchor="middle" fill="#1b2430" font-weight="600">40</text>
+<text x="198" y="274" font-size="14" text-anchor="end" fill="#1b2430" font-weight="400">Nusa Tenggara Timur</text>
+<text x="198" y="290" font-size="11" text-anchor="end" fill="#5b6573">3.538 desa</text>
+<rect x="210.0" y="258" width="149.7" height="34" fill="#1f7a5a"/>
+<text x="284.8" y="280" font-size="13" text-anchor="middle" fill="#fff" font-weight="600">30</text>
+<rect x="359.7" y="258" width="43.8" height="34" fill="#e0a030"/>
+<text x="381.6" y="280" font-size="13" text-anchor="middle" fill="#fff" font-weight="600">9</text>
+<rect x="403.5" y="258" width="306.5" height="34" fill="#c9ced6"/>
+<text x="556.7" y="280" font-size="13" text-anchor="middle" fill="#1b2430" font-weight="600">61</text>
+<text x="198" y="328" font-size="14" text-anchor="end" fill="#1b2430" font-weight="400">Papua Tengah</text>
+<text x="198" y="344" font-size="11" text-anchor="end" fill="#5b6573">1.208 desa</text>
+<rect x="210.0" y="312" width="17.0" height="34" fill="#1f7a5a"/>
+<rect x="227.0" y="312" width="16.1" height="34" fill="#e0a030"/>
+<rect x="243.1" y="312" width="466.9" height="34" fill="#c9ced6"/>
+<text x="476.6" y="334" font-size="13" text-anchor="middle" fill="#1b2430" font-weight="600">93</text>
+<text x="198" y="382" font-size="14" text-anchor="end" fill="#1b2430" font-weight="400">Papua Pegunungan</text>
+<text x="198" y="398" font-size="11" text-anchor="end" fill="#5b6573">2.634 desa</text>
+<rect x="210.0" y="366" width="4.9" height="34" fill="#1f7a5a"/>
+<rect x="214.9" y="366" width="17.3" height="34" fill="#e0a030"/>
+<rect x="232.2" y="366" width="477.8" height="34" fill="#c9ced6"/>
+<text x="471.1" y="388" font-size="13" text-anchor="middle" fill="#1b2430" font-weight="600">96</text>
+<rect x="210" y="422" width="14" height="14" fill="#1f7a5a"/><text x="230" y="434" font-size="12" fill="#1b2430">Ada &amp; berfungsi</text>
+<rect x="359" y="422" width="14" height="14" fill="#e0a030"/><text x="379" y="434" font-size="12" fill="#1b2430">Jarang / tidak berfungsi</text>
+<rect x="571" y="422" width="14" height="14" fill="#c9ced6"/><text x="591" y="434" font-size="12" fill="#1b2430">Belum ada fasilitas</text>
+<text x="24" y="462" font-size="11" fill="#5b6573">Sumber: BPS, Statistik Telekomunikasi Indonesia 2024 (Podes 2024), Lampiran 61–63, 68–70 · Olahan Connecting Nusantara</text>
+</svg>
