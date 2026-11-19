@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 474" font-family="Inter,Segoe UI,Arial,sans-serif" role="img" aria-label="Kondisi fasilitas internet di kantor desa, 2024">
 <rect width="760" height="474" fill="#ffffff"/>
-<text x="24" y="36" font-size="20" font-weight="700" fill="#1b2430">Dari 100 desa/kelurahan, berapa yang kantornya punya internet berfungsi?</text>
-<text x="24" y="60" font-size="13" fill="#5b6573">Persentase desa/kelurahan menurut kondisi fasilitas internet di kantor desa, 2024</text>
+<text x="24" y="36" font-size="20" font-weight="700" fill="#1b2430">Berapa kantor desa yang internetnya berfungsi?</text>
+<text x="24" y="60" font-size="13" fill="#5b6573">Persentase desa dan kelurahan menurut kondisi fasilitas internet di kantor desa, 2024</text>
 <text x="198" y="112" font-size="14" text-anchor="end" fill="#1b2430" font-weight="400">Perkotaan</text>
 <text x="198" y="128" font-size="11" text-anchor="end" fill="#5b6573">29.736 desa</text>
 <rect x="210.0" y="96" width="449.7" height="34" fill="#1f7a5a"/>
